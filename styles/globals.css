@@ -1,107 +1,93 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   html {
-    color-scheme: dark;
+    @apply bg-dark-bg-color scroll-smooth
   }
+
+  body {
+    @apply scroll-smooth
+  }
+}
+
+@layer components {
+  
+  .menu-link {
+    @apply text-darker-white text-base
+    hover:font-semibold
+  }
+
+  .side-menu-container {
+    @apply hidden col-span-3 md:inline mt-20 md:mt-32
+  }
+
+  .sections-container {
+    @apply scroll-smooth col-span-12 grid grid-cols-8 gap-y-24 md:gap-y-32 md:col-span-9 mt-20 md:mt-32
+  }
+
+  .form-container {
+    @apply col-span-full grid
+  }
+
+  .main-container {
+    @apply scroll-smooth px-10 sm:px-5 md:px-4 w-screen md:w-full grid grid-cols-12 md:grid-cols-mainLayout gap-x-4 justify-center pb-24 md:pb-32
+  }
+
+  .contact-button {
+    @apply flex text-darker-white text-base border 
+    border-darker-white h-12 w-32 items-center justify-center
+    rounded-full cursor-pointer hover:scale-110 hover:-translate-y-1
+    hover:bg-darker-white hover:text-dark-bg-color transition-all hover:font-bold hover:border-transparent
+ }
+
+ .service-title {
+  @apply text-darker-white text-2xl lg:text-3xl
+}
+
+ .timeline-year {
+  @apply relative text-sm lg:text-base font-bold text-center bg-[#282828] py-2 px-4 mt-2 rounded-full
+}
+
+.timeline-description {
+  @apply text-sm lg:text-base font-semibold leading-9
+} 
+
+  .methodology-step {
+    @apply grid grid-cols-1 justify-items-center items-center md:items-start gap-2 md:gap-5
+  }
+
+  .methodology-icon-container {
+    @apply flex items-center justify-center bg-[#FAD3FF] rounded-3xl z-20 h-16 w-16
+  }
+
+  .heart-icon-container {
+    @apply relative items-center justify-center bg-[#FAD3FF] rounded-3xl h-16 w-16
+  }
+
+  .step-text-container {
+    @apply grid grid-cols-1 gap-1 md:gap-3 justify-items-center
+  }
+
+  .step-title {
+    @apply text-xl md:text-2xl text-[#1B1B1B] font-bold
+  }
+
+  .step-paragraph {
+    @apply text-sm md:text-base text-[#6C6C6C] font-medium text-center
+  }
+
+  .t4y-empathy-card-title {
+    @apply text-xl md:text-2xl text-[#ADADAD] font-bold text-center py-2 bg-[#242424] rounded-full
+  }
+
+  .t4y-empathy-card {
+    @apply text-sm text-[#333333] font-semibold h-36 pt-2 px-2
+  }
+
+  .nav-active {
+    @apply text-darker-white font-bold
+  }
+
 }
