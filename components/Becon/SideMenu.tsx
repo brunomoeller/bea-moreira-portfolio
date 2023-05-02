@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { introductionVisibleEvent } from "./Introduction";
+import { roleEvent } from "./Role";
+import { problemsVisibleEvent } from "./Problems";
+import { solutionVisibleEvent } from "./Solution";
+import { personaEvent } from "./Persona";
+import { userflowEvent } from "./Userflow";
+import { beforeAndAfterVisibleEvent } from "./BeforeAndAfter";
 
 type Props = {};
 
@@ -8,28 +15,40 @@ export default function SideMenu({}: Props) {
   const [pos, setPos] = useState("introduction");
 
   useEffect(() => {
-    document.addEventListener("scroll", (e) => {
-      try {
-        let scrolled =
-          document.querySelector<HTMLBodyElement>("html")?.scrollTop;
-        if (scrolled) {
-          if (scrolled >= 0 && scrolled < 1090) {
-            setPos("introduction");
-          } else if (scrolled >= 1090 && scrolled < 1375) {
-            setPos("role");
-          } else if (scrolled >= 1375 && scrolled < 1610) {
-            setPos("problems");
-          } else if (scrolled >= 1610 && scrolled < 2200) {
-            setPos("solution");
-          } else if (scrolled >= 2200 && scrolled < 2800) {
-            setPos("persona");
-          } else if (scrolled >= 2800 && scrolled < 3300) {
-            setPos("userflow");
-          } else if (scrolled >= 3300) {
-            setPos("before-and-after");
-          }
-        }
-      } catch {}
+    self.addEventListener("becon-introduction-visible", (e) => {
+      if (e) {
+        setPos("introduction");
+      }
+    });
+    self.addEventListener("becon-role-visible", (e) => {
+      if (e) {
+        setPos("role");
+      }
+    });
+    self.addEventListener("becon-problems-visible", (e) => {
+      if (e) {
+        setPos("problems");
+      }
+    });
+    self.addEventListener("becon-solution-visible", (e) => {
+      if (e) {
+        setPos("solution");
+      }
+    });
+    self.addEventListener("becon-persona-visible", (e) => {
+      if (e) {
+        setPos("persona");
+      }
+    });
+    self.addEventListener("becon-userflow-visible", (e) => {
+      if (e) {
+        setPos("userflow");
+      }
+    });
+    self.addEventListener("becon-beforeAndAfter-visible", (e) => {
+      if (e) {
+        setPos("before-and-after");
+      }
     });
   }, []);
 
@@ -46,40 +65,103 @@ export default function SideMenu({}: Props) {
           id="nav-introduction"
           className={`${pos === "introduction" ? "nav-active" : ""}`}
         >
-          <Link href="#introduction">Introduction</Link>
+          <Link
+            onClick={() => {
+              setTimeout(() => {
+                self.dispatchEvent(introductionVisibleEvent);
+              }, 1000);
+            }}
+            href="#introduction"
+          >
+            Introduction
+          </Link>
         </li>
         <li id="nav-role" className={`${pos === "role" ? "nav-active" : ""}`}>
-          <Link href="#role">My role</Link>
+          <Link
+            onClick={() => {
+              setTimeout(() => {
+                self.dispatchEvent(roleEvent);
+              }, 1000);
+            }}
+            href="#role"
+          >
+            My role
+          </Link>
         </li>
         <li
           id="nav-problems"
           className={`${pos === "problems" ? "nav-active" : ""}`}
         >
-          <Link href="#problems">Problems & challenges</Link>
+          <Link
+            onClick={() => {
+              setTimeout(() => {
+                self.dispatchEvent(problemsVisibleEvent);
+              }, 1000);
+            }}
+            href="#problems"
+          >
+            Problems & challenges
+          </Link>
         </li>
         <li
           id="nav-solution"
           className={`${pos === "solution" ? "nav-active" : ""}`}
         >
-          <Link href="#solution">Solution</Link>
+          <Link
+            onClick={() => {
+              setTimeout(() => {
+                self.dispatchEvent(solutionVisibleEvent);
+              }, 1000);
+            }}
+            href="#solution"
+          >
+            Solution
+          </Link>
         </li>
         <li
           id="nav-persona"
           className={`${pos === "persona" ? "nav-active" : ""}`}
         >
-          <Link href="#persona">User persona</Link>
+          <Link
+            onClick={() => {
+              setTimeout(() => {
+                self.dispatchEvent(personaEvent);
+              }, 1000);
+            }}
+            href="#persona"
+          >
+            User persona
+          </Link>
         </li>
         <li
           id="nav-userflow"
           className={`${pos === "userflow" ? "nav-active" : ""}`}
         >
-          <Link href="#userflow">User flow diagram</Link>
+          <Link
+            onClick={() => {
+              setTimeout(() => {
+                self.dispatchEvent(userflowEvent);
+              }, 1000);
+            }}
+            href="#userflow"
+          >
+            User flow diagram
+          </Link>
         </li>
         <li
           id="nav-before-and-after"
           className={`${pos === "before-and-after" ? "nav-active" : ""}`}
         >
-          <Link href="#before-and-after">Before and after</Link>
+          <Link
+            onClick={() => {
+              setTimeout(() => {
+                self.dispatchEvent(beforeAndAfterVisibleEvent);
+              }, 1000);
+            }}
+            href="#before-and-after"
+          >
+            Before and after
+          </Link>
         </li>
       </ul>
     </motion.nav>

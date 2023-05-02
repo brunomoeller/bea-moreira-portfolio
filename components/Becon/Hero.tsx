@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { quicksand } from "@/utils/fonts";
 import beconHero from "@/public/images/becon/hero-presentation.png";
@@ -10,10 +10,21 @@ import {
   FadedH3,
   LeftToRightTitle,
 } from "../Framer/MotionComponents";
+import { useInView } from "react-hook-inview";
+import { introductionVisibleEvent } from "./Introduction";
 
 type Props = {};
 
 export default function Hero({}: Props) {
+  const [ref, isVisible] = useInView({
+    threshold: 0.1,
+  });
+  useEffect(() => {
+    if (isVisible) {
+      self.dispatchEvent(introductionVisibleEvent);
+    }
+  }, [isVisible]);
+
   return (
     <div
       className={`col-span-12 grid lg:grid-cols-letsPracticeHero gap-y-20 lg:gap-y-0 justify-items-center items-center gap-x-8 w-full lg:h-[85vh] pt-16 px-4 lg:px-0 lg:pt-0 lg:pl-14 overflow-hidden bg-[#6E4FC1] ${quicksand.variable} font-quicksand rounded-3xl`}
@@ -29,7 +40,10 @@ export default function Hero({}: Props) {
               alt="Logo Becon"
             />
           </FadedDiv>
-          <div className="col-span-2 grid grid-cols-1 text-xl md:text-3xl text-white">
+          <div
+            ref={ref}
+            className="col-span-2 grid grid-cols-1 text-xl md:text-3xl text-white"
+          >
             <LeftToRightTitle className="font-semibold">
               Design UX/UI Case study
             </LeftToRightTitle>

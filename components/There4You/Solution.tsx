@@ -1,17 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import braceletFade from "@/public/images/there4you/bracelet-fade.svg";
 import coloredBracelet from "@/public/images/there4you/colored-bracelet.svg";
 import { FadedDiv, FadedH3, ScaledDiv } from "../Framer/MotionComponents";
+import { useInView } from "react-hook-inview";
 
 type Props = {};
 
+export const solutionEvent = new Event("t4y-solution-visible");
+
 export default function Solution({}: Props) {
+  const [ref, isVisible] = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (isVisible) {
+      dispatchEvent(solutionEvent);
+    }
+  }, [isVisible]);
+
   return (
     <section
-      id="solution"
-      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand"
+      ref={ref}
+      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand relative"
     >
+      <span id="solution" className="absolute translate-y-[-25vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold">Solution</FadedH3>
       <div className="grid grid-cols-1 gap-y-12 text-lg md:text-xl">
         <FadedDiv className="grid grid-cols-1 gap-y-2">

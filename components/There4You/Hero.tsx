@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import bracelet from "@/public/images/there4you/bracelet.svg";
 import t4y3d from "@/public/images/there4you/t4y3d.svg";
@@ -11,21 +11,36 @@ import {
   LeftToRightSubtitle,
   LeftToRightTitle,
 } from "../Framer/MotionComponents";
+import { useInView } from "react-hook-inview";
+import { introductionEvent } from "./Introduction";
 
 type Props = {};
 
 export default function Hero({}: Props) {
+  const [ref, isVisible] = useInView({
+    threshold: 0.2,
+  });
+
+  useEffect(() => {
+    if (isVisible) {
+      dispatchEvent(introductionEvent);
+    }
+  }, [isVisible]);
+
   return (
     <FadedDiv
       className={`col-span-12 grid grid-cols-2 gap-y-12 xl:gap-y-0 justify-items-center items-center xl:gap-x-32 w-full xl:h-[85vh] xl:px-10 px-5 py-10 xl:py-0 overflow-hidden bg-t4y ${quicksand.variable} font-quicksand rounded-3xl`}
     >
       <div className="grid grid-cols-3 col-span-2 xl:col-span-1 justify-items-center xl:grid-cols-1 xl:self-start xl:justify-self-start xl:mt-14">
         <Image
-          className="hidden md:inline opacity-[70%] -rotate-[65deg] mix-blend-overlay order-2 xl:order-1 xl:rotate-0 justify-self-start mt-8 xl:mt-auto"
+          className="md:h-101 hidden md:inline opacity-[70%] -rotate-[65deg] mix-blend-overlay order-2 xl:order-1 xl:rotate-0 justify-self-start mt-8 xl:mt-auto"
           src={bracelet}
           alt="bracelet"
         />
-        <div className="grid grid-cols-2 col-span-2 xl:col-span-1 xl:ml-20 xl:-mt-20 order-1">
+        <div
+          ref={ref}
+          className="grid grid-cols-2 col-span-2 xl:col-span-1 xl:ml-20 xl:-mt-20 order-1"
+        >
           <LeftToRightTitle
             className={`self-start col-span-2 text-4xl md:text-5xl text-[#D014E9] font-semibold drop-shadow-[0_7px_19px_rgba(199,33,214,0.25)] z-2`}
           >

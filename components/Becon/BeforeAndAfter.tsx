@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import beconBefore from "@/public/images/becon/becon-before.png";
 import beconAfter from "@/public/images/becon/becon-after.png";
 import beconMobile from "@/public/images/becon/becon-mobile.png";
@@ -11,15 +11,31 @@ import {
   FadedDiv,
   FadedParagraph,
 } from "../Framer/MotionComponents";
+import { useInView } from "react-hook-inview";
 
 type Props = {};
 
+export const beforeAndAfterVisibleEvent = new Event(
+  "becon-beforeAndAfter-visible"
+);
+
 export default function Userflow({}: Props) {
+  const [ref, isVisible] = useInView({
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (isVisible) {
+      self.dispatchEvent(beforeAndAfterVisibleEvent);
+    }
+  }, [isVisible]);
+
   return (
     <section
-      id="before-and-after"
-      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand"
+      ref={ref}
+      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand relative"
     >
+      <span id="before-and-after" className="absolute translate-y-[-20vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold justify-self-center">
         Before and after
       </FadedH3>
@@ -50,7 +66,7 @@ export default function Userflow({}: Props) {
           alt="Becon Mobile"
         />
       </FadedDiv>
-      <FadedParagraph className="text-center lg:text-start lg:mt-20 lg:w-3/4 justify-self-center">
+      <FadedParagraph className="text-base md:text-xl text-center lg:text-start lg:mt-20 lg:w-3/4 justify-self-center">
         I have defined a recommended color palette for the platform that is
         compatible with different visual identities and with the neutral system
         default colors.

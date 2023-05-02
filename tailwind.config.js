@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        125: { raw: "(-webkit-min-device-pixel-ratio: 1.25)" },
+      },
       fontFamily: {
         quicksand: ["var(--font-quicksand)", ...fontFamily.sans],
         poppins: ["var(--font-poppins)", ...fontFamily.sans],
@@ -43,6 +46,7 @@ module.exports = {
         101: "28rem",
         102: "35rem",
         104: "42rem",
+        500: "31rem",
       },
       backgroundImage: {
         t4y: "url('../public/images/there4you/t4ycover.svg')",

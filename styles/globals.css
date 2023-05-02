@@ -4,12 +4,20 @@
 
 @layer base {
   html {
-    @apply bg-dark-bg-color scroll-smooth
+    @apply bg-dark-bg-color 125:text-[75%]
+  }
+
+  html {
+    @apply scroll-smooth !important
   }
 
   body {
     @apply scroll-smooth
   }
+
+  :root {
+    color-scheme: light only;
+}
 }
 
 @layer components {

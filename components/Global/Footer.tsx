@@ -63,10 +63,10 @@ export default function Footer({}: Props) {
         </Link>
       </div>
       <div className="self-start md:self-auto col-span-4 md:col-span-5 md:col-start-4 flex justify-center gap-x-6">
-        <Link href="https://www.behance.net/beatrizmoreira3">
+        <Link target="_blank" href="https://www.behance.net/beatrizmoreira3">
           <Image src={behance} alt="behance" />
         </Link>
-        <Link href="https://www.linkedin.com/in/msbeatriz/">
+        <Link target="_blank" href="https://www.linkedin.com/in/msbeatriz/">
           <Image src={linkedin} alt="behance" />
         </Link>
       </div>

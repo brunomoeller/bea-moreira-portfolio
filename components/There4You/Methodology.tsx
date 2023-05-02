@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import heartIcon from "@/public/icons/heartIcon.svg";
 import researchIcon from "@/public/icons/researchIcon.svg";
@@ -6,15 +6,29 @@ import ideaIcon from "@/public/icons/ideaIcon.svg";
 import toolsIcon from "@/public/icons/toolsIcon.svg";
 import checklistIcon from "@/public/icons/checklistIcon.svg";
 import { FadedDiv, FadedH3, FadedParagraph } from "../Framer/MotionComponents";
+import { useInView } from "react-hook-inview";
 
 type Props = {};
 
+export const methodologyEvent = new Event("t4y-methodology-visible");
+
 export default function Methodology({}: Props) {
+  const [ref, isVisible] = useInView({
+    threshold: 1,
+  });
+
+  useEffect(() => {
+    if (isVisible) {
+      dispatchEvent(methodologyEvent);
+    }
+  }, [isVisible]);
+
   return (
     <section
-      id="methodology"
-      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand"
+      ref={ref}
+      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand relative"
     >
+      <span id="methodology" className="absolute translate-y-[-30vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold">Methodology</FadedH3>
       <div className="grid grid-cols-1 gap-y-8 text-lg md:text-xl">
         <FadedParagraph>

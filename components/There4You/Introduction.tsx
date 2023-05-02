@@ -1,15 +1,31 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { FadedH3, FadedParagraph } from "../Framer/MotionComponents";
+import { useInView } from "react-hook-inview";
+import Role from "./Role";
 
 type Props = {};
 
+export const introductionEvent = new Event("t4y-introduction-visible");
+
 export default function Introduction({}: Props) {
+  const [ref, isVisible] = useInView({
+    threshold: 1,
+  });
+
+  useEffect(() => {
+    if (isVisible) {
+      self.dispatchEvent(introductionEvent);
+    }
+  }, [isVisible]);
+
   return (
-    <section
-      id="introduction"
-      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand"
-    >
+    <section className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand relative">
+      <span
+        ref={ref}
+        id="introduction"
+        className="absolute translate-y-[-52vh]"
+      />
       <FadedH3 className="text-3xl md:text-4xl font-bold">Introduction</FadedH3>
       <div className="grid grid-cols-1 gap-y-8 text-lg md:text-xl">
         <FadedParagraph>
@@ -32,24 +48,14 @@ export default function Introduction({}: Props) {
           would impact the lives of many women around the world.
         </FadedParagraph>
         <Link
+          target="_blank"
           className="flex items-center justify-center hover:scale-110 hover:-translate-y-1 transition-all w-64 h-12 rounded-full bg-[#D014E9] justify-self-center"
           href="https://www.linkedin.com/feed/update/urn:li:activity:6823742017542217728/"
         >
           Check on LinkedIn
         </Link>
 
-        <FadedH3 id="role" className="text-3xl md:text-4xl font-bold">
-          My role and team
-        </FadedH3>
-        <div className="grid grid-cols-1 gap-y-4 md:gap-y-8 text-lg md:text-xl">
-          <FadedParagraph>
-            <strong>My role:</strong> Founder / Designer
-          </FadedParagraph>
-          <FadedParagraph>
-            <strong>Team / Founders:</strong> Me (Beatriz Moreira); Beatriz
-            Fonseca; Iris Nascimento and Giovanna Savazo
-          </FadedParagraph>
-        </div>
+        <Role />
       </div>
     </section>
   );

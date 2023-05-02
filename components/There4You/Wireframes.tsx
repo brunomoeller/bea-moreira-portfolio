@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import lowFidelity from "@/public/images/there4you/wireframe-low-fidelity.png";
 import connect from "@/public/images/there4you/t4y-high-fidelity-1.png";
@@ -11,15 +11,46 @@ import community from "@/public/images/there4you/t4y-high-fidelity-6.png";
 import statistics from "@/public/images/there4you/t4y-high-fidelity-7.png";
 import highFidelity from "@/public/images/there4you/high-fidelity-wireframes.png";
 import { FadedDiv, FadedH3, FadedH4 } from "../Framer/MotionComponents";
+import { useInView } from "react-hook-inview";
 
 type Props = {};
 
-export default function Userflow({}: Props) {
+export const wireframesEvent = new Event("t4y-wireframes-visible");
+export const prototypeEvent = new Event("t4y-prototype-visible");
+
+export default function Wireframes({}: Props) {
+  const [ref, isVisible] = useInView({
+    threshold: 0.1,
+  });
+
+  const [prototypeRef, isVideoVisible] = useInView({
+    threshold: 0.1,
+  });
+
+  const [highWireframes, isHighWireframesVisible] = useInView({
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (isVisible) {
+      dispatchEvent(wireframesEvent);
+    }
+
+    if (isVideoVisible) {
+      dispatchEvent(prototypeEvent);
+    }
+
+    if (isHighWireframesVisible) {
+      dispatchEvent(prototypeEvent);
+    }
+  }, [isVisible, isVideoVisible, isHighWireframesVisible]);
+
   return (
     <section
-      id="wireframes"
-      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand"
+      ref={ref}
+      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand relative"
     >
+      <span id="wireframes" className="absolute translate-y-[-20vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold justify-self-center">
         Wireframes
       </FadedH3>
@@ -36,7 +67,7 @@ export default function Userflow({}: Props) {
       </FadedH4>
       <div className="grid grid-cols-1 gap-y-12 gap-x-4 w-full md:w-auto md:grid-cols-highWireframe md:gap-x-9 md:gap-y-16 items-center justify-self-center">
         <Image
-          className="md:translate-x-10 justify-self-center md:justify-self-auto order-1"
+          className="h-500 w-auto md:h-auto md:translate-x-10 justify-self-center md:justify-self-auto order-1"
           src={connect}
           alt="connect bracelet"
         />
@@ -53,22 +84,22 @@ export default function Userflow({}: Props) {
           </p>
         </FadedDiv>
         <Image
-          className="order-3 md:order-1 justify-self-center md:justify-self-auto"
+          className="h-500 w-auto md:h-auto order-3 md:order-1 justify-self-center md:justify-self-auto"
           src={emergencyContacts}
           alt="Emergency Contacts"
         />
         <Image
-          className="order-4 md:order-1 justify-self-center md:justify-self-auto"
+          className="h-500 w-auto md:h-auto order-4 md:order-1 justify-self-center md:justify-self-auto"
           src={socialMedia}
           alt="Social Media"
         />
         <Image
-          className="order-5 md:order-1 justify-self-center md:justify-self-auto"
+          className="h-500 w-auto md:h-auto order-5 md:order-1 justify-self-center md:justify-self-auto"
           src={sosMessage}
           alt="SOS Message"
         />
         <Image
-          className="md:translate-x-10 order-6 md:order-1 justify-self-center md:justify-self-auto"
+          className="h-500 w-auto md:h-auto md:translate-x-10 order-6 md:order-1 justify-self-center md:justify-self-auto"
           src={t4yHome}
           alt="Home"
         />
@@ -95,12 +126,12 @@ export default function Userflow({}: Props) {
           </p>
         </FadedDiv>
         <Image
-          className="md:-translate-x-20 order-8 justify-self-center md:order-1"
+          className="h-500 w-auto md:h-auto md:-translate-x-20 order-8 justify-self-center md:order-1"
           src={community}
           alt="Community"
         />
         <Image
-          className="md:translate-x-10 order-10 justify-self-center md:justify-self-auto md:order-1"
+          className="h-500 w-auto md:h-auto md:translate-x-10 order-10 justify-self-center md:justify-self-auto md:order-1"
           src={statistics}
           alt="Statistics"
         />
@@ -114,14 +145,18 @@ export default function Userflow({}: Props) {
           </p>
         </FadedDiv>
       </div>
-      <div className="w-15 h-100 lg:w-auto lg:h-auto">
+      <div className="grid grid-cols-1 gap-2 md:gap-8 w-15 h-100 lg:w-auto lg:h-auto relative">
+        <span id="prototype" className="absolute translate-y-[-10vh]" />
+        <FadedH3 className="text-2xl md:text-3xl font-semibold justify-self-center">
+          Video prototype
+        </FadedH3>
         <motion.video
+          ref={prototypeRef}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          id="prototype"
-          className="w-full h-full object-cover lg:object-contain md:mt-36 mt-10"
+          className="w-full h-full object-cover md:object-contain"
           autoPlay
           muted
           playsInline
@@ -134,7 +169,8 @@ export default function Userflow({}: Props) {
         </motion.video>
       </div>
       <Image
-        className="w-full h-full md:mt-36 mt-20"
+        ref={highWireframes}
+        className="w-full h-auto md:mt-36 mt-20"
         src={highFidelity}
         alt="High fidelity wireframes"
       />

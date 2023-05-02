@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import figmaIcon from "@/public/icons/figmaIcon.svg";
 import { quicksand } from "@/utils/fonts";
@@ -9,12 +9,25 @@ import {
   LeftToRightSubtitle,
   LeftToRightTitle,
 } from "../Framer/MotionComponents";
+import { useInView } from "react-hook-inview";
+import { introductionEvent } from "./Introduction";
 
 type Props = {};
 
 export default function Hero({}: Props) {
+  const [ref, isVisible] = useInView({
+    threshold: 1,
+  });
+
+  useEffect(() => {
+    if (isVisible) {
+      self.dispatchEvent(introductionEvent);
+    }
+  }, [isVisible]);
+
   return (
     <div
+      ref={ref}
       className={`col-span-12 grid grid-cols-1 xl:grid-cols-letsPracticeHero justify-items-center items-center gap-y-10 xl:gap-y-0 xl:gap-x-8 w-full lg:h-[85vh] px-5 pt-10 xl:px-14 xl:pt-16 overflow-hidden bg-letsPractice ${quicksand.variable} font-quicksand rounded-3xl`}
     >
       <div className="grid grid-cols-1">

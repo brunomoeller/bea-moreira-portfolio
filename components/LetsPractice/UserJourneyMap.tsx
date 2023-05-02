@@ -1,19 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import sadEmoji from "@/public/icons/sadEmoji.svg";
 import thoughtfulEmoji from "@/public/icons/thoughtEmoji.svg";
 import hopefulEmoji from "@/public/icons/hopeEmoji.svg";
 import joyfulEmoji from "@/public/icons/joyEmoji.svg";
 import { FadedDiv, FadedH3 } from "../Framer/MotionComponents";
+import { useInView } from "react-hook-inview";
 
 type Props = {};
 
+export const journeyEvent = new Event("lp-journey-visible");
+
 export default function UserJourneyMap({}: Props) {
+  const [ref, isVisible] = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (isVisible) {
+      self.dispatchEvent(journeyEvent);
+    }
+  }, [isVisible]);
+
   return (
     <section
-      id="journey-map"
-      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand w-full overflow-x-scroll scrollbar-thin scrollbar-thumb-[#590BC2]/30 scrollbar-track-[rgb(222,198,255)] lg:overflow-x-hidden lg:w-auto"
+      ref={ref}
+      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand w-full overflow-x-scroll scrollbar-thin scrollbar-thumb-[#590BC2]/30 scrollbar-track-[rgb(222,198,255)] lg:overflow-x-hidden lg:w-auto relative"
     >
+      <span id="journey-map" className="absolute translate-y-[-15vh]" />
       <FadedH3 className="sticky left-2 lg:justify-self-center lg:static lg:left-auto text-3xl md:text-4xl font-bold">
         User journey map
       </FadedH3>

@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FadedDiv, FadedH3, FadedParagraph } from "../Framer/MotionComponents";
+import { useInView } from "react-hook-inview";
 
 type Props = {};
 
+export const competitorsEvent = new Event("lp-competitors-visible");
+
 export default function Competitors({}: Props) {
+  const [ref, isVisible] = useInView({
+    threshold: 1,
+  });
+
+  useEffect(() => {
+    if (isVisible) {
+      self.dispatchEvent(competitorsEvent);
+    }
+  }, [isVisible]);
+
   return (
     <section
-      id="competitors"
-      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand"
+      ref={ref}
+      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand relative"
     >
+      <span id="competitors" className="absolute translate-y-[-20vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold">Competitors</FadedH3>
       <FadedParagraph className="text-lg md:text-xl font-medium">
         Summary of the Landing Page analysis of some competitors, more focused

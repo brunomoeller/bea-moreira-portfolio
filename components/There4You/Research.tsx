@@ -1,18 +1,32 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import researchGraph1 from "@/public/images/there4you/researchGraph1.svg";
 import researchGraph2 from "@/public/images/there4you/researchGraph2.svg";
 import researchGraph3 from "@/public/images/there4you/researchGraph3.svg";
 import { FadedDiv, FadedH3, FadedParagraph } from "../Framer/MotionComponents";
+import { useInView } from "react-hook-inview";
 
 type Props = {};
 
+export const researchEvent = new Event("t4y-research-visible");
+
 export default function Research({}: Props) {
+  const [ref, isVisible] = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (isVisible) {
+      dispatchEvent(researchEvent);
+    }
+  }, [isVisible]);
+
   return (
     <section
-      id="research"
+      ref={ref}
       className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand"
     >
+      <span id="research" className="absolute translate-y-[-20vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold">Research</FadedH3>
       <div className="text-lg md:text-xl">
         <FadedParagraph>

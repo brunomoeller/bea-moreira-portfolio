@@ -1,23 +1,27 @@
-import React, { FormEvent, useState } from "react";
+import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { motion } from "framer-motion";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 type Props = {};
 
-type formData = {
+type Inputs = {
   from_name: string;
   from_email: string;
   message: string;
-  services: string;
+  services: string | null;
 };
 
 function Form({}: Props) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [isNameFilled, setNameFilled] = useState(false);
+  const [isEmailFilled, setEmailFilled] = useState(false);
+  const [isMessageFilled, setMessageFilled] = useState(false);
+
   const [services, setServices] = useState<string[]>([]);
+
+  const { register, handleSubmit, reset } = useForm<Inputs>();
 
   function handleCheckbox(e: EventTarget & HTMLInputElement) {
     if (e.checked) {
@@ -27,22 +31,16 @@ function Form({}: Props) {
     }
   }
 
-  function handleSubmit(e: FormEvent) {
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+    formData.services = services.join(", ");
+    
     const id = toast.loading("Sending...");
-
-    e.preventDefault();
-    const data: formData = {
-      from_name: name,
-      from_email: email,
-      message: message,
-      services: services.join(", "),
-    };
-
+    reset();
     emailjs
       .send(
         process.env.EMAILJS_SERVICE_ID!,
         process.env.EMAILJS_TEMPLATE_ID!,
-        data,
+        formData,
         process.env.EMAILJS_PUBLIC_KEY!
       )
       .then(
@@ -57,7 +55,7 @@ function Form({}: Props) {
             closeOnClick: true,
             draggable: true,
             progress: undefined,
-            theme: "colored",
+            theme: "dark",
           });
         },
         (error) => {
@@ -75,7 +73,7 @@ function Form({}: Props) {
           });
         }
       );
-  }
+  };
 
   return (
     <>
@@ -88,9 +86,7 @@ function Form({}: Props) {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          onSubmit={(e) => {
-            handleSubmit(e);
-          }}
+          onSubmit={handleSubmit(onSubmit)}
           className="grid grid-cols-1 border rounded-3xl gap-y-14 p-10"
         >
           <h1 className="font-bold text-3xl xl:text-5xl">Get in Touch!</h1>
@@ -100,12 +96,15 @@ function Form({}: Props) {
                 Your name
               </label>
               <input
-                className="w-full border border-[#686868] bg-transparent px-4 py-2 rounded placeholder:text-[#686868]"
+                {...register("from_name")}
+                className={`w-full border border-[#686868] bg-transparent px-4 py-2 rounded placeholder:text-[#686868] ${
+                  isNameFilled ? "invalid:border-red-600" : ""
+                }`}
                 type="text"
                 placeholder="Your name"
-                value={name}
+                required
                 onChange={(e) => {
-                  setName(e.target.value);
+                  e.target.value ? setNameFilled(true) : setNameFilled(false);
                 }}
               />
             </div>
@@ -114,12 +113,15 @@ function Form({}: Props) {
                 Your email
               </label>
               <input
-                className="w-full border border-[#686868] bg-transparent px-4 py-2 rounded placeholder:text-[#686868]"
+                {...register("from_email")}
+                className={`w-full border border-[#686868] bg-transparent px-4 py-2 rounded placeholder:text-[#686868] ${
+                  isEmailFilled ? "invalid:border-red-600" : ""
+                }`}
                 type="email"
                 placeholder="Your email"
-                value={email}
+                required
                 onChange={(e) => {
-                  setEmail(e.target.value);
+                  e.target.value ? setEmailFilled(true) : setEmailFilled(false);
                 }}
               />
             </div>
@@ -128,11 +130,17 @@ function Form({}: Props) {
                 Message
               </label>
               <textarea
-                className="h-24 w-full border border-[#686868] bg-transparent px-4 py-2 rounded placeholder:text-[#686868]"
-                placeholder="Write your message here"
-                value={message}
+                {...register("message")}
+                className={`h-24 w-full border border-[#686868] bg-transparent px-4 py-2 rounded placeholder:text-[#686868] ${
+                  isMessageFilled ? "invalid:border-red-600" : ""
+                }`}
+                placeholder="Write your message here. At least 50 characters long"
+                required
+                minLength={50}
                 onChange={(e) => {
-                  setMessage(e.target.value);
+                  e.target.value
+                    ? setMessageFilled(true)
+                    : setMessageFilled(false);
                 }}
               />
             </div>
@@ -153,7 +161,7 @@ function Form({}: Props) {
                   />
                   <label htmlFor="ux-design">UX Design</label>
                 </div>
-                <div className="flex items-center gap-x-2 w-32">
+                <div className="flex items-center gap-x-2 w-36">
                   <input
                     className="accent-[#5DB05B]"
                     id="visual-identity"

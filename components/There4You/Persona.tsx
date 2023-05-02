@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import persona from "@/public/images/there4you/t4y-persona.png";
-
 import { FadedDiv, FadedH3 } from "../Framer/MotionComponents";
+import { useInView } from "react-hook-inview";
 
 type Props = {};
+export const personaEvent = new Event("t4y-persona-visible");
 
 export default function Persona({}: Props) {
+  const [ref, isVisible] = useInView({
+    threshold: 1,
+  });
+
+  useEffect(() => {
+    if (isVisible) {
+      dispatchEvent(personaEvent);
+    }
+  }, [isVisible]);
+
   return (
     <section
-      id="persona"
+      ref={ref}
       className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand md:px-16"
     >
+      <span id="persona" className="absolute translate-y-[-25vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold justify-self-center">
         User persona
       </FadedH3>

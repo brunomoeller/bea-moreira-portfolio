@@ -32,7 +32,7 @@ export default function Header({}: Props) {
     <>
       <Popup hidden={popupHidden} />
       <header
-        className={`h-24 md:h-36 
+        className={`h-28 md:h-36
       flex items-center justify-between
       sticky top-0 z-50
       col-span-12 bg-dark-bg-color
@@ -40,7 +40,7 @@ export default function Header({}: Props) {
       >
         <Link href="/">
           <Image
-            className="h-16 w-auto md:h-auto"
+            className="h-16 w-auto md:h-24"
             src={Logo}
             alt="Beatriz Moreira"
           />

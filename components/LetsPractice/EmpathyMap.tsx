@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import empathyMap from "@/public/images/lets-practice/letspractice-empathy-map.png";
 import cardsIcon from "@/public/icons/cardsIcon.svg";
 import lugIcon from "@/public/icons/lugIcon.svg";
@@ -7,15 +7,29 @@ import moneyIcon from "@/public/icons/moneyIcon.svg";
 import sickIcon from "@/public/icons/sickIcon.svg";
 import routineIcon from "@/public/icons/routineIcon.svg";
 import { FadedDiv, FadedH3, FadedParagraph } from "../Framer/MotionComponents";
+import { useInView } from "react-hook-inview";
 
 type Props = {};
 
+export const empathyEvent = new Event("lp-empathy-visible");
+
 export default function EmpathyMap({}: Props) {
+  const [ref, isVisible] = useInView({
+    threshold: 0.2,
+  });
+
+  useEffect(() => {
+    if (isVisible) {
+      self.dispatchEvent(empathyEvent);
+    }
+  }, [isVisible]);
+
   return (
     <section
-      id="empathy-map"
-      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand"
+      ref={ref}
+      className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand relative"
     >
+      <span id="empathy-map" className="absolute translate-y-[-20vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold">Empathy map</FadedH3>
       <FadedParagraph className="text-lg md:text-xl font-medium">
         Through an interview involving 9 Participants (team people and target
