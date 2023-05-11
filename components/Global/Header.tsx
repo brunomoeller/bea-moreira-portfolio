@@ -61,9 +61,9 @@ export default function Header({}: Props) {
               About
             </Link>
           </li>
-          <li className="hidden md:contact-button">
+          <Link href="/contact" className="hidden md:contact-button">
             <Link href="/contact">Contact</Link>
-          </li>
+          </Link>
           <div>
             <Image
               onClick={hideOrShowPopup}
