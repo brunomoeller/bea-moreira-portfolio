@@ -38,7 +38,7 @@ export default function Footer({}: Props) {
       </div>
       <div className="row-start-2 col-start-1 md:col-start-3 md:row-start-auto md:justify-self-end">
         <Link
-          className="text-md md:text-lg text-darker-white"
+          className="text-md md:text-lg text-darker-white justify-self-start"
           href="/#projects"
         >
           Projects
@@ -46,7 +46,7 @@ export default function Footer({}: Props) {
       </div>
       <div className="row-start-2 col-start-2 md:col-start-3 md:row-start-auto md:justify-self-end">
         <Link className="text-md md:text-lg text-darker-white" href="/about">
-          About
+          About&nbsp;&nbsp;&nbsp;&nbsp;
         </Link>
       </div>
       <div className="row-start-2 col-start-3 md:col-start-3 md:row-start-auto md:justify-self-end">
