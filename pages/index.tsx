@@ -41,7 +41,7 @@ export default function Home() {
           content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.25"
         />
         <meta name="color-scheme" content="light only"></meta>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       {isLoading ? (
         <div className="grid grid-cols-1 items-center justify-items-center h-[100vh] w-[100vw]">
