@@ -6,12 +6,22 @@ import { quicksand, poppins } from "@/utils/fonts";
 import Popup from "@/components/Global/Popup";
 import Form from "@/components/Contact/Form";
 import { ToastContainer } from "react-toastify";
+import Script from "next/script";
 
 type Props = {};
 
 export default function contact({}: Props) {
   return (
     <>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-51DXXN4Q2P"></Script>
+      <Script id="google-analytics" strategy="afterInteractive">
+        {
+        `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-51DXXN4Q2P');`
+        }
+      </Script>
       <main
         className={`main-container ${quicksand.variable} ${poppins.variable}`}
       >

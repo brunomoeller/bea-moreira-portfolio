@@ -1,9 +1,9 @@
+import HamburguerIcon from "@/public/icons/hamburguer.svg";
+import Logo from "@/public/icons/logo.png";
+import { quicksand } from "@/utils/fonts";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import Logo from "@/public/icons/logo.png";
-import HamburguerIcon from "@/public/icons/hamburguer.svg";
-import { quicksand } from "@/utils/fonts";
+import { useState } from "react";
 import Popup from "./Popup";
 
 type Props = {};
@@ -62,7 +62,7 @@ export default function Header({}: Props) {
             </Link>
           </li>
           <Link href="/contact" className="hidden md:contact-button">
-            <Link href="/contact">Contact</Link>
+            <li>Contact</li>
           </Link>
           <div>
             <Image

@@ -3,11 +3,12 @@ import Header from "@/components/Global/Header";
 import Hero from "@/components/Home/Hero";
 import Projects from "@/components/Home/Projects";
 import Services from "@/components/Home/Services";
-import Head from "next/head";
-import { quicksand, poppins } from "@/utils/fonts";
-import { useEffect, useState } from "react";
-import Lottie from "lottie-react";
 import loadingAnimation from "@/public/icons/loading.json";
+import { poppins, quicksand } from "@/utils/fonts";
+import Lottie from "lottie-react";
+import Head from "next/head";
+import Script from "next/script";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isLoading, setLoading] = useState(true);
@@ -43,6 +44,15 @@ export default function Home() {
         <meta name="color-scheme" content="light only"></meta>
         <link rel="icon" href="/favicon.svg" />
       </Head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-51DXXN4Q2P"></Script>
+      <Script id="google-analytics" strategy="afterInteractive">
+        {
+        `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-51DXXN4Q2P');`
+        }
+      </Script>
       {isLoading ? (
         <div className="grid grid-cols-1 items-center justify-items-center h-[100vh] w-[100vw]">
           <Lottie

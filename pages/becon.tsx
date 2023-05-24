@@ -13,6 +13,7 @@ import BeforeAndAfter from "@/components/Becon/BeforeAndAfter";
 import Header from "@/components/Global/Header";
 import Lottie from "lottie-react";
 import loadingAnimation from "@/public/icons/loading.json";
+import Script from "next/script";
 
 type Props = {};
 
@@ -35,6 +36,15 @@ export default function Becon({}: Props) {
 
   return (
     <>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-51DXXN4Q2P"></Script>
+      <Script id="google-analytics" strategy="afterInteractive">
+        {
+        `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-51DXXN4Q2P');`
+        }
+      </Script>
       {isLoading ? (
         <div className="grid grid-cols-1 items-center justify-items-center h-[100vh] w-[100vw]">
           <Lottie
