@@ -20,9 +20,11 @@ import { GetStaticPropsContext } from "next";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 
-type Props = {};
+type Props = {
+  locale: string;
+};
 
-export default function There4you({}: Props) {
+export default function There4you({ locale }: Props) {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -62,7 +64,7 @@ export default function There4you({}: Props) {
           className={`main-container ${quicksand.variable} ${poppins.variable}`}
         >
           <Header />
-          <Hero />
+          <Hero locale={locale} />
           <div className="side-menu-container">
             <SideMenu />
           </div>
@@ -89,7 +91,8 @@ export default function There4you({}: Props) {
 export async function getStaticProps({locale}: GetStaticPropsContext) {
   return {
     props: {
-      messages: (await import(`../messages/${locale}.json`)).default
+      messages: (await import(`../messages/${locale}.json`)).default,
+      locale
     }
   };
 }
