@@ -14,16 +14,16 @@ const nextConfig = {
   i18n: {
     locales: ['en', 'pt-br'],
     defaultLocale: 'en',
-    domains: [
-      {
-        domain: 'beatrizmoreira.com',
-        defaultLocale: 'en',
-      },
-      {
-        domain: 'br.beatrizmoreira.com',
-        defaultLocale: 'pt-br',
-      },
-    ],
+    // domains: [
+    //   {
+    //     domain: 'beatrizmoreira.com',
+    //     defaultLocale: 'en',
+    //   },
+    //   {
+    //     domain: 'br.beatrizmoreira.com',
+    //     defaultLocale: 'pt-br',
+    //   },
+    // ],
   }
 };
 
