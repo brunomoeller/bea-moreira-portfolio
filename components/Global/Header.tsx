@@ -9,11 +9,9 @@ import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
-type Props = {
-  locale: string;
-};
+type Props = {};
 
-export default function Header({ locale }: Props) {
+export default function Header({}: Props) {
   const t = useTranslations("menu");
   const language = t("language")
 
@@ -125,7 +123,6 @@ export async function getStaticProps({locale}: GetStaticPropsContext) {
   return {
     props: {
       messages: (await import(`../../messages/${locale}.json`)).default,
-      locale
     }
   };
 }
