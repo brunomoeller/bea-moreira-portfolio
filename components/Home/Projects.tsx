@@ -8,10 +8,14 @@ import letsPractice from "@/public/images/lets-practice/letspractice.png";
 import becon from "@/public/images/becon/becon-login-mobile.png";
 import redirectIcon from "@/public/icons/redirectIcon.svg";
 import { FadedDiv } from "../Framer/MotionComponents";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export default function Projects({}: Props) {
+  const t = useTranslations("home.redirectLinks");
+
   return (
     <main className="col-span-12 grid grid-cols-2 gap-y-6 gap-x-4 mt-24 font-poppins">
       <FadedDiv
@@ -73,7 +77,7 @@ export default function Projects({}: Props) {
           className="text-base md:text-xl text-darker-white font-medium"
           href="/there4you"
         >
-          Product design / Mobile App
+          {t("there4you")}
         </Link>
         <Image className="h-3 w-3" src={redirectIcon} alt="go to" />
       </div>
@@ -103,7 +107,7 @@ export default function Projects({}: Props) {
           className="text-base md:text-xl text-darker-white font-medium"
           href="/letspractice"
         >
-          Landing page
+          {t("letsPractice")}
         </Link>
         <Image className="h-3 w-3" src={redirectIcon} alt="go to" />
       </div>
@@ -115,10 +119,18 @@ export default function Projects({}: Props) {
           className="text-base md:text-xl text-darker-white font-medium"
           href="/becon"
         >
-          Login page (Web and Mobile)
+          {t("becon")}
         </Link>
         <Image className="h-3 w-3" src={redirectIcon} alt="go to" />
       </div>
     </main>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

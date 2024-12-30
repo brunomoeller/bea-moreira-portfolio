@@ -14,10 +14,13 @@ import Header from "@/components/Global/Header";
 import Lottie from "lottie-react";
 import loadingAnimation from "@/public/icons/loading.json";
 import Script from "next/script";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export default function Becon({}: Props) {
+
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -75,4 +78,12 @@ export default function Becon({}: Props) {
       )}
     </>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../messages/${locale}.json`)).default
+    }
+  };
 }

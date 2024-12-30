@@ -12,6 +12,8 @@ import {
   FadedParagraph,
 } from "../Framer/MotionComponents";
 import { useInView } from "react-hook-inview";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
@@ -19,7 +21,9 @@ export const beforeAndAfterVisibleEvent = new Event(
   "becon-beforeAndAfter-visible"
 );
 
-export default function Userflow({}: Props) {
+export default function BeforeAndAfter({}: Props) {
+  const t = useTranslations("becon.beforeAndAfter")
+
   const [ref, isVisible] = useInView({
     threshold: 0.1,
   });
@@ -37,10 +41,10 @@ export default function Userflow({}: Props) {
     >
       <span id="before-and-after" className="absolute translate-y-[-20vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold justify-self-center">
-        Before and after
+        {t("title")}
       </FadedH3>
       <FadedH4 className="text-2xl md:text-3xl font-semibold justify-self-center">
-        Before
+      {t("subtitles.1")}
       </FadedH4>
       <FadedDiv className="rounded-3xl overflow-hidden">
         <Image
@@ -50,7 +54,7 @@ export default function Userflow({}: Props) {
         />
       </FadedDiv>
       <FadedH4 className="text-2xl md:text-3xl font-semibold justify-self-center">
-        After
+      {t("subtitles.2")}
       </FadedH4>
       <FadedDiv className="rounded-3xl overflow-hidden">
         <Image
@@ -67,9 +71,7 @@ export default function Userflow({}: Props) {
         />
       </FadedDiv>
       <FadedParagraph className="text-base md:text-xl text-center lg:text-start lg:mt-20 lg:w-3/4 justify-self-center">
-        I have defined a recommended color palette for the platform that is
-        compatible with different visual identities and with the neutral system
-        default colors.
+      {t("description")}
       </FadedParagraph>
       <FadedDiv className="grid grid-cols-1 items-center justify-items-center py-20 mt-12 md:mt-24 bg-[#EEEEEE] rounded-3xl">
         <Image
@@ -83,4 +85,12 @@ export default function Userflow({}: Props) {
       </FadedDiv>
     </section>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

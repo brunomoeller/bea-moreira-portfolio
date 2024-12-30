@@ -1,0 +1,568 @@
+{
+    "home": {
+        "hero": {
+            "title": "Resolvendo problemas de design de forma bonita",
+            "headline": "Olá! Eu sou a Beatriz, uma designer criativa com um olhar atento aos detalhes e um compromisso em entregar soluções que sejam funcionais e visualmente atraentes."
+        },
+        "redirectLinks": {
+            "there4you": "Design de produto / Aplicativo móvel",
+            "letsPractice": "Landing page",
+            "becon": "Página de login (Web e Mobile)"
+        },
+        "services": {
+            "title": "Serviços",
+            "categories": {
+            "1": "UX/UI",
+            "2": "Aplicativos Web & Mobile",
+            "3": "Identidade visual",
+            "4": "Desenvolvimento",
+            "5": "Em colaboração com desenvolvedores especialistas."
+            }
+        }
+    },
+    "menu": {
+        "projects": "Projetos",
+        "services": "Serviços",
+        "about": "Sobre",
+        "contact": "Contato",
+        "language": "Idioma",
+        "portuguese": "Português",
+        "english": "Inglês"
+        },
+        "footer": {
+        "cta": "Vamos trabalhar juntos!",
+        "contactButton": "Contato",
+        "exploreMenu": {
+            "title": "Explorar",
+            "projects": "Projetos",
+            "about": "Sobre",
+            "services": "Serviços",
+            "contact": "Contato"
+        }
+    },
+    "about": {
+        "title": "Um pouco sobre mim...",
+        "description": "Olá. Eu sou a Beatriz! Sou apaixonada pelo universo do design, empreendedorismo, branding e marketing. Estou sempre buscando aprender mais sobre diferentes assuntos, principalmente dentro desse universo. Me considero uma Designer orientada a resultados, com experiência em design thinking e design centrado no ser humano.",
+        "timeline": {
+            "title": "Linha do Tempo",
+            "2012": "Comecei a me aventurar no design digital apenas como um hobby",
+            "2018": "Estava cursando farmácia na universidade (eu sei, nada a ver) até entrar na empresa júnior do curso, onde comecei a trabalhar voluntariamente com marketing e design (foi incrível). Foi aí que percebi que estava no curso errado",
+            "2019": "Ano de muitas mudanças. Troquei meu curso de bacharelado para comunicação social com habilitação em publicidade. Comecei a trabalhar em uma agência júnior de publicidade. Comecei a atuar como designer freelancer. Criei meu próprio e-commerce. Participei do meu primeiro Startup Weekend e muito mais…",
+            "2021": "Tive experiência como designer voluntária em uma startup, onde comecei a me aprofundar mais em UX/UI Design. Participei de um estágio internacional com uma grande competição de projetos, e minha equipe ficou em primeiro lugar entre mais de 700 participantes.",
+            "2022": "Comecei a trabalhar em uma startup de tecnologia como designer principal de UX/UI.",
+            "2023": "Em andamento..."
+        }
+    },
+    "there4you": {
+        "title": "There4you",
+        "description": "Uma pulseira tecnológica, discreta e criativa que ajuda mulheres contra o assédio sexual.",
+        "type": "Produto / App",
+        "specs": "Ferramentas:",
+        "introduction": {
+            "title": "Introdução",
+            "paragraphs": {
+            "1": "(Serviço de software para educação e desenvolvimento de carreira de Chicago) em parceria com ",
+            "2": "(Escola de Negócios para Empreendedorismo na Europa) criou uma competição de projetos de empreendedorismo. Havia menos de uma semana para criar uma ideia de negócio.",
+            "3": "Meu time de 4 garotas desenvolveu uma ideia de startup chamada",
+            "4": ", uma pulseira tecnológica, discreta e criativa que ",
+            "5": "ajuda mulheres contra o assédio sexual.",
+            "6": "Mais de 700 estudantes",
+            "7": "competiram para desenvolver uma ideia de startup e",
+            "8": " as vencedoras fomos nós.",
+            "9": "No geral, tenho orgulho deste projeto, foi desafiador e criamos uma ideia de negócio que impactaria a vida de muitas mulheres ao redor do mundo."
+            },
+            "redirectButton": "Confira no LinkedIn"
+        },
+        "myRole": {
+            "title": "Meu papel e equipe",
+            "items": {
+            "role": { "1": "Meu papel:", "2": "Fundadora / Designer de Produto" },
+            "team": { "1": "Equipe / Fundadoras:", "2": "Eu (Beatriz Moreira); Beatriz Fonseca; Iris Nascimento e Giovanna Savazo" }
+            }
+        },
+        "methodology": {
+            "title": "Metodologia",
+            "subtitle": "O projeto foi desenvolvido seguindo a ",
+            "strong": "metodologia design thinking ",
+            "continuation": "",
+            "stages": {
+            "empathize": {
+                "title": "Empatia",
+                "items": {
+                "1": "Buscar entender as necessidades e desejos do usuário",
+                "2": "Observação e entrevistas"
+                }
+            },
+            "define": {
+                "title": "Definir",
+                "items": { "1": "Declaração clara do problema" }
+            },
+            "ideate": {
+                "title": "Idealizar",
+                "items": { "1": "Soluções potenciais" }
+            },
+            "prototype": {
+                "title": "Prototipar",
+                "items": {
+                "1": "Esboços, modelos",
+                "2": "Mockups",
+                "3": "Protótipo digital"
+                }
+            },
+            "test": {
+                "title": "Testar",
+                "items": { "1": "(Passo futuro)", "2": "O que funciona?" }
+            }
+            }
+        },
+        "problems": {
+            "title": "Problemas",
+            "items": {
+            "1": "8 em cada 10 mulheres sofreram assédio sexual no mundo (De acordo com uma pesquisa da Stop Street Harassment com 996 mulheres)",
+            "2": "O medo de sair sozinha é universal e constante",
+            "3": "O assédio tem muitas consequências na vida das mulheres, como ansiedade, depressão e distúrbios do sono"
+            }
+        },
+        "solution": {
+            "title": "Solução",
+            "subtitle": "Produto",
+            "description": "Pulseira de segurança contra assédio conectada a um app que torna a chamada de ajuda mais ágil.",
+            "howItWorks": {
+            "title": "Como funciona?",
+            "items": {
+                "1": "O dispositivo possui uma porta USB (para recarregar a bateria)",
+                "2": "Conexão com o celular via bluetooth e funcionalidades pelo aplicativo.",
+                "3": "A pulseira possui 4 botões, um para ligar e desligar e 3 com as seguintes funcionalidades:",
+                "4": "Som, emite um alarme (som alto e desagradável para assustar o agressor)",
+                "5": "Ativar a delegacia de polícia mais próxima + rastreamento",
+                "6": "Envia uma mensagem SOS para contatos selecionados e redes sociais com rastreamento de localização"
+            }
+            }
+        },
+        "competitors": {
+            "title": "Concorrentes",
+            "subtitle": "Resumo da análise de concorrentes.",
+            "header": "Empresa",
+            "companies": {
+            "1": {
+                "name": "Vigilant",
+                "issue": "Vende apenas produtos de alarme sem tecnologia de aplicativo integrada; não tem um público específico e possui pouca presença digital."
+            },
+            "2": {
+                "name": "Safelet",
+                "issue": "Possui uma pulseira e um app com tecnologia semelhante à nossa, mas o produto possui apenas um botão de função e poucas funcionalidades no aplicativo. Além disso, o site e o app têm um design não profissional. Possui pouca presença digital."
+            }
+            }
+        },
+        "research": {
+            "title": "Pesquisa",
+            "paragraphs": {
+            "1": "O mercado global de produtos de autodefesa tem um tamanho estimado para atingir US$ 3,6 bilhões até 2025, com uma expansão de um CAGR de 5,9% durante o período (de acordo com um relatório da Grand View Research, Inc).",
+            "2": "Fizemos uma pesquisa com pessoas ao redor do mundo (32 mulheres) e descobrimos que 62,5% já experimentaram assédio em sua vida e que 85,7% não tinham nenhum dispositivo de autodefesa no momento. Por fim, propusemos um gadget com as mesmas funções do THERE4YOU e 87,5% das pessoas demonstraram interesse e estavam determinadas a comprá-lo."
+            },
+            "questions": {
+            "1": "Você já sofreu algum tipo de assédio e/ou abuso?",
+            "2": "Se sim, tinha algo para se defender no momento?",
+            "3": "Se você tivesse a oportunidade de comprar um dispositivo na forma de uma simples pulseira com as seguintes funcionalidades (Emitir sons altos; Notificar e chamar a delegacia de polícia mais próxima; Enviar mensagens de SOS para contatos selecionados), você estaria interessado em comprá-lo?"
+            },
+            "yes": "Sim",
+            "no": "Não",
+            "idk": "Não sei"
+        },
+        "userEmpathyMap": {
+            "title": "Mapa de empatia do usuário",
+            "sections": {
+            "1": {
+                "title": "Diz",
+                "items": {
+                "1": "Esse lugar é muito perigoso, não vou sozinha",
+                "2": "Tem muitos homens desconhecidos ali, vamos mudar a rota",
+                "3": "Estou saindo do trabalho um pouco tarde, você pode me buscar?",
+                "4": "Você pode me acompanhar até o ponto de ônibus, amiga?"
+                }
+            },
+            "2": {
+                "title": "Pensa",
+                "items": {
+                "1": "Como posso escapar se me assediarem aqui?",
+                "2": "Como vou pedir ajuda rapidamente se algo suspeito acontecer?",
+                "3": "Preciso tentar sair cedo antes de ficar tarde e perigoso.",
+                "4": "É muito difícil ser mulher",
+                "5": "Se eu sair sozinha posso ser assediada",
+                "6": "Não aguento mais sentir medo"
+                }
+            },
+            "3": {
+                "title": "Faz",
+                "items": {
+                "1": "Compartilha a localização do Uber com pessoas",
+                "2": "Evita passar perto de homens desconhecidos quando está sozinha",
+                "3": "Sempre tenta encontrar companhia para ir a algum lugar, especialmente à noite",
+                "4": "Evita ir a lugares por medo"
+                }
+            },
+            "4": {
+                "title": "Sente",
+                "items": {
+                "1": "Insegurança",
+                "2": "Medo",
+                "3": "Pavor",
+                "4": "Insônia",
+                "5": "Preocupação",
+                "6": "Ansiedade"
+                }
+            }
+            }
+        },
+        "userPersona": {
+            "title": "Persona",
+            "name": { "1": "Nome", "2": "Ashley" },
+            "age": { "1": "Idade", "2": "21 anos" },
+            "subtitle": "Cenário",
+            "description": "Ela é estudante e trabalha como estagiária em uma empresa. Precisa usar transporte público com frequência para chegar à faculdade e ao trabalho. Está constantemente com medo de ser assediada pelo caminho. Diante disso, está sempre ansiosa e se sente insegura. Ela precisa de algo que a faça se sentir mais calma e segura quando sai de casa sozinha."
+        },
+        "userflow": {
+            "title": "Diagrama de fluxo do usuário"
+        },
+        "wireframes": {
+            "title": "Wireframes",
+            "subtitles": {
+            "1": "Baixa fidelidade",
+            "2": "Alta fidelidade"
+            },
+            "baloons": {
+            "1": {
+                "title": "Conexão e configuração",
+                "description": "Conecte sua pulseira via Bluetooth e configure contatos, redes sociais e mensagem SOS para serem acionados em situações de perigo."
+            },
+            "2": {
+                "title": "Início",
+                "description": "Mapa com sua localização. Visualize relatos ao seu redor. Localize as delegacias de polícia mais próximas. Funções de ativar alarme, compartilhar localização e chamar a polícia conectadas aos botões da pulseira."
+            },
+            "3": {
+                "title": "Comunidade",
+                "description": "Comunidade com relatos de denúncias de assédio para ajudar outras vítimas. Os dados ajudam a construir estatísticas para entender quais locais e horários são mais perigosos, contribuindo para o policiamento."
+            },
+            "4": {
+                "title": "Estatísticas",
+                "description": "Veja quais lugares e horários são mais perigosos."
+                }
+            }
+        },
+        "prototype": {
+            "title": "Protótipo em vídeo"
+        },
+        "styleGuide": {
+            "title": "Guia de estilo"
+        }
+    },
+    "letsPractice": {
+        "title": "Let's Practice",
+        "subtitle": "Startup de ensino de inglês",
+        "tech": "Estudo de caso de UX/UI",
+        "madeWith": "Feito com Figma",
+        "type": "Landing page",
+        "introduction": {
+            "title": "Introdução",
+            "paragraphs": {
+                "1": "A Let's Practice é uma startup brasileira de ensino de inglês focada em negócios e empreendedorismo. A marca se apresenta como disruptiva, determinada e inovadora, valorizando seu propósito de inovar o produto \"aulas particulares de inglês\", tornando-o mais atrativo, vantajoso e eficiente do que os cursos presenciais e outras plataformas disponíveis atualmente."
+            }
+        },
+        "myRole": {
+            "title": "Meu papel",
+            "paragraphs": {
+                "1": "Atuei como Designer UX/UI e designer gráfico voluntária na startup. Fui responsável por criar uma identidade visual e diretrizes de marca junto com outro designer gráfico. Além disso, fui a designer responsável por remodelar a interface da Landing Page da marca em parceria com os proprietários da empresa e o gerente de produto."
+            }
+        },
+        "problems": {
+            "title": "Problemas",
+            "items": {
+                "1": "Falta de uma identidade visual e diretrizes de marca, resultando em pouca presença e atratividade em um mercado muito competitivo",
+                "2": "Inconsistência visual e desorganização da Landing Page",
+                "3": "Falta de destaque na proposta de valor da startup dentro da Landing Page"
+            }
+        },
+        "goals": {
+            "title": "Objetivos",
+            "items": {
+                "1": "Criar uma identidade visual e guia de estilo para a marca",
+                "2": "Melhorar a percepção da marca",
+                "3": "Destacar os benefícios e vantagens competitivas da startup na Landing Page",
+                "4": "Criar um fluxo de navegação do site simples e eficaz para captura de leads"
+            }
+        },
+        "competitors": {
+            "title": "Concorrentes",
+            "subtitle": "Resumo da análise da Landing Page de alguns concorrentes, mais focada na navegação e experiência visual.",
+            "headers": {
+                "1": "Empresa",
+                "2": "Pontos fortes",
+                "3": "Pontos fracos"
+            },
+            "companies": {
+                "1": {
+                    "name": "Cambly",
+                    "items": {
+                        "1": "É muito popular",
+                        "2": "A landing page possui um bom fluxo de navegação",
+                        "3": "Não exibe o preço na página, e são necessários muitos passos para obter uma cotação"
+                    }
+                },
+                "2": {
+                    "name": "English life",
+                    "items": {
+                        "1": "Empresa que está no mercado há mais de 20 anos",
+                        "2": "Interface mais clean, navegação rápida",
+                        "3": "Informações muito vagas e também não exibe preços na página"
+                    }
+                },
+                "3": {
+                    "name": "Wise up",
+                    "items": {
+                        "1": "Depoimentos bem destacados",
+                        "2": "Muitas perguntas no FAQ",
+                        "3": "Não há preços na página",
+                        "4": "Não oferecem aulas gratuitas"
+                    }
+                },
+                "4": {
+                    "name": "English boy",
+                    "items": {
+                        "1": "Possui recursos de onboarding interativo muito interessantes para engajamento de leads",
+                        "2": "Há muitos elementos em algumas páginas da interface, gerando um pouco de confusão e poluição visual"
+                    }
+                }
+            }
+        },
+        "userEmpathyMap": {
+            "title": "Mapa de empatia",
+            "subtitle": "Através de uma entrevista envolvendo 9 participantes (membros da equipe e público-alvo), algumas conclusões relacionadas às aulas de inglês surgiram...",
+            "continuation": "Geralmente essas pessoas...",
+            "items": {
+                "1": "Preferem estudar com métodos de ensino lúdicos",
+                "2": "Buscam aprender inglês para qualificação profissional",
+                "3": "Acham que as aulas de inglês são caras",
+                "4": "Têm dificuldade de se concentrar nas aulas",
+                "5": "Têm dificuldade de seguir uma rotina de estudos"
+            }
+        },
+        "userPersona": {
+            "title": "Persona",
+            "name": {"1": "Nome", "2": "Yara"},
+            "age": {"1": "Idade", "2": "28 anos"},
+            "profession": {"1": "Profissão", "2": "Assistente de Marketing"},
+            "maritalStatus": {"1": "Estado civil", "2": "Casada"},
+            "painMap": "Mapa de dores",
+            "painMapItems": {
+                "1": "Ela tem dificuldade em parar para estudar inglês. Por isso, precisa aprender o máximo possível em pouco tempo.",
+                "2": "Seu trabalho exige um bom nível de inglês e ela quer obter um certificado para aumentar suas oportunidades de emprego.",
+                "3": "Ela não tem tempo para fazer um curso completo e também acha muito caro.",
+                "4": "Ela precisa de um método de estudo que se encaixe em sua rotina e que seja acessível."
+            },
+            "mapOfPleasure": "Mapa de prazeres",
+            "mapOfPleasureItems": {
+                "1": "Yara quer conseguir um emprego na empresa dos seus sonhos que exige um bom nível de inglês."
+            }
+        },
+        "journeyMap": {
+            "title": "Mapa da jornada do usuário",
+            "stagesTitle": "Etapas",
+            "stages": {
+                "1": "Etapas",
+                "2": "Pensando",
+                "3": "Fazendo",
+                "4": "Pontos de dor",
+                "5": "Sentindo",
+                "6": "Oportunidades"
+            },
+            "columns": {
+                "1": {
+                    "title": "Consciência",
+                    "items": {
+                        "1": "O usuário está pensando em melhorar seu inglês.",
+                        "2": "Vendo anúncios de aulas de inglês",
+                        "3": "Pesquisando nas redes sociais e no Google",
+                        "4": "Muitas opções",
+                        "5": "Aulas muito caras",
+                        "6": "Frustrado",
+                        "7": "Melhorar palavras-chave da página para resultados de busca",
+                        "8": "Destacar o preço competitivo"
+                    }
+                },
+                "2": {
+                    "title": "Consideração",
+                    "items": {
+                        "1": "Pesquisando mais",
+                        "2": "Olhando vários outros cursos de inglês",
+                        "3": "Agendando aulas de teste",
+                        "4": "Layouts confusos e informações muito generalistas",
+                        "5": "Reflexivo",
+                        "6": "Fornecer informações específicas",
+                        "7": "Informações personalizadas"
+                    }
+                },
+                "3": {
+                    "title": "Aquisição",
+                    "items": {
+                        "1": "Gostou da aula experimental gratuita e quer fazer mais",
+                        "2": "Escolhe um pacote básico e o adiciona ao carrinho",
+                        "3": "Passa pelo processo de checkout",
+                        "4": "Página de checkout não suporta muitos métodos de pagamento diferentes",
+                        "5": "Esperançoso",
+                        "6": "Trabalhar para suportar mais métodos de pagamento"
+                    }
+                },
+                "4": {
+                    "title": "Serviço",
+                    "items": {
+                        "1": "Usuário está pensando em como encaixar as aulas em sua rotina",
+                        "2": "Cria um cronograma no Google Agenda",
+                        "3": "Define horários de aula manualmente no Google Agenda",
+                        "4": "Pensativo",
+                        "5": "Agendar aulas automaticamente e instantaneamente pelo site"
+                    }
+                },
+                "5": {
+                    "title": "Fidelidade",
+                    "items": {
+                        "1": "O usuário percebe que seu inglês está melhorando",
+                        "2": "Compra um pacote de aulas avançadas",
+                        "3": "Indica para amigos",
+                        "4": "Não há acompanhamento sobre a satisfação com as aulas",
+                        "5": "Feliz",
+                        "6": "Enviar um formulário NPS para entender o nível de satisfação do usuário"
+                    }
+                }
+            }
+        },
+        "userFlow": {
+            "title": "Diagrama de fluxo do usuário"
+        },
+        "wireframes": {
+            "title": "Wireframes",
+            "subtitles": {
+                "1": "Baixa fidelidade",
+                "2": "Alta fidelidade"
+            }
+        },
+        "styleGuide": {
+            "title": "Guia de estilo"
+        }
+    },
+    "becon": {
+        "tech": "Estudo de Caso UX/UI",
+        "type": "Página de Login",
+        "madeWith": "Ferramenta",
+        "introduction": {
+            "title": "Introdução",
+            "paragraphs": {
+                "1": "A Becon é uma startup tecnológica que oferece uma plataforma de chatbot como serviço, ajudando empresas a terem mais controle e agilidade em seus serviços, além de venderem mais. A plataforma possui diversas funcionalidades de automação e integrações."
+            }
+        },
+        "myRole": {
+            "title": "Meu papel",
+            "role": {
+                "1": "Meu papel", 
+                "2": "Designer UX / UI"
+            }
+        },
+        "problems": {
+            "title": "Problemas e desafios",
+            "items": {
+                "1": "Quando entrei para a equipe da startup, ela estava em um processo de mudanças relacionadas ao seu crescimento. A empresa estava alterando sua identidade visual para se apresentar como mais moderna e confiável e precisava que esses atributos também estivessem presentes nas interfaces da plataforma, como na página de login. Ou seja:",
+                "2": "Interface de login visualmente pouco profissional, não muito moderna e que não condiz com a nova identidade visual da marca.",
+                "3": "A plataforma possui interfaces personalizáveis de acordo com as duas principais cores da marca de cada empresa/cliente. Portanto, surge o desafio de criar uma interface adaptável e coerente para esta situação.",
+                "4": "A interface precisa ser personalizável, adaptável e ter boa leitura, legibilidade e consistência visual para diferentes situações."
+            }
+        },
+        "solution": {
+            "title": "Solução",
+            "items": {
+                "1": "Criar uma interface mais profissional, moderna, confiável e personalizável."
+            }
+        },
+        "userPersona": {
+            "title": "Persona",
+            "name": { "1": "Nome", "2": "Cleiton" },
+            "age": {"1": "Idade", "2": "32 anos" },
+            "subtitle": "Características",
+            "description": "Empreendedor moderno, possui boa aptidão tecnológica, analisa bastante uma plataforma antes de adquiri-la, é exigente com o produto e não teme mudar de plataforma se não estiver satisfeito. Não gosta de complexidades no processo de onboarding. É proativo e aberto a novas ideias."
+        },
+        "userFlow": {
+            "title": "Diagrama de fluxo do usuário"
+        },
+        "beforeAndAfter": {
+            "title": "Antes e depois",
+            "subtitles": {"1": "Antes", "2": "Depois"},
+            "description": "Defini uma paleta de cores recomendada para a plataforma, compatível com diferentes identidades visuais e com as cores neutras padrão do sistema."
+        }
+    },
+    "sideMenu": {
+        "there4you": 
+            {
+                "1": "Introdução",
+                "2": "Meu papel e equipe",
+                "3": "Metodologia",
+                "4": "Problemas",
+                "5": "Solução",
+                "6": "Análise competitiva",
+                "7": "Pesquisa",
+                "8": "Mapa de empatia do usuário",
+                "9": "Persona",
+                "10": "Diagrama de fluxo do usuário",
+                "11": "Wireframes",
+                "12": "Protótipo",
+                "13": "Guia de estilo"
+            }
+        ,
+        "becon": {
+            "1": "Introdução",
+            "2": "Meu papel",
+            "3": "Problemas e desafios",
+            "4": "Solução",
+            "5": "Persona",
+            "6": "Diagrama de fluxo do usuário",
+            "7": "Antes e depois"
+        },
+        "letsPractice": {
+            "1": "Introdução",
+            "2": "Meu papel",
+            "3": "Problemas",
+            "4": "Objetivos",
+            "5": "Análise competitiva",
+            "6": "Mapa de empatia do usuário",
+            "7": "Persona",
+            "8": "Mapa da jornada do usuário",
+            "9": "Diagrama de fluxo do usuário",
+            "10": "Wireframes",
+            "11": "Guia de estilo"
+        }
+    },
+    "contact": {
+        "title": "Entre em contato!",
+        "inputs": {
+            "1": {
+                "label": "Seu nome",
+                "placeholder": "Seu nome"
+            },
+            "2": {
+                "label": "Seu email",
+                "placeholder": "Seu email"
+            },
+            "3": {
+                "label": "Mensagem",
+                "placeholder": "Escreva sua mensagem aqui. Pelo menos 50 caracteres"
+            }
+        },
+        "subtitle": "Serviços",
+        "checkboxes": {
+            "1": "Design UX",
+            "2": "Identidade visual",
+            "3": "Design UI",
+            "4": "Desenvolvimento"
+        },
+        "button": "Enviar",
+        "toastUpdateRender": "Enviado!",
+        "toastUpdateRenderFailed": "Falha"
+    }
+  }

@@ -1,9 +1,12 @@
-import React from "react";
 import { motion } from "framer-motion";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export default function Services({}: Props) {
+  const t = useTranslations("home.services");
+
   return (
     <motion.section
       initial={{
@@ -23,24 +26,32 @@ export default function Services({}: Props) {
     >
       <div className="lg:row-span-4 grid items-center justify-center">
         <h2 className="text-3xl lg:text-5xl text-darker-white font-bold">
-          Services
+          {t("title")}
         </h2>
       </div>
       <div className="lg:w-102 lg:justify-items-start grid items-center justify-items-center w-full h-24 lg:h-36 border-b border-b-[#353535]">
-        <h3 className="service-title">UX/UI</h3>
+        <h3 className="service-title">{t("categories.1")}</h3>
       </div>
       <div className="lg:w-102 lg:justify-items-start grid items-center justify-items-center w-full h-24 lg:h-36 border-b border-b-[#353535]">
-        <h3 className="service-title">Web & Mobile App</h3>
+        <h3 className="service-title">{t("categories.2")}</h3>
       </div>
       <div className="lg:w-102 lg:justify-items-start grid items-center justify-items-center w-full h-24 lg:h-36 border-b border-b-[#353535]">
-        <h3 className="service-title">Visual identity</h3>
+        <h3 className="service-title">{t("categories.3")}</h3>
       </div>
       <div className="lg:w-102 lg:justify-items-start justify-items-center grid items-end w-full h-24 lg:h-36">
-        <h3 className="service-title">Development</h3>
+        <h3 className="service-title">{t("categories.4")}</h3>
         <p className="text-base lg:text-xl self-start text-darker-gray">
-          In collaboration with expert developers.
+        {t("categories.5")}
         </p>
       </div>
     </motion.section>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

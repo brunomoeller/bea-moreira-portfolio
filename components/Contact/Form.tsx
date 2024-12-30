@@ -1,11 +1,15 @@
-import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { motion } from "framer-motion";
-import { SubmitHandler, useForm } from "react-hook-form";
 
-type Props = {};
+type Props = {
+  locale: string;
+};
 
 type Inputs = {
   from_name: string;
@@ -14,7 +18,9 @@ type Inputs = {
   services: string | null;
 };
 
-function Form({}: Props) {
+function Form({ locale }: Props) {
+  const t = useTranslations("contact");
+
   const [isNameFilled, setNameFilled] = useState(false);
   const [isEmailFilled, setEmailFilled] = useState(false);
   const [isMessageFilled, setMessageFilled] = useState(false);
@@ -46,7 +52,7 @@ function Form({}: Props) {
       .then(
         (result) => {
           toast.update(id, {
-            render: "Sent!",
+            render: t("toastUpdateRender"),
             type: "success",
             isLoading: false,
             position: "bottom-right",
@@ -60,7 +66,7 @@ function Form({}: Props) {
         },
         (error) => {
           toast.update(id, {
-            render: "Sent!",
+            render: t("toastUpdateRenderFailed"),
             type: "error",
             isLoading: false,
             position: "bottom-right",
@@ -74,6 +80,8 @@ function Form({}: Props) {
         }
       );
   };
+
+  const conditionalWidthClass = locale === "en" ? "w-36" : "w-full";
 
   return (
     <>
@@ -89,11 +97,11 @@ function Form({}: Props) {
           onSubmit={handleSubmit(onSubmit)}
           className="grid grid-cols-1 border rounded-3xl gap-y-14 p-10"
         >
-          <h1 className="font-bold text-3xl xl:text-5xl">Get in Touch!</h1>
+          <h1 className="font-bold text-3xl xl:text-5xl">{t("title")}</h1>
           <div className="grid grid-cols-1 gap-y-10">
             <div className="grid grid-cols-1 gap-y-4">
               <label className="font-semibold text-lg xl:text-xl">
-                Your name
+              {t("inputs.1.label")}
               </label>
               <input
                 {...register("from_name")}
@@ -101,7 +109,7 @@ function Form({}: Props) {
                   isNameFilled ? "invalid:border-red-600" : ""
                 }`}
                 type="text"
-                placeholder="Your name"
+                placeholder={t("inputs.1.placeholder")}
                 required
                 onChange={(e) => {
                   e.target.value ? setNameFilled(true) : setNameFilled(false);
@@ -110,7 +118,7 @@ function Form({}: Props) {
             </div>
             <div className="grid grid-cols-1 gap-y-4">
               <label className="font-semibold text-lg xl:text-xl">
-                Your email
+              {t("inputs.2.label")}
               </label>
               <input
                 {...register("from_email")}
@@ -118,7 +126,7 @@ function Form({}: Props) {
                   isEmailFilled ? "invalid:border-red-600" : ""
                 }`}
                 type="email"
-                placeholder="Your email"
+                placeholder={t("inputs.2.placeholder")}
                 required
                 onChange={(e) => {
                   e.target.value ? setEmailFilled(true) : setEmailFilled(false);
@@ -127,14 +135,14 @@ function Form({}: Props) {
             </div>
             <div className="grid grid-cols-1 gap-y-4">
               <label className="font-semibold text-lg xl:text-xl">
-                Message
+              {t("inputs.3.label")}
               </label>
               <textarea
                 {...register("message")}
                 className={`h-24 w-full border border-[#686868] bg-transparent px-4 py-2 rounded placeholder:text-[#686868] ${
                   isMessageFilled ? "invalid:border-red-600" : ""
                 }`}
-                placeholder="Write your message here. At least 50 characters long"
+                placeholder={t("inputs.3.placeholder")}
                 required
                 minLength={50}
                 onChange={(e) => {
@@ -146,7 +154,7 @@ function Form({}: Props) {
             </div>
             <div className="grid grid-cols-1 gap-y-4 md:justify-items-center">
               <label className="font-semibold text-lg xl:text-xl">
-                Services
+              {t("subtitle")}
               </label>
               <div className="grid grid-cols-2 gap-y-2">
                 <div className="flex items-center gap-x-2">
@@ -159,9 +167,9 @@ function Form({}: Props) {
                       handleCheckbox(e.target);
                     }}
                   />
-                  <label htmlFor="ux-design">UX Design</label>
+                  <label htmlFor="ux-design">{t("checkboxes.1")}</label>
                 </div>
-                <div className="flex items-center gap-x-2 w-36">
+                <div className={`flex items-center gap-x-2 ${conditionalWidthClass}`}>
                   <input
                     className="accent-[#5DB05B]"
                     id="visual-identity"
@@ -171,7 +179,7 @@ function Form({}: Props) {
                       handleCheckbox(e.target);
                     }}
                   />
-                  <label htmlFor="visual-identity">Visual identity</label>
+                  <label htmlFor="visual-identity">{t("checkboxes.2")}</label>
                 </div>
                 <div className="flex items-center gap-x-2">
                   <input
@@ -183,7 +191,7 @@ function Form({}: Props) {
                       handleCheckbox(e.target);
                     }}
                   />
-                  <label htmlFor="ui-design">UI Design</label>
+                  <label htmlFor="ui-design">{t("checkboxes.3")}</label>
                 </div>
                 <div className="flex items-center gap-x-2">
                   <input
@@ -195,14 +203,14 @@ function Form({}: Props) {
                       handleCheckbox(e.target);
                     }}
                   />
-                  <label htmlFor="development">Development</label>
+                  <label htmlFor="development">{t("checkboxes.4")}</label>
                 </div>
               </div>
               <button
                 className="mt-4 w-full bg-white text-dark-bg-color font-bold p-1 justify-self-center self-center rounded"
                 type="submit"
               >
-                Send
+                {t("button")}
               </button>
             </div>
           </div>
@@ -213,3 +221,12 @@ function Form({}: Props) {
 }
 
 export default Form;
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default,
+      locale
+    }
+  };
+}

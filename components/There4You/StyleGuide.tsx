@@ -1,14 +1,18 @@
-import React, { useEffect } from "react";
-import Image from "next/image";
 import styleGuide from "@/public/images/there4you/style-guide.png";
-import { FadedH3 } from "../Framer/MotionComponents";
+import { GetStaticPropsContext } from "next";
+import Image from "next/image";
+import { useEffect } from "react";
 import { useInView } from "react-hook-inview";
+import { FadedH3 } from "../Framer/MotionComponents";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export const styleGuideEvent = new Event("t4y-style-visible");
 
 export default function StyleGuide({}: Props) {
+  const t = useTranslations("there4you.styleGuide");
+
   const [ref, isVisible] = useInView({
     threshold: 0.1,
   });
@@ -26,9 +30,17 @@ export default function StyleGuide({}: Props) {
     >
       <span id="style-guide" className="absolute translate-y-[-20vh]" />
       <FadedH3 className="text-2xl md:text-3xl font-medium justify-self-center">
-        Style guide
+        {t("title")}
       </FadedH3>
       <Image src={styleGuide} alt="Style guide" />
     </section>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

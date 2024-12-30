@@ -8,10 +8,14 @@ import { solutionVisibleEvent } from "./Solution";
 import { personaEvent } from "./Persona";
 import { userflowEvent } from "./Userflow";
 import { beforeAndAfterVisibleEvent } from "./BeforeAndAfter";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export default function SideMenu({}: Props) {
+  const t = useTranslations("sideMenu.becon");
+
   const [pos, setPos] = useState("introduction");
 
   useEffect(() => {
@@ -73,7 +77,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#introduction"
           >
-            Introduction
+            {t("1")}
           </Link>
         </li>
         <li id="nav-role" className={`${pos === "role" ? "nav-active" : ""}`}>
@@ -85,7 +89,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#role"
           >
-            My role
+            {t("2")}
           </Link>
         </li>
         <li
@@ -100,7 +104,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#problems"
           >
-            Problems & challenges
+            {t("3")}
           </Link>
         </li>
         <li
@@ -115,7 +119,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#solution"
           >
-            Solution
+            {t("4")}
           </Link>
         </li>
         <li
@@ -130,7 +134,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#persona"
           >
-            User persona
+            {t("5")}
           </Link>
         </li>
         <li
@@ -145,7 +149,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#userflow"
           >
-            User flow diagram
+            {t("6")}
           </Link>
         </li>
         <li
@@ -160,10 +164,18 @@ export default function SideMenu({}: Props) {
             }}
             href="#before-and-after"
           >
-            Before and after
+            {t("7")}
           </Link>
         </li>
       </ul>
     </motion.nav>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

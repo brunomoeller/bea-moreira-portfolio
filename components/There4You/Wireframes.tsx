@@ -12,6 +12,8 @@ import statistics from "@/public/images/there4you/t4y-high-fidelity-7.png";
 import highFidelity from "@/public/images/there4you/high-fidelity-wireframes.png";
 import { FadedDiv, FadedH3, FadedH4 } from "../Framer/MotionComponents";
 import { useInView } from "react-hook-inview";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
@@ -19,6 +21,9 @@ export const wireframesEvent = new Event("t4y-wireframes-visible");
 export const prototypeEvent = new Event("t4y-prototype-visible");
 
 export default function Wireframes({}: Props) {
+  const t = useTranslations("there4you.wireframes");
+  const t2 = useTranslations("there4you.prototype");
+
   const [ref, isVisible] = useInView({
     threshold: 0.1,
   });
@@ -52,10 +57,10 @@ export default function Wireframes({}: Props) {
     >
       <span id="wireframes" className="absolute translate-y-[-20vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold justify-self-center">
-        Wireframes
+        {t("title")}
       </FadedH3>
       <FadedH4 className="text-2xl md:text-3xl font-semibold justify-self-center">
-        Low fidelity
+      {t("subtitles.1")}
       </FadedH4>
       <Image
         className="w-full h-full"
@@ -63,7 +68,7 @@ export default function Wireframes({}: Props) {
         alt="low fidelity wireframes"
       />
       <FadedH4 className="text-2xl md:text-3xl font-semibold justify-self-center">
-        High fidelity
+      {t("subtitles.2")}
       </FadedH4>
       <div className="grid grid-cols-1 gap-y-12 gap-x-4 w-full md:w-auto md:grid-cols-highWireframe md:gap-x-9 md:gap-y-16 items-center justify-self-center">
         <Image
@@ -76,11 +81,10 @@ export default function Wireframes({}: Props) {
         border-2 border-dashed border-[#FAD3FF] md:h-52 md:w-100 md:max-w-100 p-4 md:pl-9 md:pr-4 md:py-9 rounded-2xl md:rounded-3xl order-2 md:order-1"
         >
           <h5 className="text-lg md:text-xl font-bold">
-            Connection and set up
+          {t("baloons.1.title")}
           </h5>
           <p className="text-sm md:text-base font-medium">
-            Connect your bracelet via Bluetooth and set contacts, social media,
-            and SOS message to be triggered when you are in danger.
+          {t("baloons.1.description")}
           </p>
         </FadedDiv>
         <Image
@@ -107,22 +111,18 @@ export default function Wireframes({}: Props) {
           className="md:col-span-2 grid grid-cols-1 gap-y-2 justify-self-center items-center justify-items-center md:justify-items-start 
         border-2 border-dashed border-[#FAD3FF] md:h-56 md:w-100 md:max-w-100 p-4 md:pl-9 md:pr-4 md:py-9 rounded-2xl md:rounded-3xl order-7 md:order-1"
         >
-          <h5 className="text-lg md:text-xl font-bold">Home</h5>
+          <h5 className="text-lg md:text-xl font-bold">{t("baloons.2.title")}</h5>
           <p className="text-sm md:text-base font-medium">
-            Map with your location. View reports around you. Locate the nearest
-            police stations. Functions of activating the alarm, sharing
-            location, and calling the police connected to bracelet buttons.
+          {t("baloons.2.description")}
           </p>
         </FadedDiv>
         <FadedDiv
           className="md:col-span-2 grid grid-cols-1 gap-y-2 justify-self-center md:justify-self-start 
         items-center border-2 border-dashed border-[#FAD3FF] md:h-56 md:w-100 md:max-w-100 p-4 md:pl-9 md:pr-4 md:py-9 rounded-2xl md:rounded-3xl order-9 md:order-1"
         >
-          <h5 className="text-lg md:text-xl font-bold">Community</h5>
+          <h5 className="text-lg md:text-xl font-bold">{t("baloons.3.title")}</h5>
           <p className="text-sm md:text-base font-medium">
-            Community with reports of harassment complaints to help other
-            victims. The data helps build statistics to understand which places
-            and times are most dangerous, in order to contribute to policing.
+          {t("baloons.3.description")}
           </p>
         </FadedDiv>
         <Image
@@ -139,16 +139,16 @@ export default function Wireframes({}: Props) {
           className="md:col-span-2 grid grid-cols-1 gap-y-2 justify-self-center items-center border-2 
         border-dashed border-[#FAD3FF] p-4 md:h-30 md:w-101 md:max-w-100 md:pl-9 md:pr-4 md:py-9 rounded-2xl md:rounded-3xl order-11 md:order-1"
         >
-          <h5 className="text-lg md:text-xl font-bold">Statistics</h5>
+          <h5 className="text-lg md:text-xl font-bold">{t("baloons.4.title")}</h5>
           <p className="text-sm md:text-base font-medium">
-            View which places and times are most dangerous.
+          {t("baloons.4.description")}
           </p>
         </FadedDiv>
       </div>
       <div className="grid grid-cols-1 gap-2 md:gap-8 w-15 h-100 lg:w-auto lg:h-auto relative">
         <span id="prototype" className="absolute translate-y-[-10vh]" />
         <FadedH3 className="text-2xl md:text-3xl font-semibold justify-self-center">
-          Video prototype
+          {t2("title")}
         </FadedH3>
         <motion.video
           ref={prototypeRef}
@@ -176,4 +176,12 @@ export default function Wireframes({}: Props) {
       />
     </section>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

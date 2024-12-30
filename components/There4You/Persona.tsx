@@ -3,11 +3,15 @@ import Image from "next/image";
 import persona from "@/public/images/there4you/t4y-persona.png";
 import { FadedDiv, FadedH3 } from "../Framer/MotionComponents";
 import { useInView } from "react-hook-inview";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 export const personaEvent = new Event("t4y-persona-visible");
 
 export default function Persona({}: Props) {
+  const t = useTranslations("there4you.userPersona");
+
   const [ref, isVisible] = useInView({
     threshold: 1,
   });
@@ -25,7 +29,7 @@ export default function Persona({}: Props) {
     >
       <span id="persona" className="absolute translate-y-[-25vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold justify-self-center">
-        User persona
+        {t("title")}
       </FadedH3>
       <FadedDiv
         className="grid grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-9 bg-[#FAD3FF] 
@@ -40,25 +44,28 @@ export default function Persona({}: Props) {
         </div>
         <div className="col-span-2 lg:col-span-5 grid grid-cols-1 gap-y-2 lg:ml-10 justify-self-start lg:justify-self-auto">
           <p>
-            <strong>Name:</strong> Ashley
+            <strong>{t("name.1")}:</strong> {t("name.2")}
           </p>
           <p>
-            <strong>Age:</strong> 21 years old
+            <strong>{t("age.1")}:</strong> {t("age.2")}
           </p>
         </div>
         <hr className="col-span-3 lg:col-span-6 border border-t border-top-[#FCFCFC] w-screen -translate-x-20" />
         <div className="col-span-3 lg:col-span-6 grid grid-cols-1 gap-y-6">
-          <h4 className="font-bold">Scenario</h4>
+          <h4 className="font-bold">{t("subtitle")}</h4>
           <p>
-            She is a student and works as an intern at a company. She needs to
-            use public transport frequently to get to college and work. She is
-            constantly afraid of being harassed along the way. In the face of
-            this, she is always anxious and feels insecure. She needs something
-            that makes her feel calmer and safer when she leaves the house
-            alone.
+          {t("description")}
           </p>
         </div>
       </FadedDiv>
     </section>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

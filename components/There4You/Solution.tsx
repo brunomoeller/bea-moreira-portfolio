@@ -4,12 +4,16 @@ import braceletFade from "@/public/images/there4you/bracelet-fade.svg";
 import coloredBracelet from "@/public/images/there4you/colored-bracelet.svg";
 import { FadedDiv, FadedH3, ScaledDiv } from "../Framer/MotionComponents";
 import { useInView } from "react-hook-inview";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export const solutionEvent = new Event("t4y-solution-visible");
 
 export default function Solution({}: Props) {
+  const t = useTranslations("there4you.solution");
+
   const [ref, isVisible] = useInView({
     threshold: 0.5,
   });
@@ -26,41 +30,36 @@ export default function Solution({}: Props) {
       className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand relative"
     >
       <span id="solution" className="absolute translate-y-[-25vh]" />
-      <FadedH3 className="text-3xl md:text-4xl font-bold">Solution</FadedH3>
+      <FadedH3 className="text-3xl md:text-4xl font-bold">{t("title")}</FadedH3>
       <div className="grid grid-cols-1 gap-y-12 text-lg md:text-xl">
         <FadedDiv className="grid grid-cols-1 gap-y-2">
-          <h4 className="font-bold">Product</h4>
+          <h4 className="font-bold">{t("subtitle")}</h4>
           <p className="font-medium">
-            Security bracelet against harassment connected with an app that
-            makes calling for help more agile.
+          {t("description")}
           </p>
         </FadedDiv>
         <FadedDiv className="grid grid-cols-1 gap-y-2">
-          <h4 className="font-bold">How it works?</h4>
+          <h4 className="font-bold">{t("howItWorks.title")}</h4>
           <p className="font-medium">
-            The device has a USB port (to recharge its battery)
+          {t("howItWorks.items.1")}
           </p>
           <p className="font-medium">
-            Connection with the cell phone via bluetooth and functionalities via
-            the app.
+          {t("howItWorks.items.2")}
           </p>
         </FadedDiv>
         <FadedDiv className="grid grid-cols-1 gap-y-2">
           <p className="font-medium">
-            The bracelet has 4 buttons, one for on and off and 3 with the
-            following features:
+          {t("howItWorks.items.3")}
           </p>
         </FadedDiv>
         <FadedDiv className="grid grid-cols-1 gap-y-2">
           <ol className="list-decimal pl-4 md:pl-8 grid grid-cols-1 gap-y-2">
             <li>
-              Sound, emits an alarm (loud and unpleasant sound to scare the
-              aggressor)
+            {t("howItWorks.items.4")}
             </li>
-            <li>Activate the nearest police station + tracking</li>
+            <li>{t("howItWorks.items.5")}</li>
             <li>
-              Sends a SOS message to selected contacts and social networks with
-              location tracking
+            {t("howItWorks.items.6")}
             </li>
           </ol>
         </FadedDiv>
@@ -79,4 +78,13 @@ export default function Solution({}: Props) {
       </div>
     </section>
   );
+}
+
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

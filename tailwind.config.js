@@ -1,3 +1,4 @@
+// const {nextui} = require('@nextui-org/theme');
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
@@ -5,6 +6,7 @@ module.exports = {
   content: [
     "./pages/**/*.{js,jsx,ts,tsx}",
     "./components/**/*.{js,jsx,ts,tsx}",
+    // "./node_modules/@nextui-org/theme/dist/components/(dropdown|menu|divider|popover|button|ripple|spinner).js"
   ],
   theme: {
     extend: {
@@ -58,5 +60,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwind-scrollbar-hide"), require("tailwind-scrollbar")],
+  plugins: [require("tailwind-scrollbar-hide"),require("tailwind-scrollbar")],
 };

@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: true,
   env: {
@@ -10,6 +11,20 @@ const nextConfig = {
     unoptimized: true,
     
   },
+  i18n: {
+    locales: ['en', 'pt-br'],
+    defaultLocale: 'en',
+    domains: [
+      {
+        domain: 'beatrizmoreira.com',
+        defaultLocale: 'en',
+      },
+      {
+        domain: 'br.beatrizmoreira.com',
+        defaultLocale: 'pt-br',
+      },
+    ],
+  }
 };
 
 module.exports = nextConfig;

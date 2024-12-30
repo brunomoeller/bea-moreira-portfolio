@@ -7,6 +7,7 @@ import Popup from "@/components/Global/Popup";
 import Form from "@/components/Contact/Form";
 import { ToastContainer } from "react-toastify";
 import Script from "next/script";
+import { GetStaticPropsContext } from "next";
 
 type Props = {};
 
@@ -45,4 +46,12 @@ export default function contact({}: Props) {
       />
     </>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../messages/${locale}.json`)).default
+    }
+  };
 }

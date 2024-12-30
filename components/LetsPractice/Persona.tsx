@@ -3,12 +3,16 @@ import Image from "next/image";
 import persona from "@/public/images/lets-practice/letspractice-persona.webp";
 import { FadedDiv, FadedH3 } from "../Framer/MotionComponents";
 import { useInView } from "react-hook-inview";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export const personaEvent = new Event("lp-persona-visible");
 
 export default function Persona({}: Props) {
+  const t = useTranslations("letsPractice.userPersona");
+
   const [ref, isVisible] = useInView({
     threshold: 0.5,
   });
@@ -26,7 +30,7 @@ export default function Persona({}: Props) {
     >
       <span id="persona" className="absolute translate-y-[-20vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold justify-self-center">
-        User persona
+        {t("title")}
       </FadedH3>
       <FadedDiv
         className="grid grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-9 bg-[#F1EAFF] 
@@ -41,46 +45,49 @@ export default function Persona({}: Props) {
         </div>
         <div className="text-center lg:text-start col-span-3 lg:col-span-5 grid grid-cols-1 gap-y-2 lg:ml-14 xl:ml-4 lg:justify-self-auto">
           <p>
-            <strong>Name:</strong> Yara
+            <strong>{t("name.1")}:</strong> {t("name.2")}
           </p>
           <p>
-            <strong>Age:</strong> 28 years old
+            <strong>{t("age.1")}:</strong> {t("age.2")}
           </p>
           <p>
-            <strong>Profession:</strong> Marketing Assistant
+            <strong>{t("profession.1")}:</strong> {t("profession.2")}
           </p>
           <p>
-            <strong>Marital status:</strong> married
+            <strong>{t("maritalStatus.1")}:</strong> {t("maritalStatus.2")}
           </p>
         </div>
         <hr className="col-span-3 lg:col-span-6 border border-t border-top-[#FCFCFC] w-screen -translate-x-20" />
         <div className="col-span-3 lg:col-span-6 grid grid-cols-1 gap-y-6">
-          <h4 className="font-bold">Pain map</h4>
+          <h4 className="font-bold">{t("painMap")}</h4>
           <p>
-            She has difficulty stopping to study English. Given this, she needs
-            to learn as much as possible in a short time.
+            {t("painMapItems.1")}
           </p>
 
           <p>
-            Her job requires a good level of English and she wants to get a
-            certificate to increase her job opportunities.
+          {t("painMapItems.2")}
           </p>
           <p>
-            She doesn&apos;t have time to take a full course and also finds it
-            too expensive.
+          {t("painMapItems.3")}
           </p>
 
           <p>
-            She needs a study method that fits into her routine, and that is
-            accessible.
+          {t("painMapItems.4")}
           </p>
-          <h4 className="font-bold">Map of pleasure</h4>
+          <h4 className="font-bold">{t("mapOfPleasure")}</h4>
           <p>
-            Yara wants to get a job at her dream company that requires a good
-            level of English.
+          {t("mapOfPleasureItems.1")}
           </p>
         </div>
       </FadedDiv>
     </section>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

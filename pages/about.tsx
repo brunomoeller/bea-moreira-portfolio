@@ -6,11 +6,14 @@ import {
 import Footer from "@/components/Global/Footer";
 import Header from "@/components/Global/Header";
 import { poppins, quicksand } from "@/utils/fonts";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from 'next-intl';
 import Script from "next/script";
 
 type Props = {};
 
-export default function about({}: Props) {
+export default function About({}: Props) {
+  const t = useTranslations('about');
 
   return (
     <>
@@ -32,20 +35,24 @@ export default function about({}: Props) {
         >
           <div className="grid grid-cols-1 gap-y-4">
             <FadedTitle className="text-2xl xl:text-3xl font-bold justify-self-start">
-              A little about myself...
+              {t("title")}
             </FadedTitle>
             <FadedSubtitle className="text-sm xl:text-base font-medium leading-9 font-poppins">
-              Hello. I&apos;m Beatriz! I&apos;m passionate about the universe of
-              design, entrepreneurship, branding, and marketing. I&apos;m always
-              looking to learn more about different things, mainly within this
-              universe. I consider myself a results-oriented Designer with
-              experience in design thinking and human-centered design.
+              {t("description")}
             </FadedSubtitle>
           </div>
-          <Timeline />
+          {/* <Timeline /> */}
         </main>
         <Footer />
       </div>
     </>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../messages/${locale}.json`)).default
+    }
+  };
 }

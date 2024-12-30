@@ -13,10 +13,14 @@ import { personaEvent } from "./Persona";
 import { userflowEvent } from "./Userflow";
 import { prototypeEvent, wireframesEvent } from "./Wireframes";
 import { styleGuideEvent } from "./StyleGuide";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export default function SideMenu({}: Props) {
+  const t = useTranslations("sideMenu.there4you")
+
   const [pos, setPos] = useState("introduction");
 
   useEffect(() => {
@@ -112,7 +116,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#introduction"
           >
-            Introduction
+            {t("1")}
           </Link>
         </li>
         <li id="nav-role" className={`${pos === "role" ? "nav-active" : ""}`}>
@@ -124,7 +128,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#role"
           >
-            My role and team
+            {t("2")}
           </Link>
         </li>
         <li
@@ -139,7 +143,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#methodology"
           >
-            Methodology
+            {t("3")}
           </Link>
         </li>
         <li
@@ -154,7 +158,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#problems"
           >
-            Problems
+            {t("4")}
           </Link>
         </li>
         <li
@@ -169,7 +173,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#solution"
           >
-            Solution
+            {t("5")}
           </Link>
         </li>
         <li
@@ -184,7 +188,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#competitors"
           >
-            Competitive analysis
+            {t("6")}
           </Link>
         </li>
         <li
@@ -199,7 +203,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#research"
           >
-            Research
+            {t("7")}
           </Link>
         </li>
         <li
@@ -214,7 +218,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#empathy-map"
           >
-            User empathy map
+            {t("8")}
           </Link>
         </li>
         <li
@@ -229,7 +233,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#persona"
           >
-            User persona
+            {t("9")}
           </Link>
         </li>
         <li
@@ -244,7 +248,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#userflow"
           >
-            User flow diagram
+            {t("10")}
           </Link>
         </li>
         <li
@@ -259,7 +263,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#wireframes"
           >
-            Wireframes
+            {t("11")}
           </Link>
         </li>
         <li
@@ -274,7 +278,7 @@ export default function SideMenu({}: Props) {
             }}
             href="#prototype"
           >
-            Prototype
+            {t("12")}
           </Link>
         </li>
         <li
@@ -289,10 +293,18 @@ export default function SideMenu({}: Props) {
             }}
             href="#style-guide"
           >
-            Style guide
+            {t("13")}
           </Link>
         </li>
       </ul>
     </motion.nav>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

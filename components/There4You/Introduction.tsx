@@ -3,12 +3,16 @@ import React, { useEffect } from "react";
 import { FadedH3, FadedParagraph } from "../Framer/MotionComponents";
 import { useInView } from "react-hook-inview";
 import Role from "./Role";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export const introductionEvent = new Event("t4y-introduction-visible");
 
 export default function Introduction({}: Props) {
+  const t = useTranslations("there4you.introduction");
+
   const [ref, isVisible] = useInView({
     threshold: 1,
   });
@@ -26,37 +30,39 @@ export default function Introduction({}: Props) {
         id="introduction"
         className="absolute translate-y-[-52vh]"
       />
-      <FadedH3 className="text-3xl md:text-4xl font-bold">Introduction</FadedH3>
+      <FadedH3 className="text-3xl md:text-4xl font-bold">{t("title")}</FadedH3>
       <div className="grid grid-cols-1 gap-y-8 text-lg md:text-xl">
         <FadedParagraph>
-          <strong>Upkey</strong> (Education and career development software
-          service from Chicago) in partnership with{" "}
-          <strong>IE Business School</strong> (Business School for
-          Entrepreneurship in Europe) created an entrepreneurship project
-          competition. It was less than one week to create a business idea.
+          <strong>Upkey</strong> {t("paragraphs.1")}
+          <strong>IE Business School</strong> {t("paragraphs.2")}
         </FadedParagraph>
         <FadedParagraph>
-          My team of 4 girls, developed a Startup idea called &quot;
-          <strong>There4You</strong>&quot;, a technological, discreet, and
-          creative bracelet that{" "}
-          <strong>helps women against sexual harassment.</strong>
+          {t("paragraphs.3")} &quot;
+          <strong>There4You</strong>&quot;{t("paragraphs.4")} 
+          <strong>{t("paragraphs.5")}</strong>
         </FadedParagraph>
         <FadedParagraph>
-          <strong>Over 700 students</strong> competed to develop a Startup idea
-          and <strong>the winners were us.</strong> Overall, I&apos;m proud of
-          this project, it was challenging and we created a business idea that
-          would impact the lives of many women around the world.
+          <strong>{t("paragraphs.6")}</strong> {t("paragraphs.7")}  
+          <strong>{t("paragraphs.8")}</strong> {t("paragraphs.9")}
         </FadedParagraph>
         <Link
           target="_blank"
           className="flex items-center justify-center hover:scale-110 hover:-translate-y-1 transition-all w-64 h-12 rounded-full bg-[#D014E9] justify-self-center"
           href="https://www.linkedin.com/feed/update/urn:li:activity:6823742017542217728/"
         >
-          Check on LinkedIn
+          {t("redirectButton")}
         </Link>
 
         <Role />
       </div>
     </section>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

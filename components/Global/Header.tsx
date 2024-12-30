@@ -3,13 +3,34 @@ import Logo from "@/public/icons/logo.png";
 import { quicksand } from "@/utils/fonts";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Popup from "./Popup";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
-type Props = {};
+type Props = {
+  locale: string;
+};
 
-export default function Header({}: Props) {
+export default function Header({ locale }: Props) {
+  const t = useTranslations("menu");
+  const language = t("language")
+
   const [popupHidden] = useState(true);
+
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  
+  const toggleDropdown = () => {
+    setIsDropdownVisible((prev) => !prev);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+    if (!target.closest(".dropdown")) {
+      setIsDropdownVisible(false);
+    }
+  };
 
   function hideOrShowPopup() {
     let popup: Element = document.querySelector("#popup")!;
@@ -27,6 +48,19 @@ export default function Header({}: Props) {
       window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
   }
+
+  useEffect(() => {
+    if (isDropdownVisible) {
+      window.addEventListener("click", handleClickOutside);
+    } else {
+      window.removeEventListener("click", handleClickOutside);
+    }
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [isDropdownVisible]);
 
   return (
     <>
@@ -48,21 +82,30 @@ export default function Header({}: Props) {
         <nav className="flex items-center justify-center gap-7 list-none">
           <li className="hidden md:inline md:w-24">
             <Link className="menu-link" href="/#projects">
-              Projects
+              {t("projects")}
             </Link>
           </li>
           <li className="hidden md:inline md:w-24">
             <Link className="menu-link" href="/#services">
-              Services
+              {t("services")}
             </Link>
           </li>
           <li className="hidden md:inline md:w-24">
             <Link className="menu-link" href="/about">
-              About
+              {t("about")}
             </Link>
           </li>
+          <li className="hidden md:inline md:w-24">
+          <div id="dropdown" className="dropdown">
+            <button className="dropbtn text-base" onClick={toggleDropdown}>{language}</button>
+            <div className={`dropdown-content ${isDropdownVisible ? "show" : ""} text-base`}>
+              <a href="/en">{t("english")}</a>
+              <a href="/pt-br">{t("portuguese")}</a>
+            </div>
+          </div>
+          </li>
           <Link href="/contact" className="hidden md:contact-button">
-            <li>Contact</li>
+            <li>{t("contact")}</li>
           </Link>
           <div>
             <Image
@@ -76,4 +119,13 @@ export default function Header({}: Props) {
       </header>
     </>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default,
+      locale
+    }
+  };
 }

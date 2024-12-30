@@ -1,23 +1,24 @@
 import Footer from "@/components/Global/Footer";
-import React, { useEffect, useState } from "react";
+import Header from "@/components/Global/Header";
+import Competitors from "@/components/There4You/Competitors";
+import EmpathyMap from "@/components/There4You/EmpathyMap";
 import Hero from "@/components/There4You/Hero";
 import Introduction from "@/components/There4You/Introduction";
 import Methodology from "@/components/There4You/Methodology";
-import Problems from "@/components/There4You/Problems";
-import Solution from "@/components/There4You/Solution";
-import Competitors from "@/components/There4You/Competitors";
-import Research from "@/components/There4You/Research";
-import EmpathyMap from "@/components/There4You/EmpathyMap";
-import { quicksand, poppins } from "@/utils/fonts";
 import Persona from "@/components/There4You/Persona";
+import Problems from "@/components/There4You/Problems";
+import Research from "@/components/There4You/Research";
+import SideMenu from "@/components/There4You/SideMenu";
+import Solution from "@/components/There4You/Solution";
+import StyleGuide from "@/components/There4You/StyleGuide";
 import Userflow from "@/components/There4You/Userflow";
 import Wireframes from "@/components/There4You/Wireframes";
-import StyleGuide from "@/components/There4You/StyleGuide";
-import SideMenu from "@/components/There4You/SideMenu";
-import Header from "@/components/Global/Header";
-import Lottie from "lottie-react";
 import loadingAnimation from "@/public/icons/loading.json";
+import { poppins, quicksand } from "@/utils/fonts";
+import Lottie from "lottie-react";
+import { GetStaticPropsContext } from "next";
 import Script from "next/script";
+import { useEffect, useState } from "react";
 
 type Props = {};
 
@@ -83,4 +84,12 @@ export default function There4you({}: Props) {
       )}
     </>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../messages/${locale}.json`)).default
+    }
+  };
 }

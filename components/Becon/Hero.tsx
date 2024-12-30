@@ -12,10 +12,14 @@ import {
 } from "../Framer/MotionComponents";
 import { useInView } from "react-hook-inview";
 import { introductionVisibleEvent } from "./Introduction";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export default function Hero({}: Props) {
+  const t = useTranslations("becon");
+
   const [ref, isVisible] = useInView({
     threshold: 0.1,
   });
@@ -45,17 +49,17 @@ export default function Hero({}: Props) {
             className="col-span-2 grid grid-cols-1 text-xl md:text-3xl text-white"
           >
             <LeftToRightTitle className="font-semibold">
-              Design UX/UI Case study
+              {t("tech")}
             </LeftToRightTitle>
           </div>
           <div className="justify-self-start">
             <FadedH3 className="text-sm md:text-xl text-white font-medium border border-white rounded-full px-8 py-2">
-              Login page
+            {t("type")}
             </FadedH3>
           </div>
           <FadedDiv className="justify-self-start">
             <div className="flex gap-x-2 items-center justify-center text-sm lg:text-xl text-white font-medium border border-white rounded-full px-8 py-2">
-              <h3>Tool:</h3>
+              <h3>{t("madeWith")}:</h3>
               <Image className="h-4 lg:h-auto" src={figmaIcon} alt="Figma" />
             </div>
           </FadedDiv>
@@ -73,4 +77,12 @@ export default function Hero({}: Props) {
       />
     </div>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

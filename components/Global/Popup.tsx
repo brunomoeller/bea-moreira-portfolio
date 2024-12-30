@@ -1,14 +1,32 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { quicksand } from "@/utils/fonts";
 import Link from "next/link";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {
   hidden: boolean;
 };
 
 function Popup({ hidden }: Props) {
+  const t = useTranslations("menu");
+  const language = t("language")
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownVisible((prev) => !prev);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+    if (!target.closest(".dropdown")) {
+      setIsDropdownVisible(false);
+    }
+  };
+
   function hidePopup() {
+
     let popup: Element = document.querySelector("#popup")!;
     popup.classList.remove("grid");
     const scrollY = document.body.style.top;
@@ -18,6 +36,19 @@ function Popup({ hidden }: Props) {
     document.body.style.top = "";
     window.scrollTo(0, parseInt(scrollY || "0") * -1);
   }
+
+  useEffect(() => {
+    if (isDropdownVisible) {
+      window.addEventListener("click", handleClickOutside);
+    } else {
+      window.removeEventListener("click", handleClickOutside);
+    }
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [isDropdownVisible]);
 
   return (
     <AnimatePresence>
@@ -32,26 +63,41 @@ function Popup({ hidden }: Props) {
           quicksand.variable
         }`}
       >
+        <button
+            onClick={hidePopup}
+            className="absolute top-5 right-5 bg-[#272323] text-white text-2xl rounded-full px-4 py-2 hover:bg-red-600"
+          >
+            ✕
+          </button>
         <ul className="-mt-10 flex flex-col items-start justify-center gap-y-20 font-quicksand text-4xl text-darker-white font-semibold">
           <li className="px-4 py-1 border-l-4 rounded-sm">
             <Link onClick={hidePopup} href="/#projects">
-              Projects
+              {t("projects")}
             </Link>
           </li>
           <li className="px-4 py-1 border-l-4 rounded-sm">
             <Link onClick={hidePopup} href="/#services">
-              Services
+            {t("services")}
             </Link>
           </li>
           <li className="px-4 py-1 border-l-4 rounded-sm">
             <Link onClick={hidePopup} href="/about">
-              About
+            {t("about")}
             </Link>
           </li>
           <li className="px-4 py-1 border-l-4 rounded-sm">
             <Link onClick={hidePopup} href="/contact">
-              Contact
+            {t("contact")}
             </Link>
+          </li>
+          <li className="px-4 py-1 border-l-4 rounded-sm">
+          <div id="dropdown" className="dropdown">
+            <button className="dropbtn text-4xl" onClick={toggleDropdown}>{language}</button>
+            <div className={`dropdown-content ${isDropdownVisible ? "show" : ""} text-2xl`}>
+              <a href="/en">{t("english")}</a>
+              <a href="/pt-br">{t("portuguese")}</a>
+            </div>
+          </div>
           </li>
         </ul>
       </motion.nav>
@@ -60,3 +106,11 @@ function Popup({ hidden }: Props) {
 }
 
 export default Popup;
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
+}

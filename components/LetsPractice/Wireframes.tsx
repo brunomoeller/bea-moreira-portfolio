@@ -1,16 +1,20 @@
-import Image from "next/image";
-import React, { useEffect } from "react";
+import highFidelity from "@/public/images/lets-practice/letspractice-high-fidelity.png";
 import lowFidelity1 from "@/public/images/lets-practice/letspractice-low-fidelity-1.svg";
 import lowFidelity2 from "@/public/images/lets-practice/letspractice-low-fidelity-2.svg";
-import highFidelity from "@/public/images/lets-practice/letspractice-high-fidelity.png";
-import { FadedDiv, FadedH3, FadedH4 } from "../Framer/MotionComponents";
+import { GetStaticPropsContext } from "next";
+import Image from "next/image";
+import { useEffect } from "react";
 import { useInView } from "react-hook-inview";
+import { FadedDiv, FadedH3, FadedH4 } from "../Framer/MotionComponents";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export const wireframesEvent = new Event("lp-wireframes-visible");
 
-export default function Userflow({}: Props) {
+export default function Wireframes({}: Props) {
+  const t = useTranslations("letsPractice.wireframes");
+
   const [ref, isVisible] = useInView({
     threshold: 0.1,
   });
@@ -28,10 +32,10 @@ export default function Userflow({}: Props) {
     >
       <span id="wireframes" className="absolute translate-y-[-20vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold justify-self-center">
-        Wireframes
+        {t("title")}
       </FadedH3>
       <FadedH4 className="text-2xl md:text-3xl font-semibold justify-self-center">
-        Low fidelity
+        {t("subtitles.1")}
       </FadedH4>
       <FadedDiv className="grid gap-y-12 md:gap-y-0 md:grid-cols-2 items-center justify-items-center md:gap-x-16">
         <Image
@@ -46,7 +50,7 @@ export default function Userflow({}: Props) {
         />
       </FadedDiv>
       <FadedH4 className="text-2xl md:text-3xl font-semibold justify-self-center mt-16 md:mt-28">
-        High fidelity
+      {t("subtitles.2")}
       </FadedH4>
       <FadedDiv className="rounded-3xl overflow-hidden">
         <Image
@@ -57,4 +61,12 @@ export default function Userflow({}: Props) {
       </FadedDiv>
     </section>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

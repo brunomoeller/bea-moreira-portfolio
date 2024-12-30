@@ -6,11 +6,16 @@ import Services from "@/components/Home/Services";
 import loadingAnimation from "@/public/icons/loading.json";
 import { poppins, quicksand } from "@/utils/fonts";
 import Lottie from "lottie-react";
+import { GetStaticPropsContext } from "next";
+import { useTimeZone, useTranslations } from "next-intl";
 import Head from "next/head";
 import Script from "next/script";
 import { useEffect, useState } from "react";
+import {getTimeZone} from 'next-intl/server';
 
 export default function Home() {
+  const timeZone = useTimeZone();
+  const t = useTranslations("home.hero");
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -33,9 +38,7 @@ export default function Home() {
         <title>Beatriz Moreira | Portfolio</title>
         <meta
           name="description"
-          content="Hello! I'm Beatriz, a creative designer with a keen eye for
-          detail and a commitment to delivering solutions that are both
-          functional and visually appealing."
+          content={t("headline")}
         />
         <meta
           name="viewport"
@@ -75,4 +78,13 @@ export default function Home() {
       )}
     </>
   );
+}
+
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../messages/${locale}.json`)).default
+    }
+  };
 }

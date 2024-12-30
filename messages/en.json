@@ -1,0 +1,575 @@
+{
+    "home": {
+      "hero": {
+        "title": "Solving design problems in a beautiful way",
+        "headline": "Hello! I'm Beatriz, a creative designer with a keen eye for detail and a commitment to delivering solutions that are both functional and visually appealing."
+      },
+      "redirectLinks": {
+        "there4you": "Product design / Mobile App",
+        "letsPractice": "Landing page",
+        "becon": "Login page (Web and Mobile)"
+      },
+      "services": {
+        "title": "Services",
+       "categories": 
+            {
+                "1":"UX/UI",
+                "2":"Web & Mobile App",
+                "3":"Visual identity",
+                "4":"Development",
+                "5": "In collaboration with expert developers."
+            }
+      }
+    },
+    "menu": {
+        "projects": "Projects",
+        "services": "Services",
+        "about": "About",
+        "contact": "Contact",
+        "language": "Language",
+        "portuguese": "Portuguese",
+        "english": "English"
+      },
+    "footer": {
+        "cta": "Let's work together!",
+        "contactButton": "Contact",
+        "exploreMenu": {
+            "title": "Explore",
+            "projects": "Projects",
+            "about": "About",
+            "services": "Services",
+            "contact": "Contact"
+        }
+      },
+    "about": {
+        "title": "A little about myself...",
+        "description": "Hello. I'm Beatriz! I'm passionate about the universe of design, entrepreneurship, branding, and marketing. I'm always looking to learn more about different things, mainly within this universe. I consider myself a results-oriented Designer with experience in design thinking and human-centered design.",
+        "timeline": {
+            "title": "Timeline",
+            "2012": "I started to venture into the digital design just as a hobby",
+            "2018": "I was studying pharmacy at the university (I know, nothing to do) until I joined the Junior company of the course in which I started to work voluntarily with marketing and design (it was amazing), that's when I realized that I was in the wrong course",
+            "2019": "Year of many changes. I switched my bachelor's course to social communication with a major in advertising. I started working at a junior advertising agency. I started working as a freelance designer. I created my own e-commerce. I participated in my first Startup Weeknd and more…",
+            "2021": "I had experience as a volunteer designer at a startup, where I started to delve deeper into UX / UI Design. I participated in an international internship with a great project competition and my team won first place among more than 700 participants.",
+            "2022": "Started working at a technology startup, being the principal UX/UI designer.",
+            "2023": "In progress..."
+        }
+      },
+    "there4you": {
+        "title": "There4you",
+        "description": "A technological, discreet, and creative bracelet that helps women against sexual harassment.",
+        "type": "Product / App",
+        "specs": "Tools:",
+        "introduction": {
+            "title": "Introduction",
+            "paragraphs": 
+                {
+                    "1": "(Education and career development software service from Chicago) in partnership with ",
+                    "2": "(Business School for Entrepreneurship in Europe) created an entrepreneurship project competition. It was less than one week to create a business idea.",
+                    "3": "My team of 4 girls, developed a Startup idea called",
+                    "4": ", a technological, discreet, and creative bracelet that ",
+                    "5": "helps women against sexual harassment.",
+                    "6": "Over 700 students",
+                    "7": "competed to develop a Startup idea and",
+                    "8": "the winners were us.",
+                    "9": "Overall, I'm proud of this project, it was challenging and we created a business idea that would impact the lives of many women around the world."
+                },
+            "redirectButton": "Check on LinkedIn"
+        },
+        "myRole": {
+            "title": "My role and team",
+            "items": {
+                "role": {"1": "My role:", "2": "Founder / Product Designer"},
+                "team": {"1": "Team / Founders:", "2": "Me (Beatriz Moreira); Beatriz Fonseca; Iris Nascimento and Giovanna Savazo"}
+            }
+        },
+        "methodology": {
+            "title": "Methodology",
+            "subtitle": "The project was designed following the ",
+            "strong": "design thinking ",
+            "continuation": "methodology",
+            "stages": {
+                "empathize": {
+                    "title": "Empathize",
+                    "items": 
+                        {
+                            "1": "Seek to understand the needs and wants of the user", 
+                            "2": "Observation and interviews"
+                        }
+                },
+                "define": {
+                    "title": "Define",
+                    "items": { "1": "Clear problem statement"}
+                },
+                "ideate": {
+                    "title": "Ideate",
+                    "items": {"1": "Potential solutions"}
+                },
+                "prototype": {
+                    "title": "Prototype",
+                    "items": 
+                        {
+                            "1": "Sketeches, models",
+                            "2": "Mockups",
+                            "3": "Digital prototype"}
+                    
+                },
+                "test": {
+                    "title": "Test",
+                    "items": {"1": "(Future step)", "2":"What works?"}
+                }
+            }
+        },
+        "problems": {
+            "title": "Problems",
+            "items": 
+                 {
+                 "1": "8 out of 10 women have suffered from sexual harassment worldwide (According to Stop Street Harassment's survey with 996 women)",
+                 "2": "The fear of going out alone is universal and constant",
+                 "3": "Harassment has many consequences in women's lives such as anxiety, depression and sleep disturbances"
+            }
+        },
+        "solution": {
+            "title": "Solution",
+            "subtitle": "Product",
+            "description": "Security bracelet against harassment connected with an app that makes calling for help more agile.",
+            "howItWorks": {
+                "title": "How it works?",
+                "items": {
+                    "1": "The device has a USB port (to recharge its battery)",
+                    "2": "Connection with the cell phone via bluetooth and functionalities via the app.",
+                    "3": "The bracelet has 4 buttons, one for on and off and 3 with the following features",
+                    "4": "Sound, emits an alarm (loud and unpleasant sound to scare the aggressor)",
+                    "5": "Activate the nearest police station + tracking",
+                    "6": "Sends a SOS message to selected contacts and social networks with location tracking"
+                }
+            }
+        },
+        "competitors": {
+            "title": "Competitors",
+            "subtitle": "Competitor analysis summary.",
+            "header": "Company",
+            "companies": {
+                "1": 
+                    {
+                        "name": "Vigilant",
+                        "issue": "Only sells alarm products with no app technology attached; it does not have a specific audience and has little digital presence."
+                    },
+                "2":
+                    {
+                        "name": "Safelet",
+                        "issue": "It has a bracelet and an app with technology similar to ours, but the product has only one function button and a few functionalities in the app. In addition, the site and app have an unprofessional design. It has little digital presence."
+                    }
+                }
+            
+        },
+        "research": {
+            "title": "Research",
+            "paragraphs": {
+                "1": "The global self-defense products market size is expected to reach USD 3.6 billion by 2025. Expanding at a CAGR of 5.9% over the forecast period (According to a report by Grand View Research, Inc)..",
+                "2": "We did research with people around the world (32 women) and discovered that 62.5% have experienced harassment in their lifetime and that 85.7% did not have any self-defense device with them at the moment. Finally, we proposed a gadget with the same functions as THERE4YOU and 87.5% of the people were interested and determined on buying it."
+            },
+            "questions": {
+                "1": "Have you experienced any type of harassment and/or abuse?",
+                "2": "If yes, did you have anything to defend yourself with at the moment?",
+                "3": "If you had the opportunity to buy a device in the form of a simple bracelet that had the following features (Emit loud sounds; Notify and call the nearest police station; Send SOS messages to selected contacts) would you be interested in buying it?"
+            },
+            "yes": "Yes",
+            "no": "No",
+            "idk": "I don't know"
+        },
+        "userEmpathyMap": {
+            "title": "User empathy map",
+            "sections": {
+                "1": {
+                    "title": "Says",
+                    "items": {
+                        "1": "That place is very dangerous, I'm not going alone",
+                        "2": "There are many unknown men over there, let's change the route",
+                        "3": "I'm leaving work a little late, can you pick me up?",
+                        "4": "Can you walk me to the bus stop, friend?"
+                    }
+                },
+                "2": {
+                    "title": "Thinks",
+                    "items": {
+                        "1": "How can I escape if they harass me here?",
+                        "2": "How will I call for help quickly if something suspicious happens?",
+                        "3": "I need to try to leave early before it gets later and dangerous.",
+                        "4": "It is very difficult to be a woman",
+                        "5": "If I go out alone I might get harassed",
+                        "6": "I can't stand feeling scared anymore"
+                    }
+                },
+                "3":{
+                    "title": "Does",
+                    "items": {
+                        "1": "Share Uber location with people",
+                        "2": "Avoid going near unknown men when alone",
+                        "3": "Always try to find a company to go somewhere, especially at night",
+                        "4": "Avoid going places out of fear"
+                    }
+                },
+                "4": {
+                    "title": "Feels",
+                    "items": {
+                        "1": "Unsafe",
+                        "2": "Fear",
+                        "3": "Dread",
+                        "4": "Insomnia",
+                        "5": "Worry",
+                        "6": "Anxiety"
+                    }
+                }
+            }
+                
+        },
+        "userPersona": {
+            "title": "User persona",
+            "name": {"1": "Name", "2": "Ashley"},
+            "age": {"1": "Age", "2": "21 years old"},
+            "subtitle": "Scenario",
+            "description": "She is a student and works as an intern at a company. She needs to use public transport frequently to get to college and work. She is constantly afraid of being harassed along the way. In the face of this, she is always anxious and feels insecure. She needs something that makes her feel calmer and safer when she leaves the house alone."
+        },
+        "userflow": {
+            "title": "User flow diagram"
+        },
+        "wireframes": {
+            "title": "Wireframes",
+            "subtitles": {
+                "1": "Low fidelity",
+                "2": "High fidelity"
+            },
+            "baloons": {
+                "1": {
+                    "title": "Connection and set up",
+                    "description": "Connect your bracelet via Bluetooth and set contacts, social media, and SOS message to be triggered when you are in danger."
+                },
+                "2": {
+                    "title": "Home",
+                    "description": "Map with your location. View reports around you. Locate the nearest police stations. Functions of activating the alarm, sharing location, and calling the police connected to bracelet buttons."
+                },
+                "3": {
+                    "title": "Community",
+                    "description": "Community with reports of harassment complaints to help other victims. The data helps build statistics to understand which places and times are most dangerous, in order to contribute to policing."
+                },
+                "4": {
+                    "title": "Statistics",
+                    "description": "View which places and times are most dangerous."
+                }
+            }
+        },
+        "prototype": {
+            "title": "Video prototype"
+        },
+        "styleGuide": {
+            "title": "Style guide"
+        }
+    },
+    "letsPractice": {
+        "title": "Let's Practice",
+        "subtitle": "English teaching startup",
+        "tech": "UX/UI Case study",
+        "madeWith": "Made with Figma",
+        "type": "Landing page",
+        "introduction": {
+            "title": "Introduction",
+            "paragraphs": {
+                "1": "Let's Practice is a brazilian english teaching startup focused on business and entrepreneurship. The brand presents itself as disruptive, determined, and innovative, valuing its purpose of innovating the product “private English classes”, making it more attractive, advantageous, and efficient than face-to-face courses and other platforms currently available."
+            }
+        },
+        "myRole": {
+            "title": "My role",
+            "paragraphs": {"1": "I worked as a UI/UX designer and volunteer graphic designer at the startup. I was responsible for creating a visual identity and brand guidelines together with another graphic designer. In addition, I was the designer responsible for remodeling the Landing page interface for the brand in partnership with the company's owners and the product manager."}
+        },
+        "problems": {
+            "title": "Problems",
+            "items": {
+                "1": "Lack of a visual identity and brand guidmotion.elines, which resulted in little presence and attractiveness in a very competitive market",
+                "2": "Landing Page visual inconsistency and disorganization",
+                "3": "Lack of prominence in the startup's value proposition within the Landing Page"
+            }
+        },
+        "goals": {
+            "title": "Goals",
+            "items": {
+                "1": "Create a visual identity and style guide for the brand",
+                "2": "Enhance brand perception",
+                "3": "Highlight the benefits and competitive advantages of the Startup on the Landing Page",
+                "4": "Create a website navigation flow that is simple and effective for capturing leads"
+            }
+        },
+        "competitors": {
+            "title": "Competitors",
+            "subtitle": "Summary of the Landing Page analysis of some competitors, more focused on the navigation and visual experience.",
+            "headers": {
+                "1": "Company",
+                "2": "Strengths",
+                "3": "Weaknesses"
+            },
+            "companies": {
+                "1": {
+                    "name": "Cambly",
+                    "items": {
+                        "1": "It is very popular",
+                        "2": "The landing page has a good navigation flow",
+                        "3": "It doesn't show the price on the page, and a lot of steps need to be taken to get a quote"
+                    }
+                },
+                "2": {
+                    "name": "English life",
+                    "items": {
+                       "1": "A Company that has been in the market for over 20 years",
+                       "2": "Interface more clean, fast navigation",
+                       "3": "It has very vague information and also doesn't show prices on the page"
+                    }
+                },
+                "3": {
+                    "name": "Wise up",
+                    "items": {
+                       "1": "Well highlighted testimonials;",
+                       "2": "Lots of questions in the FAQ",
+                       "3": "There aren't prices on the page;",
+                       "4": "They don't offer free classes"
+                    }
+                },
+                "4": {
+                    "name": "English boy",
+                    "items": {
+                        "1": "It has features interactive onboarding that is very interesting for lead engagement",
+                        "2": "There are too many elements on some pages of the interface, which generates a bit of confusion and visual pollution"
+                    }
+                }
+            }
+        },
+        "userEmpathyMap": {
+            "title": "Empathy map",
+            "subtitle": "Through an interview involving 9 Participants (team people and target audience), some conclusions related to the English class emerged...",
+            "continuation": "Usually these people...",
+            "items": {
+                "1": "Prefer to study with playful teaching methods",
+                "2": "Seek to learn English for professional qualification.",
+                "3": "Think that English classes are expensive",
+                "4": "Have difficulty concentrating in class",
+                "5": "Have difficulty following a study routine"
+            }
+        },
+        "userPersona": {
+            "title": "User persona",
+            "name": {"1": "Name", "2": "Yara"},
+            "age": {"1": "Age", "2": "28 years old"},
+            "profession": {"1": "Profession", "2": "Marketing Assistant"},
+            "maritalStatus": {"1": "Marital status", "2": "married"},
+            "painMap": "Pain map",
+            "painMapItems": {
+                "1": "She has difficulty stopping to study English. Given this, she needs to learn as much as possible in a short time.",
+                "2": "Her job requires a good level of English and she wants to get a certificate to increase her job opportunities.",
+                "3": "She doesn't have time to take a full course and also finds it too expensive.",
+                "4": "She needs a study method that fits into her routine, and that is accessible."
+            },
+            "mapOfPleasure": "Map of pleasure",
+            "mapOfPleasureItems": {
+                "1": "Yara wants to get a job at her dream company that requires a good level of English."
+            }
+        },
+        "journeyMap": {
+            "title": "User journey map",
+            "stagesTitle": "Stages",
+            "stages": {
+                "1": "Stages",
+                "2": "Thinking",
+                "3": "Doing",
+                "4": "Pain Points",
+                "5": "Feeling",
+                "6": "Opportunities"
+            },
+            "columns": {
+                "1": {
+                    "title": "Awareness",
+                    "items": {
+                        "1": "User is thinking of improving his English.",
+                        "2": "Looking ads for english classes",
+                        "3": "Search on social media and google",
+                        "4": "Many options",
+                        "5": "Very expensive classes",
+                        "6": "Upset",
+                        "7": "Improve page keywords for search results",
+                        "8": "Highlight the competitive price"
+                    }
+                },
+                "2": {
+                    "title": "Consideration",
+                    "items": {
+                        "1": "Do more research",
+                        "2": "Looking into several other English courses",
+                        "3": "Book test classes",
+                        "4": "Confusing web layouts and very general information",
+                        "5": "Thoughtful",
+                        "6": "Provide specific information",
+                        "7": "Personalized information"
+                    }
+                },
+                "3": {
+                    "title": "Acquisition",
+                    "items": {
+                        "1": "Liked the free trial class and want to do more",
+                        "2": "Picks a basic class package and adds it to the cart",
+                        "3": "Goes through the check out process",
+                        "4": "Checkout page doesn't support many different payment methods",
+                        "5": "Hopeful",
+                        "6": "Work to support more payment methods"
+                    }
+                },
+                "4": {
+                    "title": "Service",
+                    "items": {
+                        "1": "User is thinking about how to fit the classes into his routine",
+                        "2": "Creates a schedule in google calendar",
+                        "3": "Manually set class times in google calendar",
+                        "4": "Thoughtful",
+                        "5": "Automatically and instantly book classes from the website"
+                    }
+                },
+                "5": {
+                    "title": "Loyalty",
+                    "items": {
+                        "1": "The user realizes that his English is improving",
+                        "2": "Purchases an advanced class package",
+                        "3": "Refers to friends",
+                        "4": "No follow-up about classes satisfaction",
+                        "5": "Joy",
+                        "6": "Send an NPS form to understand the level of user satisfaction"
+                    }
+                }
+            }
+        },
+        "userFlow": {
+            "title": "User flow diagram"
+        },
+        "wireframes": {
+            "title": "Wireframes",
+            "subtitles": {
+                "1": "Low fidelity",
+                "2": "High fidelity"
+            }
+        },
+        "styleGuide": {
+            "title": "Style guide"
+        }
+    },
+    "becon": {
+        "tech": "Design UX/UI Case study",
+        "type": "Login page",
+        "madeWith": "Tool",
+        "introduction": {
+            "title": "Introduction",
+            "paragraphs": {
+                "1": "Becon is a technological startup that has a chatbot platform as a service to help companies to have more control and agility in their services and also to sell more. The platform has several automation features and integrations."
+            }
+        },
+        "myRole": {
+            "title": "My role",
+            "role": {
+                "1": "My role", 
+                "2": "Designer UX / UI"
+            }
+        },
+        "problems": {
+            "title": "Problems & challenges",
+            "items": {
+                "1": "When I joined the startup team, it was in a process of changes related to its growth. The company was changing its visual identity to present itself as more modern and reliable and needed these attributes to be part of the platform's interfaces, such as the login page. That is:",
+                "2": "Visually unprofessional login interface, as it is not very modern and does not match the new visual identity of the brand",
+                "3": "The platform has customizable interfaces according to the two main brand colors of each company/client. Therefore, the challenge of creating an interface that is adaptable and coherent for this situation arises.",
+                "4": "The interface needs to be customizable, adaptable and have good readability, legibility and visual consistency for different situations"
+            }
+        },
+        "solution": {
+            "title": "Solution",
+            "items": {
+                "1": "Create a more professional, modern, reliable and customizable interface"
+            }
+        },
+        "userPersona": {
+            "title": "User persona",
+            "name": { "1": "Name", "2": "Cleiton" },
+            "age": {"1": "Age", "2": "32 years old"},
+            "subtitle": "Characteristics",
+            "description": "A modern entrepreneur, has a good technological aptitude, analyzes a platform a lot before buying, is demanding with the product, and is not afraid to change platforms if he is not satisfied. Dislikes complexities in the onboarding process. He is proactive and open to new ideas."
+        },
+        "userFlow": {
+            "title": "User flow diagram"
+        },
+        "beforeAndAfter": {
+            "title": "Before and after",
+            "subtitles": {"1": "Before","2": "After"},
+            "description": "I have defined a recommended color palette for the platform that is compatible with different visual identities and with the neutral system default colors."
+        }
+    },
+    "sideMenu": {
+        "there4you": 
+            {
+                "1": "Introduction",
+                "2": "My role and team",
+                "3": "Methodology",
+                "4": "Problems",
+                "5": "Solution",
+                "6": "Competitive analysis",
+                "7": "Research",
+                "8": "User empathy map",
+                "9": "User persona",
+                "10": "User flow diagram",
+                "11": "Wireframes",
+                "12": "Prototype",
+                "13": "Style guide"
+            }
+        ,
+        "becon": {
+            "1": "Introduction",
+            "2": "My role",
+            "3": "Problems & challenges",
+            "4": "Solution",
+            "5": "User persona",
+            "6": "User flow diagram",
+            "7": "Before and after"
+        },
+        "letsPractice": {
+            "1": "Introduction",
+            "2": "My role",
+            "3": "Problems",
+            "4": "Goals",
+            "5": "Competitive analysis",
+            "6": "User empathy map",
+            "7": "User persona",
+            "8": "User journey map",
+            "9": "User flow diagram",
+            "10": "Wireframes",
+            "11": "Style guide"
+        }
+    },
+    "contact": {
+        "title": "Get in Touch!",
+        "inputs": {
+            "1": {
+                "label": "Your name",
+                "placeholder": "Your name"
+            },
+            "2": {
+                "label": "Your email",
+                "placeholder": "Your email"
+            },
+            "3": {
+                "label": "Message",
+                "placeholder": "Write your message here. At least 50 characters long"
+            }
+        },
+        "subtitle": "Services",
+        "checkboxes": {
+            "1": "Ux Design",
+            "2": "Visual identity",
+            "3": "UI Design",
+            "4": "Development"
+        },
+        "button": "Send",
+        "toastUpdateRender": "Sent!",
+        "toastUpdateRenderFailed": "Failed"
+    }
+  }

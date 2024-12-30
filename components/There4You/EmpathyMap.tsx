@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
 import { FadedDiv, FadedH3, FadedH4 } from "../Framer/MotionComponents";
 import { useInView } from "react-hook-inview";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export const empathyMapEvent = new Event("t4y-empathy-visible");
 
 export default function EmpathyMap({}: Props) {
+  const t = useTranslations("there4you.userEmpathyMap");
+
   const [ref, isVisible] = useInView({
     threshold: 0.2,
   });
@@ -24,76 +28,84 @@ export default function EmpathyMap({}: Props) {
     >
       <span id="empathy-map" className="absolute translate-y-[-20vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold justify-self-center">
-        User empathy map
+        {t("title")}
       </FadedH3>
       <div className="grid xl:grid-cols-empathyMap gap-x-10 gap-y-6 lg:gap-x-20 lg:gap-y-12">
         <div className="grid grid-cols-2 gap-x-9 gap-y-8">
-          <FadedH4 className="col-span-2 t4y-empathy-card-title">Says</FadedH4>
+          <FadedH4 className="col-span-2 t4y-empathy-card-title">{t("sections.1.title")}</FadedH4>
           <FadedDiv className="t4y-empathy-card bg-[#EABFFF]">
-            That place is very dangerous, I&apos;m not going alone
+          {t("sections.1.items.1")}
           </FadedDiv>
           <FadedDiv className="t4y-empathy-card bg-[#EABFFF]">
-            There are many unknown men over there, let&apos;s change the route
+          {t("sections.1.items.2")}
           </FadedDiv>
           <FadedDiv className="t4y-empathy-card bg-[#EABFFF]">
-            I&apos;m leaving work a little late, can you pick me up?
+          {t("sections.1.items.3")}
           </FadedDiv>
           <FadedDiv className="t4y-empathy-card bg-[#EABFFF]">
-            Can you walk me to the bus stop, friend?
+          {t("sections.1.items.4")}
           </FadedDiv>
         </div>
         <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-6 lg:gap-x-9 lg:gap-y-8">
           <FadedH4 className="col-span-2 xl:col-span-3 t4y-empathy-card-title">
-            Thinks
+          {t("sections.2.title")}
           </FadedH4>
           <FadedDiv className="t4y-empathy-card bg-[#FFB7EF]">
-            How can I escape if they harass me here?
+          {t("sections.2.items.1")}
           </FadedDiv>
           <FadedDiv className="t4y-empathy-card bg-[#FFB7EF]">
-            How will I call for help quickly if something suspicious happens?
+          {t("sections.2.items.2")}
           </FadedDiv>
           <FadedDiv className="t4y-empathy-card bg-[#FFB7EF]">
-            I need to try to leave early before it gets later and dangerous.
+          {t("sections.2.items.3")}
           </FadedDiv>
           <FadedDiv className="t4y-empathy-card bg-[#FFB7EF]">
-            It is very difficult to be a woman
+          {t("sections.2.items.4")}
           </FadedDiv>
           <FadedDiv className="t4y-empathy-card bg-[#FFB7EF]">
-            If I go out alone I might get harassed
+          {t("sections.2.items.5")}
           </FadedDiv>
           <FadedDiv className="t4y-empathy-card bg-[#FFB7EF]">
-            I can&apos;t stand feeling scared anymore
+          {t("sections.2.items.6")}
           </FadedDiv>
         </div>
         <div className="grid grid-cols-2 gap-x-9 gap-y-8">
-          <FadedH4 className="col-span-2 t4y-empathy-card-title">Does</FadedH4>
+          <FadedH4 className="col-span-2 t4y-empathy-card-title">{t("sections.3.title")}</FadedH4>
           <FadedDiv className="t4y-empathy-card bg-[#FFAD75]">
-            Share Uber location with people
+          {t("sections.3.items.1")}
           </FadedDiv>
           <FadedDiv className="t4y-empathy-card bg-[#FFAD75]">
-            Avoid going near unknown men when alone
+          {t("sections.3.items.2")}
           </FadedDiv>
           <FadedDiv className="t4y-empathy-card bg-[#FFAD75]">
-            Always try to find a company to go somewhere, especially at night
+          {t("sections.3.items.3")}
           </FadedDiv>
           <FadedDiv className="t4y-empathy-card bg-[#FFAD75]">
-            Avoid going places out of fear
+          {t("sections.3.items.4")}
           </FadedDiv>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-9 gap-y-8">
           <FadedH4 className="col-span-2 lg:col-span-3 t4y-empathy-card-title">
-            Feels
+          {t("sections.4.title")}
           </FadedH4>
-          <FadedDiv className="t4y-empathy-card bg-[#B9DDF6]">Unsafe</FadedDiv>
-          <FadedDiv className="t4y-empathy-card bg-[#B9DDF6]">Fear</FadedDiv>
-          <FadedDiv className="t4y-empathy-card bg-[#B9DDF6]">Dread</FadedDiv>
+          <FadedDiv className="t4y-empathy-card bg-[#B9DDF6]">{t("sections.4.items.1")}</FadedDiv>
+          <FadedDiv className="t4y-empathy-card bg-[#B9DDF6]">{t("sections.4.items.2")}</FadedDiv>
+          <FadedDiv className="t4y-empathy-card bg-[#B9DDF6]">{t("sections.4.items.3")}</FadedDiv>
           <FadedDiv className="t4y-empathy-card bg-[#B9DDF6]">
-            Insomnia
+          {t("sections.4.items.4")}
           </FadedDiv>
-          <FadedDiv className="t4y-empathy-card bg-[#B9DDF6]">Worry</FadedDiv>
-          <FadedDiv className="t4y-empathy-card bg-[#B9DDF6]">Anxiety</FadedDiv>
+          <FadedDiv className="t4y-empathy-card bg-[#B9DDF6]">{t("sections.4.items.5")}</FadedDiv>
+          <FadedDiv className="t4y-empathy-card bg-[#B9DDF6]">{t("sections.4.items.6")}</FadedDiv>
         </div>
       </div>
     </section>
   );
+}
+
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }
