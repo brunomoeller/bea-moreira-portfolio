@@ -9,9 +9,11 @@ import { ToastContainer } from "react-toastify";
 import Script from "next/script";
 import { GetStaticPropsContext } from "next";
 
-type Props = {};
+type Props = {
+  locale: string;
+};
 
-export default function contact({}: Props) {
+export default function contact({ locale }: Props) {
   return (
     <>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-51DXXN4Q2P"></Script>
@@ -28,7 +30,7 @@ export default function contact({}: Props) {
       >
         <Header />
         <div className="form-container">
-          <Form />
+          <Form locale={locale} />
         </div>
         <Footer />
       </main>
@@ -51,7 +53,8 @@ export default function contact({}: Props) {
 export async function getStaticProps({locale}: GetStaticPropsContext) {
   return {
     props: {
-      messages: (await import(`../messages/${locale}.json`)).default
+      messages: (await import(`../messages/${locale}.json`)).default,
+      locale
     }
   };
 }
