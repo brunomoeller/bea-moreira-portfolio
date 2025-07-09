@@ -22,11 +22,12 @@ import Script from "next/script";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
+import Head from "next/head";
 
 type Props = {};
 
 export default function LetsPractice({}: Props) {
-
+const t = useTranslations("letsPractice");
   const [isLoading, setLoading] = useState(true);
   const Lottie = useMemo(
     () => dynamic(() => import("lottie-react"), { ssr: false }),
@@ -49,6 +50,19 @@ export default function LetsPractice({}: Props) {
 
   return (
     <>
+    <Head>
+        <title>Beatriz Moreira | Let&apos;s Practice</title>
+        <meta
+          name="description"
+          content={t("introduction.paragraphs.1") + t("myRole.paragraphs.1")}
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.25"
+        />
+        <meta name="color-scheme" content="light only"></meta>
+        <link rel="icon" href="/favicon.svg" />
+      </Head>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-51DXXN4Q2P"></Script>
       <Script id="google-analytics" strategy="afterInteractive">
         {

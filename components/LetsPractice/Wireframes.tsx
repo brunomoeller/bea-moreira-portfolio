@@ -1,6 +1,6 @@
-import highFidelity from "@/public/images/lets-practice/letspractice-high-fidelity.png";
-import lowFidelity1 from "@/public/images/lets-practice/letspractice-low-fidelity-1.svg";
-import lowFidelity2 from "@/public/images/lets-practice/letspractice-low-fidelity-2.svg";
+import highFidelity from "@/public/images/lets-practice/letspractice-high-fidelity.webp";
+import lowFidelity1 from "@/public/images/lets-practice/letspractice-low-fidelity-1.webp";
+import lowFidelity2 from "@/public/images/lets-practice/letspractice-low-fidelity-2.webp";
 import { GetStaticPropsContext } from "next";
 import Image from "next/image";
 import { useEffect } from "react";

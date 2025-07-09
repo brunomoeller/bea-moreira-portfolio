@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import figmaIcon from "@/public/icons/figmaIcon.svg";
 import { quicksand } from "@/utils/fonts";
-import letsPracticeHero from "@/public/images/lets-practice/letspractice-hero.png";
+import letsPracticeHero from "@/public/images/lets-practice/letspractice-hero.webp";
 import {
   FadedDiv,
   FadedH3,

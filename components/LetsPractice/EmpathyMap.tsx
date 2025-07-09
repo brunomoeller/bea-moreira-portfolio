@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
-import empathyMap from "@/public/images/lets-practice/letspractice-empathy-map.png";
+import empathyMap from "@/public/images/lets-practice/letspractice-empathy-map.webp";
 import cardsIcon from "@/public/icons/cardsIcon.svg";
 import lugIcon from "@/public/icons/lugIcon.svg";
 import moneyIcon from "@/public/icons/moneyIcon.svg";

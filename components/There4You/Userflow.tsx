@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
-import diagram from "@/public/images/there4you/t4y-userflow.svg";
+import diagram from "@/public/images/there4you/t4y-userflow.webp";
 import { FadedH3 } from "../Framer/MotionComponents";
 import { useInView } from "react-hook-inview";
 import { GetStaticPropsContext } from "next";

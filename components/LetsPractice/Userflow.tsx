@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
-import diagram from "@/public/images/lets-practice/letspractice-userflow.png";
+import diagram from "@/public/images/lets-practice/letspractice-userflow.webp";
 import { FadedH3 } from "../Framer/MotionComponents";
 import { useInView } from "react-hook-inview";
 import { GetStaticPropsContext } from "next";

@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import introduction from "@/public/images/there4you/t4y-introduction.png";
-import connect from "@/public/images/there4you/t4y-connect.png";
-import home from "@/public/images/there4you/t4y-home.png";
-import letsPractice from "@/public/images/lets-practice/letspractice.png";
-import becon from "@/public/images/becon/becon-login-mobile.png";
+import introduction from "@/public/images/there4you/t4y1.webp";
+import connect from "@/public/images/there4you/t4y2.webp";
+import home from "@/public/images/there4you/t4y3.webp";
+import letsPractice from "@/public/images/lets-practice/letspractice.webp";
+import becon from "@/public/images/becon/becon-mobile.webp";
 import redirectIcon from "@/public/icons/redirectIcon.svg";
 import { FadedDiv } from "../Framer/MotionComponents";
 import { GetStaticPropsContext } from "next";
@@ -122,7 +122,7 @@ export default function Projects({}: Props) {
     >
       <Image
         quality={100}
-        className="h-96 w-auto"
+        className="h-[22rem] w-auto rounded-2xl"
         src={img}
         alt={`t4y-${idx}`}
       />

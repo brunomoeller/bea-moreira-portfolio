@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
-import beconBefore from "@/public/images/becon/becon-before.png";
-import beconAfter from "@/public/images/becon/becon-after.png";
-import beconMobile from "@/public/images/becon/becon-mobile.png";
+import beconBefore from "@/public/images/becon/becon-before.webp";
+import beconAfter from "@/public/images/becon/becon-after.webp";
+import beconMobile from "@/public/images/becon/becon-mobile.webp";
 import customColors from "@/public/images/becon/becon-custom-colors.svg";
-import customPresentation from "@/public/images/becon/custom-presentation.png";
+import customPresentation from "@/public/images/becon/custom-presentation.webp";
 import {
   FadedH3,
   FadedH4,

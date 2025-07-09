@@ -1,4 +1,4 @@
-import styleGuide from "@/public/images/there4you/style-guide.png";
+import styleGuide from "@/public/images/there4you/style-guide.webp";
 import { GetStaticPropsContext } from "next";
 import Image from "next/image";
 import { useEffect } from "react";
