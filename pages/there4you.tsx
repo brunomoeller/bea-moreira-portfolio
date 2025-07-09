@@ -55,7 +55,7 @@ export default function There4you({ locale }: Props) {
         <title>Beatriz Moreira | There4You</title>
         <meta
           name="description"
-          content={t("description") + t("introduction.paragraphs.1") + t("introduction.paragraphs.2") + t("introduction.paragraphs.3") + t("introduction.paragraphs.4") + t("introduction.paragraphs.5") + t("introduction.paragraphs.6") + t("introduction.paragraphs.7") + t("introduction.paragraphs.8" + t("introduction.paragraphs.9"))}
+          content={t("description") + t("introduction.paragraphs.1") + t("introduction.paragraphs.2") + t("introduction.paragraphs.3") + t("introduction.paragraphs.4") + t("introduction.paragraphs.5") + t("introduction.paragraphs.6") + t("introduction.paragraphs.7") + t("introduction.paragraphs.8") + t("introduction.paragraphs.9")}
         />
         <meta
           name="viewport"
