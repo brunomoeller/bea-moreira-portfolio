@@ -48,7 +48,7 @@ export default function Footer({}: Props) {
         </Link>
       </div>
       <div className="row-start-2 col-start-2 md:col-start-3 md:row-start-auto md:justify-self-end">
-        <Link className="text-md md:text-lg text-darker-white" href="/about">
+        <Link className="text-md md:text-lg text-darker-white" href="#about">
         {t("exploreMenu.about")}&nbsp;&nbsp;&nbsp;&nbsp;
         </Link>
       </div>
