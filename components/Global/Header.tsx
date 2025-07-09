@@ -79,6 +79,11 @@ export default function Header({}: Props) {
         </Link>
         <nav className="flex items-center justify-center gap-7 list-none">
           <li className="hidden md:inline md:w-24">
+            <Link className="menu-link" href="/#about">
+              {t("about")}
+            </Link>
+          </li>
+          <li className="hidden md:inline md:w-24">
             <Link className="menu-link" href="/#projects">
               {t("projects")}
             </Link>
@@ -86,11 +91,6 @@ export default function Header({}: Props) {
           <li className="hidden md:inline md:w-24">
             <Link className="menu-link" href="/#services">
               {t("services")}
-            </Link>
-          </li>
-          <li className="hidden md:inline md:w-24">
-            <Link className="menu-link" href="/about">
-              {t("about")}
             </Link>
           </li>
           <li className="hidden md:inline md:w-24">

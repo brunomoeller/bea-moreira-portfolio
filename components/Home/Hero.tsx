@@ -1,5 +1,5 @@
-import React from "react";
-import Lottie from "lottie-react";
+import React, { useMemo } from "react";
+// import Lottie from "lottie-react";
 import penAnimation from "@/public/penAnimation.json";
 import {
   LeftToRightSubtitle,
@@ -7,24 +7,35 @@ import {
 } from "../Framer/MotionComponents";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
+
 
 type Props = {};
 
 export default function Hero({}: Props) {
   const t = useTranslations("home.hero");
+  const Lottie = useMemo(
+    () => dynamic(() => import("lottie-react"), { ssr: false }),
+    []
+  );
 
   return (
     <section
       className={`col-span-12 grid grid-cols-12 items-center mt-16 font-quicksand`}
     >
-      <div className="col-span-12 items-center lg:col-span-5 flex flex-col gap-y-6">
-        <LeftToRightTitle className="xl:text-5xl md:text-start text-start text-4xl text-darker-white font-bold">
+      <div className="col-span-12 items-center lg:col-span-5 flex flex-col gap-y-16 md:justify-center">
+        <LeftToRightTitle className="text-center xl:text-5xl md:text-start text-4xl text-darker-white font-bold">
           {t("title")}
         </LeftToRightTitle>
-
-        <LeftToRightSubtitle className="text-start lg:text-start text-base text-darker-white leading-8 font-poppins">
-          {t("headline")}
+        <div className="self-center sm:w-[80%] items-start flex flex-col gap-8 lg:w-[90%] lg:self-start">
+          <LeftToRightSubtitle className="text-start lg:text-start text-base text-darker-white leading-8 font-poppins">
+          {t("headline_1")}
         </LeftToRightSubtitle>
+        <LeftToRightSubtitle className="text-start lg:text-start text-base text-darker-white leading-8 font-poppins">
+          {t("headline_2")}
+        </LeftToRightSubtitle>
+        </div>
+        
       </div>
       <div
         id="projects"

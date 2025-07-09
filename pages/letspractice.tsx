@@ -1,5 +1,5 @@
 import Footer from "@/components/Global/Footer";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Hero from "@/components/LetsPractice/Hero";
 import Introduction from "@/components/LetsPractice/Introduction";
 import Problems from "@/components/LetsPractice/Problems";
@@ -16,17 +16,22 @@ import Role from "@/components/LetsPractice/Role";
 import Goals from "@/components/LetsPractice/Goals";
 import UserJourneyMap from "@/components/LetsPractice/UserJourneyMap";
 import Header from "@/components/Global/Header";
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
 import loadingAnimation from "@/public/icons/loading.json";
 import Script from "next/script";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
 
 type Props = {};
 
 export default function LetsPractice({}: Props) {
 
   const [isLoading, setLoading] = useState(true);
+  const Lottie = useMemo(
+    () => dynamic(() => import("lottie-react"), { ssr: false }),
+    []
+  );
 
   useEffect(() => {
     const onPageLoad = () => {

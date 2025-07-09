@@ -22,9 +22,9 @@ export default function Services({}: Props) {
         duration: 0.5,
       }}
       id="services"
-      className="col-span-12 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-4 items-center justify-center mt-48 lg:mt-72 font-quicksand snap-center snap-always"
+      className="col-span-12 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-6 items-center justify-center mt-48 lg:mt-72 font-quicksand snap-center snap-always"
     >
-      <div className="lg:row-span-4 grid items-center justify-center">
+      <div className="lg:row-span-6 grid items-center justify-center">
         <h2 className="text-3xl lg:text-5xl text-darker-white font-bold">
           {t("title")}
         </h2>
@@ -38,11 +38,14 @@ export default function Services({}: Props) {
       <div className="lg:w-102 lg:justify-items-start grid items-center justify-items-center w-full h-24 lg:h-36 border-b border-b-[#353535]">
         <h3 className="service-title">{t("categories.3")}</h3>
       </div>
-      <div className="lg:w-102 lg:justify-items-start justify-items-center grid items-end w-full h-24 lg:h-36">
+      <div className="lg:w-102 lg:justify-items-start grid items-center justify-items-center w-full h-24 lg:h-36 border-b border-b-[#353535]">
         <h3 className="service-title">{t("categories.4")}</h3>
-        <p className="text-base lg:text-xl self-start text-darker-gray">
-        {t("categories.5")}
-        </p>
+      </div>
+      <div className="lg:w-102 lg:justify-items-start grid items-center justify-items-center w-full h-24 lg:h-36 border-b border-b-[#353535]">
+        <h3 className="service-title">{t("categories.5")}</h3>
+      </div>
+      <div className="lg:w-102 lg:justify-items-start grid items-center justify-items-center w-full h-24 lg:h-36">
+        <h3 className="service-title">{t("categories.6")}</h3>
       </div>
     </motion.section>
   );

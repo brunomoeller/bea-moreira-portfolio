@@ -1,23 +1,30 @@
 {
     "home": {
       "hero": {
-        "title": "Solving design problems in a beautiful way",
-        "headline": "Hello! I'm Beatriz, a creative designer with a keen eye for detail and a commitment to delivering solutions that are both functional and visually appealing."
+        "title": "Designing pathways to powerful solutions",
+        "headline_1": "I'm a professional designer with 6+ years of experience in design, marketing and branding. My background in social communication and advertising informs my approach to creating solutions that communicate effectively with impact.",
+        "headline_2": "I love learning about new trends, techniques and technologies that can help me deliver functional and visually appealing solutions that meet user needs and business objectives."
       },
       "redirectLinks": {
         "there4you": "Product design / Mobile App",
         "letsPractice": "Landing page",
-        "becon": "Login page (Web and Mobile)"
+        "becon": "Chatbot platform"
+      },
+      "projectsPhrases": {
+        "there4you": "Helping women reclaim their sense of safety",
+        "letsPractice": "Transforming language barriers into bridges",
+        "becon": "Helping businesses to sell more through WhatsApp"
       },
       "services": {
         "title": "Services",
        "categories": 
             {
-                "1":"UX/UI",
-                "2":"Web & Mobile App",
-                "3":"Visual identity",
-                "4":"Development",
-                "5": "In collaboration with expert developers."
+                "1":"Product Design (UX/UI)",
+                "2":"Landing Pages",
+                "3":"Institutional website",
+                "4":"E-commerce",
+                "5": "Presentations",
+                "6": "Visual identity"
             }
       }
     },
@@ -78,7 +85,7 @@
         "myRole": {
             "title": "My role and team",
             "items": {
-                "role": {"1": "My role:", "2": "Founder / Product Designer"},
+                "role": {"1": "My role:", "2": "Founder / Graphic designer / Product designer / Designer UX / UI "},
                 "team": {"1": "Team / Founders:", "2": "Me (Beatriz Moreira); Beatriz Fonseca; Iris Nascimento and Giovanna Savazo"}
             }
         },
@@ -476,8 +483,8 @@
         "problems": {
             "title": "Problems & challenges",
             "items": {
-                "1": "When I joined the startup team, it was in a process of changes related to its growth. The company was changing its visual identity to present itself as more modern and reliable and needed these attributes to be part of the platform's interfaces, such as the login page. That is:",
-                "2": "Visually unprofessional login interface, as it is not very modern and does not match the new visual identity of the brand",
+                "1": "When I joined the startup team, it was in a process of changes related to its growth. The company was changing its visual identity to present itself as more modern and reliable and needed these attributes to be part of the platform's interfaces, such as the login page. ",
+                "2": "There is a visual mismatch between the login interface and the brand’s new identity, which could affect the perception of cohesiveness.",
                 "3": "The platform has customizable interfaces according to the two main brand colors of each company/client. Therefore, the challenge of creating an interface that is adaptable and coherent for this situation arises.",
                 "4": "The interface needs to be customizable, adaptable and have good readability, legibility and visual consistency for different situations"
             }

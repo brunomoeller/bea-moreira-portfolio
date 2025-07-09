@@ -1,5 +1,5 @@
 import Footer from "@/components/Global/Footer";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Hero from "@/components/Becon/Hero";
 import Introduction from "@/components/Becon/Introduction";
 import Problems from "@/components/Becon/Problems";
@@ -11,18 +11,22 @@ import Role from "@/components/Becon/Role";
 import Solution from "@/components/Becon/Solution";
 import BeforeAndAfter from "@/components/Becon/BeforeAndAfter";
 import Header from "@/components/Global/Header";
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
 import loadingAnimation from "@/public/icons/loading.json";
 import Script from "next/script";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
 
 type Props = {};
 
 export default function Becon({}: Props) {
 
   const [isLoading, setLoading] = useState(true);
-
+  const Lottie = useMemo(
+    () => dynamic(() => import("lottie-react"), { ssr: false }),
+    []
+  );
   useEffect(() => {
     const onPageLoad = () => {
       setLoading(false);

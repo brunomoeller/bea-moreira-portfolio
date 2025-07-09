@@ -1,5 +1,5 @@
-import React from "react";
 import { motion } from "framer-motion";
+import React, { forwardRef } from "react";
 
 type Props = {
   children?: React.ReactNode;
@@ -51,20 +51,25 @@ export function LeftToRightSubtitle({ children, className, id }: Props) {
   );
 }
 
-export function FadedDiv({ children, className, id }: Props) {
-  return (
-    <motion.div
-      id={id}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
-      className={`${className}`}
-    >
-      {children}
-    </motion.div>
-  );
-}
+export const FadedDiv = forwardRef<HTMLDivElement, Props>(
+  ({ children, className, id }, ref) => {
+    return (
+      <motion.div
+        ref={ref}
+        id={id}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className={className}
+      >
+        {children}
+      </motion.div>
+    );
+  }
+);
+
+FadedDiv.displayName = "FadedDiv";
 
 export function FadedTitle({ children, className, id }: Props) {
   return (

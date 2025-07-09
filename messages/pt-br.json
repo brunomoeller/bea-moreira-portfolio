@@ -2,21 +2,28 @@
     "home": {
         "hero": {
             "title": "Resolvendo problemas de design de forma bonita",
-            "headline": "Olá! Eu sou a Beatriz, uma designer criativa com um olhar atento aos detalhes e um compromisso em entregar soluções que sejam funcionais e visualmente atraentes."
+            "headline_1": "Designer profissional com mais de 6 anos de experiência em design, marketing e branding. Minha formação em comunicação social e publicidade influencia minha abordagem na criação de soluções que se comunicam de forma eficaz e impactante.",
+            "headline_2": "Adoro aprender sobre novas tendências, técnicas e tecnologias que podem me ajudar a entregar soluções funcionais e visualmente atraentes, que atendam às necessidades dos usuários e aos objetivos do negócio."
         },
         "redirectLinks": {
             "there4you": "Design de produto / Aplicativo móvel",
             "letsPractice": "Landing page",
             "becon": "Página de login (Web e Mobile)"
         },
+         "projectsPhrases": {
+            "there4you": "Ajudando mulheres a se sentirem seguras",
+            "letsPractice": "Transformando barreiras linguísticas em pontes",
+            "becon": "Ajudando empresas a venderem mais pelo WhatsApp"
+      },
         "services": {
             "title": "Serviços",
             "categories": {
-            "1": "UX/UI",
-            "2": "Aplicativos Web & Mobile",
-            "3": "Identidade visual",
-            "4": "Desenvolvimento",
-            "5": "Em colaboração com desenvolvedores especialistas."
+                "1":"Design de Produto (UX/UI)",
+                "2":"Landing Pages",
+                "3":"Site Institucional",
+                "4":"E-commerce",
+                "5": "Apresentações",
+                "6": "Identidade Visual"
             }
         }
     },
@@ -76,7 +83,7 @@
         "myRole": {
             "title": "Meu papel e equipe",
             "items": {
-            "role": { "1": "Meu papel:", "2": "Fundadora / Designer de Produto" },
+            "role": { "1": "Meu papel:", "2": "Fundadora / Designer Gráfica / Designer de Produto / Designer UX / UI" },
             "team": { "1": "Equipe / Fundadoras:", "2": "Eu (Beatriz Moreira); Beatriz Fonseca; Iris Nascimento e Giovanna Savazo" }
             }
         },
@@ -469,8 +476,8 @@
         "problems": {
             "title": "Problemas e desafios",
             "items": {
-                "1": "Quando entrei para a equipe da startup, ela estava em um processo de mudanças relacionadas ao seu crescimento. A empresa estava alterando sua identidade visual para se apresentar como mais moderna e confiável e precisava que esses atributos também estivessem presentes nas interfaces da plataforma, como na página de login. Ou seja:",
-                "2": "Interface de login visualmente pouco profissional, não muito moderna e que não condiz com a nova identidade visual da marca.",
+                "1": "Quando entrei para a equipe da startup, ela estava em um processo de mudanças relacionadas ao seu crescimento. A empresa estava alterando sua identidade visual para se apresentar como mais moderna e confiável e precisava que esses atributos também estivessem presentes nas interfaces da plataforma, como na página de login.",
+                "2": "Há uma discrepância visual entre a interface de login e a nova identidade da marca, o que pode afetar a percepção de coesão.",
                 "3": "A plataforma possui interfaces personalizáveis de acordo com as duas principais cores da marca de cada empresa/cliente. Portanto, surge o desafio de criar uma interface adaptável e coerente para esta situação.",
                 "4": "A interface precisa ser personalizável, adaptável e ter boa leitura, legibilidade e consistência visual para diferentes situações."
             }

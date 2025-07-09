@@ -15,10 +15,11 @@ import Userflow from "@/components/There4You/Userflow";
 import Wireframes from "@/components/There4You/Wireframes";
 import loadingAnimation from "@/public/icons/loading.json";
 import { poppins, quicksand } from "@/utils/fonts";
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
 import { GetStaticPropsContext } from "next";
+import dynamic from "next/dynamic";
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Props = {
   locale: string;
@@ -26,6 +27,10 @@ type Props = {
 
 export default function There4you({ locale }: Props) {
   const [isLoading, setLoading] = useState(true);
+  const Lottie = useMemo(
+    () => dynamic(() => import("lottie-react"), { ssr: false }),
+    []
+  );
 
   useEffect(() => {
     const onPageLoad = () => {

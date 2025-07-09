@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import introduction from "@/public/images/there4you/t4y-introduction.png";
 import connect from "@/public/images/there4you/t4y-connect.png";
@@ -15,72 +15,30 @@ type Props = {};
 
 export default function Projects({}: Props) {
   const t = useTranslations("home.redirectLinks");
+  const t2 = useTranslations("home.projectsPhrases");
+
+  const carouselImages = [introduction, connect, home];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+  const handleScroll = () => {
+    if (!carouselRef.current) return;
+    const scrollLeft = carouselRef.current.scrollLeft;
+    const slideWidth = carouselRef.current.offsetWidth * 0.8;
+    const index = Math.round(scrollLeft / slideWidth);
+    setCurrentIndex(index);
+  };
+
+  const node = carouselRef.current;
+  if (!node) return;
+  node.addEventListener("scroll", handleScroll, { passive: true });
+  return () => node.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <main className="col-span-12 grid grid-cols-2 gap-y-6 gap-x-4 mt-24 font-poppins">
-      <FadedDiv
-        className="order-1 md:justify-center sm:flex sm:overflow-x-hidden col-span-2 grid grid-cols-t4yScroll items-center justify-items-start 
-        h-100 rounded-3xl 
-        bg-gradient-to-b from-linear-pink-1 via-linear-pink-2 to-Linear-pink-3 overflow-x-scroll scrollbar-hide overflow-y-hidden snap-x snap-mandatory"
-      >
-        <Link
-          href="/there4you"
-          className="w-[80vw] flex relative items-center justify-center snap-center snap-always sm:w-auto hover:cursor-pointer"
-        >
-          <Image
-            quality={100}
-            className="h-96 w-auto"
-            src={introduction}
-            alt="t4y sign in"
-          />
-          <div className="grid grid-cols-3 gap-x-1 absolute bottom-0 sm:hidden">
-            <span className="w-2 h-2 bg-white rounded-full" />
-            <span className="w-2 h-2 bg-white/50 rounded-full" />
-            <span className="w-2 h-2 bg-white/50 rounded-full" />
-          </div>
-        </Link>
-        <Link
-          href="/there4you"
-          className="w-[80vw] flex relative items-center justify-center snap-center snap-always sm:w-auto"
-        >
-          <Image
-            quality={100}
-            className="h-96 w-auto sm:translate-y-4"
-            src={connect}
-            alt="t4y connect"
-          />
-          <div className="grid grid-cols-3 gap-x-1 absolute bottom-0 sm:hidden">
-            <span className="w-2 h-2 bg-white/50 rounded-full" />
-            <span className="w-2 h-2 bg-white rounded-full" />
-            <span className="w-2 h-2 bg-white/50 rounded-full" />
-          </div>
-        </Link>
-        <Link
-          href="/there4you"
-          className="w-[80vw] flex relative items-center justify-center snap-center snap-always sm:w-auto"
-        >
-          <Image
-            quality={100}
-            className="h-96 w-auto"
-            src={home}
-            alt="t4y home"
-          />
-          <div className="grid grid-cols-3 gap-x-1 absolute bottom-0 sm:hidden">
-            <span className="w-2 h-2 bg-white/50 rounded-full" />
-            <span className="w-2 h-2 bg-white/50 rounded-full" />
-            <span className="w-2 h-2 bg-white rounded-full" />
-          </div>
-        </Link>
-      </FadedDiv>
-      <div className="order-2 sm:order-1 col-span-2 flex items-center justify-self-center sm:justify-self-start gap-x-4">
-        <Link
-          className="text-base md:text-xl text-darker-white font-medium"
-          href="/there4you"
-        >
-          {t("there4you")}
-        </Link>
-        <Image className="h-3 w-3" src={redirectIcon} alt="go to" />
-      </div>
+      {/* Let's Practice */}
       <Link
         href="/letspractice"
         className="order-3 sm:order-1 col-span-2 sm:col-span-1 flex items-start justify-center 
@@ -94,6 +52,8 @@ export default function Projects({}: Props) {
           alt="lets practice"
         />
       </Link>
+
+      {/* Becon */}
       <Link
         href="/becon"
         className="order-5 sm:order-1 col-span-2 sm:col-span-1 flex justify-center items-center 
@@ -102,35 +62,113 @@ export default function Projects({}: Props) {
       >
         <Image className="h-101 w-auto" src={becon} alt="becon login page" />
       </Link>
-      <div className="order-4 sm:order-1 sm:col-span-1 sm:justify-self-auto flex items-center col-span-2 justify-self-center gap-x-4">
-        <Link
-          className="text-base md:text-xl text-darker-white font-medium"
-          href="/letspractice"
-        >
-          {t("letsPractice")}
-        </Link>
-        <Image className="h-3 w-3" src={redirectIcon} alt="go to" />
+
+      {/* Let's Practice Text */}
+      <div className="order-4 sm:order-1 sm:col-span-1 sm:justify-self-auto flex flex-col items-start col-span-2 justify-self-center gap-x-4 gap-y-2">
+        <div className="flex items-center col-span-2 justify-self-center gap-x-4">
+          <Link
+            className="text-base md:text-xl text-darker-white font-medium"
+            href="/letspractice"
+          >
+            {t("letsPractice")}
+          </Link>
+          <Image className="h-3 w-3" src={redirectIcon} alt="go to" />
+        </div>
+        <h1 className="font-quicksand font-bold text-darker-white text-3xl md:w-[60%] leading-[1.8]">
+          {t2("letsPractice")}
+        </h1>
       </div>
+
+      {/* Becon Text */}
       <div
         id="services"
-        className="order-6 sm:order-1 sm:col-span-1 sm:justify-self-auto flex items-center col-span-2 justify-self-center gap-x-4"
+        className="order-6 sm:order-1 sm:col-span-1 sm:justify-self-auto flex flex-col items-start col-span-2 justify-self-center gap-x-4 gap-y-2"
       >
-        <Link
-          className="text-base md:text-xl text-darker-white font-medium"
-          href="/becon"
-        >
-          {t("becon")}
-        </Link>
-        <Image className="h-3 w-3" src={redirectIcon} alt="go to" />
+        <div className="flex items-center col-span-2 justify-self-center gap-x-4">
+          <Link
+            className="text-base md:text-xl text-darker-white font-medium"
+            href="/becon"
+          >
+            {t("becon")}
+          </Link>
+          <Image className="h-3 w-3" src={redirectIcon} alt="go to" />
+        </div>
+        <h1 className="font-quicksand font-bold text-darker-white text-3xl md:w-[70%] leading-[1.8]">
+          {t2("becon")}
+        </h1>
+      </div>
+
+      {/* Carousel Container */}
+<FadedDiv className="order-1 col-span-2 relative h-100 mt-14 rounded-3xl bg-gradient-to-b from-linear-pink-1 via-linear-pink-2 to-Linear-pink-3">
+  {/* Scrollable Flex Row */}
+  <div
+  ref={carouselRef}
+  className="
+    flex h-full
+    px-[10vw] space-x-8
+    overflow-x-auto snap-x snap-mandatory scrollbar-hide
+    sm:justify-center sm:overflow-x-visible sm:snap-none
+  "
+>
+  {carouselImages.map((img, idx) => (
+    <Link
+      key={idx}
+      href="/there4you"
+      className="
+        flex-shrink-0 w-[80vw] sm:w-auto
+        flex items-center justify-center
+        snap-center sm:snap-none
+      "
+    >
+      <Image
+        quality={100}
+        className="h-96 w-auto"
+        src={img}
+        alt={`t4y-${idx}`}
+      />
+    </Link>
+  ))}
+</div>
+
+  {/* Dots stay fixed at bottom center, only on mobile */}
+  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-x-2 sm:hidden">
+    {carouselImages.map((_, idx) => (
+      <span
+        key={idx}
+        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+          currentIndex === idx ? "bg-white" : "bg-white/50"
+        }`}
+      />
+    ))}
+  </div>
+</FadedDiv>
+
+
+
+
+      {/* There4You Text */}
+      <div className="order-2 sm:order-1 col-span-2 flex flex-col items-start justify-self-center sm:justify-self-start gap-x-4 gap-y-2">
+        <div className="flex items-center col-span-2 justify-self-center gap-x-4">
+          <Link
+            className="text-base md:text-xl text-darker-white font-medium"
+            href="/there4you"
+          >
+            {t("there4you")}
+          </Link>
+          <Image className="h-3 w-3" src={redirectIcon} alt="go to" />
+        </div>
+        <h1 className="font-quicksand font-bold text-darker-white text-3xl leading-[1.8]">
+          {t2("there4you")}
+        </h1>
       </div>
     </main>
   );
 }
 
-export async function getStaticProps({locale}: GetStaticPropsContext) {
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
-      messages: (await import(`../../messages/${locale}.json`)).default
-    }
+      messages: (await import(`../../messages/${locale}.json`)).default,
+    },
   };
 }

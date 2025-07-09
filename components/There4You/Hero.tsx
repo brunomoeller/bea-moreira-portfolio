@@ -55,17 +55,17 @@ export default function Hero({ locale }: Props) {
           >
             {t("title")}
           </LeftToRightTitle>
-          <LeftToRightSubtitle className="col-span-2 md:text-2xl text-[##6C6C6C] font-normal mt-5 lg:w-[33rem] w-72">
+          <LeftToRightSubtitle className="col-span-2 md:text-2xl text-[#171717] font-normal mt-5 lg:w-[33rem] w-72">
             {t("description")}
           </LeftToRightSubtitle>
           <div className="flex mt-8 z-3 w-48 md:w-full">
-            <FadedSpan className="sm:w-5/6 sm:h-12 flex items-center justify-center px-3 py-2 text-sm xl:text-xl text-[#6C6C6C] font-medium border border-[#6C6C6C33]/20 xl:px-8 xl:py-2 rounded-full">
+            <FadedSpan className="sm:w-5/6 sm:h-12 flex items-center justify-center px-3 py-2 text-sm xl:text-xl text-[#171717] font-medium border border-[#6C6C6C33]/20 xl:px-8 xl:py-2 rounded-full">
               {t("type")}
             </FadedSpan>
           </div>
           <div className="ml-10 md:ml-0 flex mt-8 z-3 w-48 md:w-full">
-            <FadedSpan className={`${conditionalWidthClass} sm:h-12 flex items-center justify-center px-3 py-2 sm:px-6 sm:py-4 text-sm xl:text-xl gap-x-2 xl:gap-x-4 border border-[#6C6C6C33]/20 xl:px-8 xl:py-2 rounded-full`}>
-              <h4 className="inline-block">{t("specs")}</h4>
+            <FadedSpan className={`text-[#171717] ${conditionalWidthClass} sm:h-12 flex items-center justify-center px-3 py-2 sm:px-6 sm:py-4 text-sm xl:text-xl gap-x-2 xl:gap-x-4 border border-[#6C6C6C33]/20 xl:px-8 xl:py-2 rounded-full`}>
+              <h4 className="inline-block text-[#171717] font-medium">{t("specs")}</h4>
               <Image src={figmaIcon} alt="Figma" />
               <Image src={photoshopIcon} alt="Photoshop" />
             </FadedSpan>
