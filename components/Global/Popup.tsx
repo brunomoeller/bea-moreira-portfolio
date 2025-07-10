@@ -81,7 +81,7 @@ function Popup({ hidden }: Props) {
             </Link>
           </li>
           <li className="px-4 py-1 border-l-4 rounded-sm">
-            <Link onClick={hidePopup} href="/about">
+            <Link onClick={hidePopup} href="/#about">
             {t("about")}
             </Link>
           </li>

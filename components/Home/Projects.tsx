@@ -74,14 +74,13 @@ export default function Projects({}: Props) {
           </Link>
           <Image className="h-3 w-3" src={redirectIcon} alt="go to" />
         </div>
-        <h1 className="font-quicksand font-bold text-darker-white text-3xl md:w-[60%] leading-[1.8]">
+        <h1 className="font-quicksand font-bold text-darker-white text-3xl md:w-[60%] leading-9">
           {t2("letsPractice")}
         </h1>
       </div>
 
       {/* Becon Text */}
       <div
-        id="services"
         className="order-6 sm:order-1 sm:col-span-1 sm:justify-self-auto flex flex-col items-start col-span-2 justify-self-center gap-x-4 gap-y-2"
       >
         <div className="flex items-center col-span-2 justify-self-center gap-x-4">
@@ -93,7 +92,7 @@ export default function Projects({}: Props) {
           </Link>
           <Image className="h-3 w-3" src={redirectIcon} alt="go to" />
         </div>
-        <h1 className="font-quicksand font-bold text-darker-white text-3xl md:w-[70%] leading-[1.8]">
+        <h1 className="font-quicksand font-bold text-darker-white text-3xl md:w-[70%] leading-9">
           {t2("becon")}
         </h1>
       </div>
@@ -157,11 +156,12 @@ export default function Projects({}: Props) {
           </Link>
           <Image className="h-3 w-3" src={redirectIcon} alt="go to" />
         </div>
-        <h1 className="font-quicksand font-bold text-darker-white text-3xl leading-[1.8]">
+        <h1 className="font-quicksand font-bold text-darker-white text-3xl leading-9">
           {t2("there4you")}
         </h1>
       </div>
     </main>
+    
   );
 }
 

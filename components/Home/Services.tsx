@@ -8,6 +8,7 @@ export default function Services({}: Props) {
   const t = useTranslations("home.services");
 
   return (
+    <>
     <motion.section
       initial={{
         opacity: 0,
@@ -21,9 +22,9 @@ export default function Services({}: Props) {
       transition={{
         duration: 0.5,
       }}
-      id="services"
-      className="col-span-12 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-6 items-center justify-center mt-48 lg:mt-72 font-quicksand snap-center snap-always"
+      className="relative col-span-12 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-6 items-center justify-center mt-48 lg:mt-72 font-quicksand snap-center snap-always"
     >
+      <span id="services" className="absolute -top-[25%] lg:-top-[20%]"></span>
       <div className="lg:row-span-6 grid items-center justify-center">
         <h2 className="text-3xl lg:text-5xl text-darker-white font-bold">
           {t("title")}
@@ -48,6 +49,8 @@ export default function Services({}: Props) {
         <h3 className="service-title">{t("categories.6")}</h3>
       </div>
     </motion.section>
+    </>
+    
   );
 }
 
