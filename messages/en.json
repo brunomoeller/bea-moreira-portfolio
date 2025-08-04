@@ -1,7 +1,7 @@
 {
     "home": {
       "hero": {
-        "title": "Designing pathways to powerful solutions",
+        "title": "Hello,\nI'm Beatriz Moreira",
         "headline_1": "I'm a professional designer with 6+ years of experience in design, marketing and branding. My background in social communication and advertising informs my approach to creating solutions that communicate effectively with impact.",
         "headline_2": "I love learning about new trends, techniques and technologies that can help me deliver functional and visually appealing solutions that meet user needs and business objectives."
       },
@@ -30,7 +30,7 @@
     },
     "menu": {
         "projects": "Projects",
-        "services": "Services",
+        "linkedin": "LinkedIn",
         "about": "About",
         "contact": "Contact",
         "language": "Language",
@@ -464,37 +464,85 @@
         }
     },
     "becon": {
-        "tech": "Design UX/UI Case study",
-        "type": "Login page",
+        "tech": "Product design (UX/UI)",
+        "type": "Chatbot platform",
         "madeWith": "Tool",
         "introduction": {
-            "title": "Introduction",
+            "title": "General",
             "paragraphs": {
-                "1": "Becon is a technological startup that has a chatbot platform as a service to help companies to have more control and agility in their services and also to sell more. The platform has several automation features and integrations."
+                "1": "Becon is a technological startup that has a chatbot platform as a service to help companies to have more control and agility in their services and also to sell more. The platform has several automation features and integrations.",
+                "2": "Role:",
+                "3": "End-to-End UX/UI Product Designer",
+                "4": "Period:",
+                "5": "2022-2023",
+                "6": "Team:",
+                "7": "I worked as a Solo Product Designer (UX/UI), collaborating with Project Manager, Executive Director, Developers, CX Team, Marketing and Branding.",
+                "8": "Overall results:",
+                "9": "Design creation of 20+ features within the platform, helping the team generate more value for the product until its acquisition for R$18M by CRM&Bonus."
+            },
+            "results": {
+                "1": "20+ features",
+                "2": "R$ 18M"
+            },
+            "recovery": {
+                "title": "Recovery of approximately 30% of abandoned e-commerce carts via WhatsApp"
             }
         },
-        "myRole": {
-            "title": "My role",
-            "role": {
-                "1": "My role", 
-                "2": "Designer UX / UI"
+        "context": {
+            "title": "Context",
+            "paragraphs": {
+                "1": "During a period of alignment between business priorities and strategic decisions, the challenge was identified of reducing the cart abandonment rate in e-commerce using WhatsApp, the chatbot platform's main channel."
             }
         },
         "problems": {
-            "title": "Problems & challenges",
+            "title": "Challenge",
             "items": {
-                "1": "When I joined the startup team, it was in a process of changes related to its growth. The company was changing its visual identity to present itself as more modern and reliable and needed these attributes to be part of the platform's interfaces, such as the login page. ",
-                "2": "There is a visual mismatch between the login interface and the brand’s new identity, which could affect the perception of cohesiveness.",
-                "3": "The platform has customizable interfaces according to the two main brand colors of each company/client. Therefore, the challenge of creating an interface that is adaptable and coherent for this situation arises.",
-                "4": "The interface needs to be customizable, adaptable and have good readability, legibility and visual consistency for different situations"
+                "1": "Cart abandonment is one of the biggest challenges in e-commerce",
+                "2": "More than 80% of people abandon the purchase process before making a payment.",
+                "3": "The challenge is to recover lost sales due to cart abandonment in e-commerce by creating a simple, scalable, and effective feature for automatically sending messages via WhatsApp.",
+                "4": "Why WhatsApp?",
+                "5": "Because of its high open rate (almost 100%), compared to only 20% for emails and 12% for SMS."
             }
         },
-        "solution": {
-            "title": "Solution",
+        "goals": {
+            "title": "Goals",
             "items": {
-                "1": "Create a more professional, modern, reliable and customizable interface"
+                "1": "Create an automation feature for cart recovery via WhatsApp",
+                "2": "Increase abandoned cart conversion rate",
+                "3": "Strengthen the product in strategic negotiations"
+            }
+            
+        },
+        "approach": {
+                "title": "Approach",
+                "paragraphs": {
+                    "1": "After mapping the context with the team and conducting research, I prototyped the integration with e-commerce sites, initially for VTEX, and its application in the chatbot flow with the automatic coupon option.",
+                    "2": "The interfaces were designed to be clear, useful, and easy to configure, undergoing constant testing with stakeholders throughout development. The solution was validated with a fashion e-commerce site in a real campaign, generating essential learnings for future iterations."
+                }
+            },
+        "impact": {
+            "title": "Results / Impact",
+            "paragraphs": {
+                "1": "about 30%",
+                "2": "of abandoned carts recovered",
+                "3": "+25%",
+                "4": "incremental revenue",
+                "5": "Functionality has become a competitive differentiator for the product"
             }
         },
+
+        "learning": {
+            "title": "Learnings",
+            "paragraphs": {
+                "1": "Aligning business goals, user experience, and technical feasibility was essential to delivering real impact.",
+                "2": "Working as a team with strategic alignment accelerates decision-making and ensures purposeful delivery",
+                "3": "*For confidentiality reasons, some data and screens have been omitted.",
+                "4": "Sources:",
+                "5": "https://pipelinevalor.globo.com/negocios/noticia/crmandbonus-compra-becon-para-trocar-sms-por-whatsapp.ghtml",
+                "6": "https://www.instagram.com/p/CmpGD5HsyKY/?img_index=5"
+            }
+        },
+
         "userPersona": {
             "title": "User persona",
             "name": { "1": "Name", "2": "Cleiton" },
@@ -530,13 +578,13 @@
             }
         ,
         "becon": {
-            "1": "Introduction",
-            "2": "My role",
-            "3": "Problems & challenges",
-            "4": "Solution",
-            "5": "User persona",
-            "6": "User flow diagram",
-            "7": "Before and after"
+            "1": "General",
+            "2": "Context",
+            "3": "Challenge",
+            "4": "Goals",
+            "5": "Approach",
+            "6": "Results",
+            "7": "Learnings"
         },
         "letsPractice": {
             "1": "Introduction",

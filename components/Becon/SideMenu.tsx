@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { introductionVisibleEvent } from "./Introduction";
-import { roleEvent } from "./Role";
-import { problemsVisibleEvent } from "./Problems";
-import { solutionVisibleEvent } from "./Solution";
-import { personaEvent } from "./Persona";
-import { userflowEvent } from "./Userflow";
-import { beforeAndAfterVisibleEvent } from "./BeforeAndAfter";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { beforeAndAfterVisibleEvent } from "./BeforeAndAfter";
+import { contextEvent } from "./Context";
+import { introductionVisibleEvent } from "./General";
+import { goalsVisibleEvent } from "./Goals";
+import { personaEvent } from "./Persona";
+import { problemsVisibleEvent } from "./Problems";
+import { userflowEvent } from "./Userflow";
+import { approachVisibleEvent } from "./Approach";
+import { impactVisibleEvent } from "./Impact";
+import { learningVisibleEvent } from "./Learning";
 
 type Props = {};
 
@@ -24,9 +27,9 @@ export default function SideMenu({}: Props) {
         setPos("introduction");
       }
     });
-    self.addEventListener("becon-role-visible", (e) => {
+    self.addEventListener("becon-context-visible", (e) => {
       if (e) {
-        setPos("role");
+        setPos("context");
       }
     });
     self.addEventListener("becon-problems-visible", (e) => {
@@ -34,24 +37,24 @@ export default function SideMenu({}: Props) {
         setPos("problems");
       }
     });
-    self.addEventListener("becon-solution-visible", (e) => {
+    self.addEventListener("becon-goals-visible", (e) => {
       if (e) {
-        setPos("solution");
+        setPos("goals");
       }
     });
-    self.addEventListener("becon-persona-visible", (e) => {
+    self.addEventListener("becon-approach-visible", (e) => {
       if (e) {
-        setPos("persona");
+        setPos("approach");
       }
     });
-    self.addEventListener("becon-userflow-visible", (e) => {
+    self.addEventListener("becon-impact-visible", (e) => {
       if (e) {
-        setPos("userflow");
+        setPos("impact");
       }
     });
-    self.addEventListener("becon-beforeAndAfter-visible", (e) => {
+    self.addEventListener("becon-learning-visible", (e) => {
       if (e) {
-        setPos("before-and-after");
+        setPos("learnings");
       }
     });
   }, []);
@@ -80,14 +83,14 @@ export default function SideMenu({}: Props) {
             {t("1")}
           </Link>
         </li>
-        <li id="nav-role" className={`${pos === "role" ? "nav-active" : ""}`}>
+        <li id="nav-role" className={`${pos === "context" ? "nav-active" : ""}`}>
           <Link
             onClick={() => {
               setTimeout(() => {
-                self.dispatchEvent(roleEvent);
+                self.dispatchEvent(contextEvent);
               }, 1000);
             }}
-            href="#role"
+            href="#context"
           >
             {t("2")}
           </Link>
@@ -109,60 +112,60 @@ export default function SideMenu({}: Props) {
         </li>
         <li
           id="nav-solution"
-          className={`${pos === "solution" ? "nav-active" : ""}`}
+          className={`${pos === "goals" ? "nav-active" : ""}`}
         >
           <Link
             onClick={() => {
               setTimeout(() => {
-                self.dispatchEvent(solutionVisibleEvent);
+                self.dispatchEvent(goalsVisibleEvent);
               }, 1000);
             }}
-            href="#solution"
+            href="#goals"
           >
             {t("4")}
           </Link>
         </li>
         <li
           id="nav-persona"
-          className={`${pos === "persona" ? "nav-active" : ""}`}
+          className={`${pos === "approach" ? "nav-active" : ""}`}
         >
           <Link
             onClick={() => {
               setTimeout(() => {
-                self.dispatchEvent(personaEvent);
+                self.dispatchEvent(approachVisibleEvent);
               }, 1000);
             }}
-            href="#persona"
+            href="#approach"
           >
             {t("5")}
           </Link>
         </li>
         <li
           id="nav-userflow"
-          className={`${pos === "userflow" ? "nav-active" : ""}`}
+          className={`${pos === "impact" ? "nav-active" : ""}`}
         >
           <Link
             onClick={() => {
               setTimeout(() => {
-                self.dispatchEvent(userflowEvent);
+                self.dispatchEvent(impactVisibleEvent);
               }, 1000);
             }}
-            href="#userflow"
+            href="#results"
           >
             {t("6")}
           </Link>
         </li>
         <li
           id="nav-before-and-after"
-          className={`${pos === "before-and-after" ? "nav-active" : ""}`}
+          className={`${pos === "learnings" ? "nav-active" : ""}`}
         >
           <Link
             onClick={() => {
               setTimeout(() => {
-                self.dispatchEvent(beforeAndAfterVisibleEvent);
+                self.dispatchEvent(learningVisibleEvent);
               }, 1000);
             }}
-            href="#before-and-after"
+            href="#learnings"
           >
             {t("7")}
           </Link>

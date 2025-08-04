@@ -24,7 +24,8 @@ const nextConfig = {
     //     defaultLocale: 'pt-br',
     //   },
     // ],
-  }
+  },
+  allowedDevOrigins: ["local-origin.dev"]
 };
 
 module.exports = nextConfig;

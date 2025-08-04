@@ -43,7 +43,7 @@ export default function Header({}: Props) {
       const scrollY = document.body.style.top;
       document.body.style.position = "";
       document.body.style.top = "";
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      window.scrollTo(0, Math.abs(parseInt(scrollY || "0")));
     }
   }
 
@@ -78,19 +78,19 @@ export default function Header({}: Props) {
           />
         </Link>
         <nav className="flex items-center justify-center gap-7 list-none">
-          <li className="hidden md:inline md:w-24">
+          {/* <li className="hidden md:inline md:w-24">
             <Link className="menu-link" href="/#about">
               {t("about")}
             </Link>
-          </li>
+          </li> */}
           <li className="hidden md:inline md:w-24">
             <Link className="menu-link" href="/#projects">
               {t("projects")}
             </Link>
           </li>
           <li className="hidden md:inline md:w-24">
-            <Link className="menu-link" href="/#services">
-              {t("services")}
+            <Link className="menu-link" href="https://www.linkedin.com/in/msbeatriz/" target="_blank" rel="noopener noreferrer">
+              {t("linkedin")}
             </Link>
           </li>
           <li className="hidden md:inline md:w-24">
@@ -102,7 +102,7 @@ export default function Header({}: Props) {
             </div>
           </div>
           </li>
-          <Link href="/contact" className="hidden md:contact-button">
+          <Link href="mailto:beatrizmoreira.pd@gmail.com" className="hidden md:contact-button">
             <li>{t("contact")}</li>
           </Link>
           <div>

@@ -79,7 +79,7 @@ export default function Home() {
           <Header />
           <Hero />
           <Projects />
-          <Services />
+          {/* <Services /> */}
           <Footer />
         </div>
       )}

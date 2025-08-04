@@ -1,14 +1,14 @@
 {
     "home": {
         "hero": {
-            "title": "Criando caminhos para soluções poderosas",
+            "title": "Olá,\nsou Beatriz Moreira",
             "headline_1": "Designer profissional com mais de 6 anos de experiência em design, marketing e branding. Minha formação em comunicação social e publicidade influencia minha abordagem na criação de soluções que se comunicam de forma eficaz e impactante.",
             "headline_2": "Adoro aprender sobre novas tendências, técnicas e tecnologias que podem me ajudar a entregar soluções funcionais e visualmente atraentes, que atendam às necessidades dos usuários e aos objetivos do negócio."
         },
         "redirectLinks": {
             "there4you": "Design de produto / Aplicativo móvel",
             "letsPractice": "Landing page",
-            "becon": "Página de login (Web e Mobile)"
+            "becon": "Plataforma de chatbot"
         },
          "projectsPhrases": {
             "there4you": "Ajudando mulheres a se sentirem seguras",
@@ -29,7 +29,7 @@
     },
     "menu": {
         "projects": "Projetos",
-        "services": "Serviços",
+        "linkedin": "LinkedIn",
         "about": "Sobre",
         "contact": "Contato",
         "language": "Idioma",
@@ -457,51 +457,99 @@
         }
     },
     "becon": {
-        "tech": "Estudo de Caso UX/UI",
-        "type": "Página de Login",
-        "madeWith": "Ferramenta",
+        "tech": "Design de produto (UX/UI)",
+        "type": "Plataforma de chatbot",
+        "madeWith": "Tool",
         "introduction": {
-            "title": "Introdução",
+            "title": "Geral",
             "paragraphs": {
-                "1": "A Becon é uma startup tecnológica que oferece uma plataforma de chatbot como serviço, ajudando empresas a terem mais controle e agilidade em seus serviços, além de venderem mais. A plataforma possui diversas funcionalidades de automação e integrações."
+                "1": "A Becon é uma startup de tecnologia que oferece uma plataforma de chatbot como serviço (SaaS), ajudando empresas a automatizar atendimentos, ganhar agilidade operacional e impulsionar suas vendas.",
+                "2": "Função:",
+                "3": "Product Designer UX/UI de ponta a ponta",
+                "4": "Período:",
+                "5": "2022-2023",
+                "6": "Time:",
+                "7": "Trabalhei como Designer de produto (UX/UI) Solo, colaborando com Project Manager, Diretor Executivo, Desenvolvedores, Time de CX , Marketing e Branding.",
+                "8": "Resultados gerais:",
+                "9": "Criação do Design de 20+ funcionalidades dentro da plataforma, ajudando o time a gerar mais valor para o produto até a sua aquisição por R$ 18M pela CRM&Bonus."
+            },
+            "results": {
+                "1": "20+ funcionalidades",
+                "2": "R$ 18M"
+            },
+            "recovery": {
+                "title": "Recuperação de cerca de 30% dos carrinhos abandonados no e-commerce via WhatsApp"
             }
         },
-        "myRole": {
-            "title": "Meu papel",
-            "role": {
-                "1": "Meu papel", 
-                "2": "Designer UX / UI"
+        "context": {
+            "title": "Contexto",
+            "paragraphs": {
+                "1": "Durante um período de alinhamento entre prioridades de negócio e decisões estratégicas, foi identificado o desafio de reduzir a taxa de abandono de carrinhos em e-commerces utilizando o WhatsApp, principal canal da plataforma de chatbot."
             }
         },
         "problems": {
-            "title": "Problemas e desafios",
+            "title": "Desafio",
             "items": {
-                "1": "Quando entrei para a equipe da startup, ela estava em um processo de mudanças relacionadas ao seu crescimento. A empresa estava alterando sua identidade visual para se apresentar como mais moderna e confiável e precisava que esses atributos também estivessem presentes nas interfaces da plataforma, como na página de login.",
-                "2": "Há uma discrepância visual entre a interface de login e a nova identidade da marca, o que pode afetar a percepção de coesão.",
-                "3": "A plataforma possui interfaces personalizáveis de acordo com as duas principais cores da marca de cada empresa/cliente. Portanto, surge o desafio de criar uma interface adaptável e coerente para esta situação.",
-                "4": "A interface precisa ser personalizável, adaptável e ter boa leitura, legibilidade e consistência visual para diferentes situações."
+                "1": "O abandono de carrinho é um dos maiores desafios do e-commerce.",
+                "2": "Mais de 80% das pessoas desistem do processo de compra antes de efetuar o pagamento. ",
+                "3": "O desafio é recuperar vendas perdidas por abandono de carrinho no e-commerce, criando uma funcionalidade simples, escalável e efetiva para envio automático de mensagens via WhatsApp.",
+                "4": "Por que o WhatsApp?",
+                "5": "Devido à alta taxa de abertura (quase 100%), contra apenas 20% de e-mails e 12% de SMS."
             }
         },
-        "solution": {
-            "title": "Solução",
+        "goals": {
+            "title": "Metas",
             "items": {
-                "1": "Criar uma interface mais profissional, moderna, confiável e personalizável."
+                "1": "Criar uma funcionalidade de automação para recuperação de carrinhos via WhatsApp",
+                "2": "Aumentar a taxa de conversão de carrinhos abandonados",
+                "3": "Fortalecer o produto em negociações estratégicas"
+            }
+            
+        },
+        "approach": {
+                "title": "Abordagem",
+                "paragraphs": {
+                    "1": "Após mapear o contexto com o time e realizar pesquisas, prototipei a integração com e-commerces, inicialmente para VTEX, e sua aplicação no fluxo do chatbot com opção de cupons automáticos.",
+                    "2": "As interfaces foram projetadas para serem claras, úteis e fáceis de configurar, passando por testes constantes com stakeholders durante o desenvolvimento. A solução foi validada com um e-commerce de moda em uma campanha real, gerando aprendizados essenciais para iterações futuras."
+                }
+            },
+        "impact": {
+            "title": "Resultados / Impacto",
+            "paragraphs": {
+                "1": "cerca de 30%",
+                "2": "de carrinhos abandonados recuperados",
+                "3": "+25%",
+                "4": "de receita incremental",
+                "5": "A funcionalidade passou a ser diferencial competitivo do produto"
             }
         },
+
+        "learning": {
+            "title": "Aprendizados",
+            "paragraphs": {
+                "1": "Alinhar metas de negócio, experiência do usuário e viabilidade técnica foi essencial para entregar impacto real.",
+                "2": "Trabalhar em equipe com alinhamento estratégico acelera decisões e garante entregas com propósito.",
+                "3": "*Por questões de confidencialidade, alguns dados e telas foram omitidos",
+                "4": "Fontes:",
+                "5": "https://pipelinevalor.globo.com/negocios/noticia/crmandbonus-compra-becon-para-trocar-sms-por-whatsapp.ghtml",
+                "6": "https://www.instagram.com/p/CmpGD5HsyKY/?img_index=5"
+            }
+        },
+
         "userPersona": {
-            "title": "Persona",
-            "name": { "1": "Nome", "2": "Cleiton" },
-            "age": {"1": "Idade", "2": "32 anos" },
-            "subtitle": "Características",
-            "description": "Empreendedor moderno, possui boa aptidão tecnológica, analisa bastante uma plataforma antes de adquiri-la, é exigente com o produto e não teme mudar de plataforma se não estiver satisfeito. Não gosta de complexidades no processo de onboarding. É proativo e aberto a novas ideias."
+            "title": "User persona",
+            "name": { "1": "Name", "2": "Cleiton" },
+            "age": {"1": "Age", "2": "32 years old"},
+            "subtitle": "Characteristics",
+            "description": "A modern entrepreneur, has a good technological aptitude, analyzes a platform a lot before buying, is demanding with the product, and is not afraid to change platforms if he is not satisfied. Dislikes complexities in the onboarding process. He is proactive and open to new ideas."
         },
         "userFlow": {
-            "title": "Diagrama de fluxo do usuário"
+            "title": "User flow diagram"
         },
         "beforeAndAfter": {
-            "title": "Antes e depois",
-            "subtitles": {"1": "Antes", "2": "Depois"},
-            "description": "Defini uma paleta de cores recomendada para a plataforma, compatível com diferentes identidades visuais e com as cores neutras padrão do sistema."
+            "title": "Before and after",
+            "subtitles": {"1": "Before","2": "After"},
+            "description": "I have defined a recommended color palette for the platform that is compatible with different visual identities and with the neutral system default colors."
         }
     },
     "sideMenu": {
@@ -523,13 +571,13 @@
             }
         ,
         "becon": {
-            "1": "Introdução",
-            "2": "Meu papel",
-            "3": "Problemas e desafios",
-            "4": "Solução",
-            "5": "Persona",
-            "6": "Diagrama de fluxo do usuário",
-            "7": "Antes e depois"
+            "1": "Geral",
+            "2": "Contexto",
+            "3": "Desafio",
+            "4": "Metas",
+            "5": "Abordagem",
+            "6": "Resultados",
+            "7": "Aprendizados"
         },
         "letsPractice": {
             "1": "Introdução",

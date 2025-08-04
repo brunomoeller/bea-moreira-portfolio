@@ -11,10 +11,10 @@ import { useTranslations } from "next-intl";
 
 type Props = {};
 
-export const problemsVisibleEvent = new Event("becon-problems-visible");
+export const approachVisibleEvent = new Event("becon-approach-visible");
 
-export default function Problems({}: Props) {
-  const t = useTranslations("becon.problems");
+export default function Approach({}: Props) {
+  const t = useTranslations("becon.approach");
 
   const [ref, isVisible] = useInView({
     threshold: 1,
@@ -22,7 +22,7 @@ export default function Problems({}: Props) {
 
   useEffect(() => {
     if (isVisible) {
-      self.dispatchEvent(problemsVisibleEvent);
+      self.dispatchEvent(approachVisibleEvent);
     }
   }, [isVisible]);
 
@@ -31,28 +31,17 @@ export default function Problems({}: Props) {
       ref={ref}
       className="col-span-8 grid grid-cols-1 gap-y-8 text-darker-white font-quicksand relative"
     >
-      <span id="problems" className="absolute translate-y-[-40vh]" />
+      <span id="approach" className="absolute translate-y-[-40vh]" />
       <FadedH3 className="text-3xl md:text-4xl font-bold">
         {t("title")}
       </FadedH3>
       <div className="grid grid-cols-1 gap-y-8 text-lg md:text-xl">
         <FadedParagraph>
-          {t("items.1")}
+          {t("paragraphs.1")}
         </FadedParagraph>
         <div className="grid grid-cols-1 text-lg md:text-xl gap-y-4 md:gap-y-8 leading-10">
           <FadedH4>
-          <strong>{t("items.2")}</strong>
-          </FadedH4>
-        </div>
-        <p>
-        {t("items.3")}
-        </p>
-        <div className="grid grid-cols-1 gap-y-2 text-lg md:text-xl leading-10">
-          <FadedH4>
-          <strong>{t("items.4")}</strong>
-          </FadedH4>
-          <FadedH4>
-          {t("items.5")}
+          {t("paragraphs.2")}
           </FadedH4>
         </div>
       </div>

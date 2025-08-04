@@ -76,17 +76,12 @@ function Popup({ hidden }: Props) {
             </Link>
           </li>
           <li className="px-4 py-1 border-l-4 rounded-sm">
-            <Link onClick={hidePopup} href="/#services">
-            {t("services")}
+            <Link onClick={hidePopup} href="https://www.linkedin.com/in/msbeatriz/" target="_blank" rel="noopener noreferrer">
+            {t("linkedin")}
             </Link>
           </li>
           <li className="px-4 py-1 border-l-4 rounded-sm">
-            <Link onClick={hidePopup} href="/#about">
-            {t("about")}
-            </Link>
-          </li>
-          <li className="px-4 py-1 border-l-4 rounded-sm">
-            <Link onClick={hidePopup} href="/contact">
+            <Link onClick={hidePopup} href="mailto:beatrizmoreira.pd@gmail.com">
             {t("contact")}
             </Link>
           </li>

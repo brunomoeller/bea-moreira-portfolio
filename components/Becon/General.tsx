@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
-import { FadedH3, FadedParagraph } from "../Framer/MotionComponents";
-import { useInView } from "react-hook-inview";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
+import { useInView } from "react-hook-inview";
+import { FadedH3, FadedParagraph } from "../Framer/MotionComponents";
+import Result from "../Global/Result";
 
 type Props = {};
 
 export const introductionVisibleEvent = new Event("becon-introduction-visible");
 
-export default function Introduction({}: Props) {
+export default function General({}: Props) {
   const t = useTranslations("becon.introduction")
 
   const [ref, isVisible] = useInView({
@@ -32,6 +33,22 @@ export default function Introduction({}: Props) {
         <FadedParagraph>
           {t("paragraphs.1")}
         </FadedParagraph>
+        <FadedParagraph>
+          <b>{t("paragraphs.2")}</b> {t("paragraphs.3")}
+        </FadedParagraph>
+        <FadedParagraph>
+          <b>{t("paragraphs.4")}</b> {t("paragraphs.5")}
+        </FadedParagraph>
+        <FadedParagraph>
+          <b>{t("paragraphs.6")}</b> {t("paragraphs.7")}
+        </FadedParagraph>
+        <FadedParagraph>
+          <b>{t("paragraphs.8")}</b> {t("paragraphs.9")}
+        </FadedParagraph>
+      </div>
+      <div className="flex flex-col gap-y-6 md:flex-row gap-x-6">
+        <Result content={t("results.1")} />
+        <Result content={t("results.2")} />
       </div>
     </section>
   );

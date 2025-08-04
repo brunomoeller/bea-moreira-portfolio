@@ -1,23 +1,27 @@
-import Footer from "@/components/Global/Footer";
-import React, { useEffect, useMemo, useState } from "react";
-import Hero from "@/components/Becon/Hero";
-import Introduction from "@/components/Becon/Introduction";
-import Problems from "@/components/Becon/Problems";
-import { quicksand, poppins } from "@/utils/fonts";
-import Persona from "@/components/Becon/Persona";
-import Userflow from "@/components/Becon/Userflow";
-import SideMenu from "@/components/Becon/SideMenu";
-import Role from "@/components/Becon/Role";
-import Solution from "@/components/Becon/Solution";
 import BeforeAndAfter from "@/components/Becon/BeforeAndAfter";
+import Context from "@/components/Becon/Context";
+import General from "@/components/Becon/General";
+import Goals from "@/components/Becon/Goals";
+import Hero from "@/components/Becon/Hero";
+import Persona from "@/components/Becon/Persona";
+import Problems from "@/components/Becon/Problems";
+import SideMenu from "@/components/Becon/SideMenu";
+import Userflow from "@/components/Becon/Userflow";
+import Footer from "@/components/Global/Footer";
 import Header from "@/components/Global/Header";
+import { poppins, quicksand } from "@/utils/fonts";
+import { useEffect, useMemo, useState } from "react";
 // import Lottie from "lottie-react";
+import Recovery from "@/components/Becon/Recovery";
 import loadingAnimation from "@/public/icons/loading.json";
-import Script from "next/script";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import Script from "next/script";
+import Approach from "@/components/Becon/Approach";
+import Impact from "@/components/Becon/Impact";
+import Learning from "@/components/Becon/Learning";
 
 type Props = {};
 
@@ -83,13 +87,14 @@ export default function Becon({}: Props) {
             <SideMenu />
           </div>
           <div className="sections-container">
-            <Introduction />
-            <Role />
+            <General />
+            <Recovery />
+            <Context />
             <Problems />
-            <Solution />
-            <Persona />
-            <Userflow />
-            <BeforeAndAfter />
+            <Goals />
+            <Approach />
+            <Impact />
+            <Learning />
           </div>
           <Footer />
         </main>
